@@ -1,0 +1,25 @@
+<nav class="navbar">
+    <a class="toggle-button" (click)="toggleMenu()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <div class="brand-title">pistONE</div>
+    <div class="navbar-links" [ngClass]="{'active': isMenuOpen}">
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">CHI SIAMO</a></li>
+            <li><a href="">STAGIONE 2023</a></li>
+            <li><a href="">SCUDERIE</a></li>
+            <li><a href="">PILOTI</a></li>
+            <li><a href="">CLASSIFICHE</a></li>
+            <li><a href="">TRACCIATI</a></li>
+            <li><a href="">ARTICOLI</a></li>
+        </ul>
+        <div class="social">
+            <a href="">insta</a>
+            <a href="">twitter</a>
+            <a href="">youtube</a>
+        </div>
+    </div>
+</nav>

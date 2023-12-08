@@ -6,6 +6,7 @@ import { HomeComponent } from "./home/home.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @NgModule({
     imports: [
@@ -15,7 +16,7 @@ import { FormsModule } from "@angular/forms";
         HttpClientModule,
         FormsModule,
     ],
-    declarations: [AppComponent, HomeComponent],
+    declarations: [AppComponent, HomeComponent, NavbarComponent],
 
     bootstrap: [AppComponent],
 })
