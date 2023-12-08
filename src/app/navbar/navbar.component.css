@@ -63,16 +63,18 @@ body {
         position: fixed;
         left: 0;
         top: 40px;
-        background-color: #333;
+        background-color: #333333;
         z-index: 1000;
         overflow-y: auto;
     }
     .navbar-links ul {
         width: 100%;
         flex-direction: column;
+        padding-left: 6rem;
+        font-size: 25px;
     }
     .navbar-links li {
-        text-align: center;
+        text-align: start;
         margin: 1.2rem;
     }
     .navbar-links.active {
@@ -86,7 +88,7 @@ body {
         display: flex;
         flex-direction: row;
         margin-top: 100px;
-        border-top: 2px solid #ffff;
+        border-top: 18px solid #e54f2c;
         justify-content: space-evenly;
     }
     .social a {
