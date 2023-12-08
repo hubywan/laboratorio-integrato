@@ -7,14 +7,14 @@
     <div class="brand-title">pistONE</div>
     <div class="navbar-links" [ngClass]="{'active': isMenuOpen}">
         <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">CHI SIAMO</a></li>
-            <li><a href="">STAGIONE 2023</a></li>
-            <li><a href="">SCUDERIE</a></li>
-            <li><a href="">PILOTI</a></li>
-            <li><a href="">CLASSIFICHE</a></li>
-            <li><a href="">TRACCIATI</a></li>
-            <li><a href="">ARTICOLI</a></li>
+            <li><a routerLink="/home" (click)="closeMenu()">HOME</a></li>
+            <li><a routerLink="/chi-siamo" (click)="closeMenu()">CHI SIAMO</a></li>
+            <li><a routerLink="/stagione-2023" (click)="closeMenu()">STAGIONE 2023</a></li>
+            <li><a routerLink="/scuderie" (click)="closeMenu()">SCUDERIE</a></li>
+            <li><a routerLink="/piloti" (click)="closeMenu()">PILOTI</a></li>
+            <li><a routerLink="/classifiche" (click)="closeMenu()">CLASSIFICHE</a></li>
+            <li><a routerLink="/tracciati" (click)="closeMenu()">TRACCIATI</a></li>
+            <li><a routerLink="/articoli" (click)="closeMenu()">ARTICOLI</a></li>
         </ul>
         <div class="social">
             <a href="">insta</a>
