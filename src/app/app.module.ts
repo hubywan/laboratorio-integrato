@@ -7,6 +7,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
     imports: [
@@ -16,7 +17,12 @@ import { NavbarComponent } from "./navbar/navbar.component";
         HttpClientModule,
         FormsModule,
     ],
-    declarations: [AppComponent, HomeComponent, NavbarComponent],
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        NavbarComponent,
+        FooterComponent,
+    ],
 
     bootstrap: [AppComponent],
 })

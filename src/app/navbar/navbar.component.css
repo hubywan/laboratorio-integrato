@@ -3,13 +3,16 @@ body {
     margin: 0;
     padding: 0;
 }
+.social-color {
+    fill: #3c3c3a;
+}
 .navbar {
     height: 43px;
     display: flex;
     overflow: hidden;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
+    background-color: #3c3c3a;
     color: white;
 }
 .brand-title {
