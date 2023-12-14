@@ -1,0 +1,22 @@
+{
+    "articoli": [
+        {
+            "id": 1,
+            "titolo": "leclerc si caga addosso",
+            "immagine": "url",
+            "autore": "Stephen King"
+        },
+        {
+            "id": 2,
+            "titolo": "leclerc si caga addosso di nuovo",
+            "immagine": "url",
+            "autore": "mario rossi"
+        },
+        {
+            "id": 3,
+            "titolo": "leclerc muore",
+            "immagine": "url",
+            "autore": "stefano gigio"
+        }
+    ]
+}

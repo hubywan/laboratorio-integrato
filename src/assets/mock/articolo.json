@@ -1,0 +1,8 @@
+{
+    "articolo": {
+        "id": 1,
+        "titolo": "leclerc si caga addosso",
+        "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut erat ac dolor ullamcorper vulputate nec id purus. Fusce feugiat nulla quis scelerisque sagittis.   Cras ornare accumsan purus quis fringilla. Nunc sit amet lacus in sem finibus pretium. Aliquam erat volutpat. Nam faucibus felis turpis, quis porta sem pharetra ac. Cras et quam ullamcorper, mollis sapien in, accumsan magna.Nam at pellentesque lorem. Maecenas vitae turpis at ante suscipit vehicula. Suspendisse sem neque, finibus ac vestibulum in, imperdiet convallis tortor. Phasellus at pulvinar turpis. Donec at nulla consequat, semper tortor a, luctus odio. Vestibulum sit amet auctor mi. Sed et euismod sem, ac pellentesque nunc.Cras egestas non massa non imperdiet. Pellentesque at elementum ligula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc et dapibus tortor, ut vestibulum urna. Ut lobortis sapien sed mi rutrum, vel mollis ligula ultrices. Sed quis ipsum mollis, imperdiet magna at, molestie tortor. Pellentesque lobortis euismod dui nec elementum. Aliquam erat volutpat. Aenean a sem vel urna tempor volutpat. Integer dignissim ultrices orci sit amet consequat. Cras elementum rhoncus tincidunt. Mauris feugiat lacus vel erat finibus, at lacinia eros eleifend. Donec vel consequat purus. In hac habitasse platea dictumst. Cras scelerisque eros ac aliquet dapibus.",
+        "data": "2023-03-15T06:00:00+00:00"
+    }
+}
