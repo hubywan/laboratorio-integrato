@@ -7,7 +7,7 @@ import { Router, NavigationEnd } from "@angular/router";
     styleUrls: ["./app.component.css"],
 })
 export class AppComponent {
-    hideFooterPaths: string[] = ["/area-riservata"];
+    hideFooterPaths: string[] = ["/login"];
     constructor(private router: Router) {
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {

@@ -8,7 +8,7 @@ import { PilotiComponent } from "./piloti/piloti.component";
 import { ClassificheComponent } from "./classifiche/classifiche.component";
 import { TracciatiComponent } from "./tracciati/tracciati.component";
 import { ArticoliComponent } from "./articoli/articoli.component";
-import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
+import { LoginComponent } from "./login/login.component";
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
@@ -19,7 +19,7 @@ const routes: Routes = [
     { path: "classifiche", component: ClassificheComponent },
     { path: "tracciati", component: TracciatiComponent },
     { path: "articoli", component: ArticoliComponent },
-    { path: "area-riservata", component: AreaRiservataComponent },
+    { path: "login", component: LoginComponent },
     { path: "", redirectTo: "home", pathMatch: "full" },
 ];
 
