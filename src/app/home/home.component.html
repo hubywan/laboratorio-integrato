@@ -1,8 +1,56 @@
-<h1>Home</h1>
-<!-- <h2>{{data.articoli.id}}</h2> -->
-<div *ngFor="let item of items">
-    {{item.id}}
-    {{item.titolo}}
+<section class="podio">
+    <div>
+        <div class="bg-[#828282] m-2 flex flex-row items-center rounded-3xl">
+            <h2 class="text-7xl text-white font-bold p-3 pr-0">
+                {{items[0].posizione}}°
+            </h2>
+            <div>
+                <img src="{{items[0].immagine}}" alt="">
+            </div>
+            <div class="flex flex-col ">
+                <h3 class="text-white text-3xl">
+                    {{items[0].nomePilota}}
+                </h3>
+                <h4 class="text-white text-4xl text-center">
+                    {{items[0].punti}} pt.
+                </h4>
+            </div>
+        </div>
+        <div class="bg-[#828282] m-2 flex flex-row items-center rounded-3xl">
+            <h2 class="text-6xl text-white font-bold p-3">
+                {{items[1].posizione}}°
+            </h2>
+            <div class="flex flex-row w-full justify-between">
+                <h3 class="text-white text-2xl pt-3">
+                    {{items[1].nomePilota}}
+                </h3>
+                <h4 class="text-white text-4xl pr-7  pt-1">
+                    {{items[1].punti}} pt.
+                </h4>
+            </div>
+        </div>
+        <div class="bg-[#828282] m-2 flex flex-row items-center rounded-3xl">
+            <h2 class="text-5xl text-white font-bold p-3">
+                {{items[2].posizione}}°
+            </h2>
+            <div class="flex flex-row w-full justify-between">
+                <h3 class="text-white text-2xl pt-3">
+                    {{items[2].nomePilota}}
+                </h3>
+                <h4 class="text-white text-3xl pr-11 pt-2">
+                    {{items[2].punti}} pt.
+                </h4>
+            </div>
+        </div>
+        <div class="w-full flex justify-center">
+            <button class="rounded-lg bg-[#E54F2C]	text-lg ">
+                Vedi tutti risultati
+            </button>
+        </div>
 
 
-</div>
+    </div>
+</section>
+<section class="articoli">
+
+</section>

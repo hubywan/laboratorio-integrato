@@ -6,7 +6,7 @@ import { Observable, of } from "rxjs";
     providedIn: "root",
 })
 export class MockDataService {
-    private mockDataUrl = "/assets/mock/articoli.json";
+    private mockDataUrl = "/assets/mock/classificaUltima.json";
 
     constructor(private http: HttpClient) {}
 
