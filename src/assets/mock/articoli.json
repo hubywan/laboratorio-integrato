@@ -3,20 +3,20 @@
         {
             "id": 1,
             "titolo": "leclerc si caga addosso",
-            "immagine": "url",
-            "autore": "Stephen King"
+            "autore": "Stephen King",
+            "data": "2023-03-15T06:00:00+00:00"
         },
         {
             "id": 2,
             "titolo": "leclerc si caga addosso di nuovo",
-            "immagine": "url",
-            "autore": "mario rossi"
+            "autore": "mario rossi",
+            "data": "2023-03-15T06:00:00+00:00"
         },
         {
             "id": 3,
             "titolo": "leclerc muore",
-            "immagine": "url",
-            "autore": "stefano gigio"
+            "autore": "stefano gigio",
+            "data": "2023-03-15T06:00:00+00:00"
         }
     ]
 }

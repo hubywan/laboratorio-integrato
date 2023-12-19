@@ -8,6 +8,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { FormsModule } from "@angular/forms";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
+import { ClassificheComponent } from "./classifiche/classifiche.component";
+import { Stagione2023Component } from "./stagione-2023/stagione-2023.component";
 
 @NgModule({
     imports: [
@@ -22,6 +24,8 @@ import { FooterComponent } from "./footer/footer.component";
         HomeComponent,
         NavbarComponent,
         FooterComponent,
+        ClassificheComponent,
+        Stagione2023Component,
     ],
 
     bootstrap: [AppComponent],
