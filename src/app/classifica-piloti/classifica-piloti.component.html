@@ -1,7 +1,22 @@
-<h1>Classifica Piloti</h1>
-<div *ngFor="let item of items">
-    {{item.nomePilota}}
-    {{item.punti}}
-    {{item.posizione}}
-    <img src="{{item.immagine}}" alt="">
-</div>
+<div *ngFor="let item of items" class="m-2 ">
+    <div class="rounded-3xl flex flex-row" style="background-image: url({{item.bandiera}}); background-size: cover; height: 140px;">
+        <div class="flex items-center">
+            <h3 class="text-7xl text-white font-bold">
+                {{item.posizione}}°
+            </h3>
+        </div>
+        <div class=" text-white flex flex-row">
+            <img src="{{item.immagine}}" alt="">
+        </div>
+        <div>
+            <h3 class="text-white">
+                {{item.nome}}
+            </h3>
+            <h3 class="text-white">
+                {{item.punti}}
+            </h3>
+            <h3 class="text-white">
+                {{item.scuderia.nome}}
+            </h3>
+        </div>
+    </div>
