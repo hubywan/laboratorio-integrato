@@ -1,1 +1,7 @@
 <h1>Classifica Piloti</h1>
+<div *ngFor="let item of items">
+    {{item.nomePilota}}
+    {{item.punti}}
+    {{item.posizione}}
+    <img src="{{item.immagine}}" alt="">
+</div>
