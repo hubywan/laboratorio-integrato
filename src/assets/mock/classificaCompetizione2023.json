@@ -31,12 +31,50 @@
                 }
             },
             "posizione": 1,
+            "tempo": "1:56:30.265",
+            "punti": 120
+        }
+    ],
+    "classificaSprint": [
+        {
+            "pilota": {
+                "id": 4,
+                "nome": "Lewis Hamilton",
+                "immagine": "",
+                "bandiera": "",
+                "scuderia": {
+                    "id": 7,
+                    "nome": "Mercedes",
+                    "logo": ""
+                }
+            },
+            "posizione": 1,
+            "tempo": "1:56:30.265",
+            "punti": 120
+        }
+    ],
+    "classificaQualificheSprint": [
+        {
+            "pilota": {
+                "id": 4,
+                "nome": "Lewis Hamilton",
+                "immagine": "",
+                "bandiera": "",
+                "scuderia": {
+                    "id": 7,
+                    "nome": "Mercedes",
+                    "logo": ""
+                }
+            },
+            "posizione": 1,
             "tempo": "1:56:30.265"
-        },
+        }
+    ],
+    "classificaQualifiche": [
         {
             "pilota": {
                 "id": 4,
-                "nome": "Carlos Sainz jr",
+                "nome": "Lewis Hamilton",
                 "immagine": "",
                 "bandiera": "",
                 "scuderia": {
@@ -45,28 +83,15 @@
                     "logo": ""
                 }
             },
-            "posizione": 2,
-            "tempo": "+1.154"
-        },
+            "posizione": 1,
+            "tempo": "1:56:30.265"
+        }
+    ],
+    "classificaProve": [
         {
             "pilota": {
                 "id": 4,
-                "nome": "Max Verstappen",
-                "immagine": "",
-                "bandiera": "",
-                "scuderia": {
-                    "id": 7,
-                    "nome": "Mercedes",
-                    "logo": "+1.491"
-                }
-            },
-            "posizione": 3,
-            "tempo": "1:32.478"
-        },
-        {
-            "pilota": {
-                "id": 4,
-                "nome": "Charles Leclerc",
+                "nome": "Lewis Hamilton",
                 "immagine": "",
                 "bandiera": "",
                 "scuderia": {
@@ -75,38 +100,8 @@
                     "logo": ""
                 }
             },
-            "posizione": 4,
-            "tempo": "+2.922"
-        },
-        {
-            "pilota": {
-                "id": 4,
-                "nome": "Yuki Tsunoda",
-                "immagine": "",
-                "bandiera": "",
-                "scuderia": {
-                    "id": 7,
-                    "nome": "Mercedes",
-                    "logo": ""
-                }
-            },
-            "posizione": 15,
-            "tempo": "1 Lap"
-        },
-        {
-            "pilota": {
-                "id": 4,
-                "nome": "Kevin Magnusen",
-                "immagine": "",
-                "bandiera": "",
-                "scuderia": {
-                    "id": 7,
-                    "nome": "Mercedes",
-                    "logo": ""
-                }
-            },
-            "posizione": 20,
-            "tempo": "DNF"
+            "posizione": 1,
+            "tempo": "1:56:30.265"
         }
     ]
 }
