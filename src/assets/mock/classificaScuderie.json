@@ -5,6 +5,7 @@
             "nome": "Mercedes",
             "punti": 30,
             "posizione": 1,
+            "piloti": ["Lewis Hamilton, Charles Leclerc"],
             "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Mercedes-Benz_Star.svg/640px-Mercedes-Benz_Star.svg.png"
         },
         {
