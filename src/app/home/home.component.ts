@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { OnInit } from "@angular/core";
-import { MockDataService } from "src/services/mock-service";
+import { MockDataService } from "src/services/classifica-ultima.service";
 
 @Component({
     selector: "app-home",

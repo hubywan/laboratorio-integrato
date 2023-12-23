@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "nome": "Melbourne Grand Prix Circuit",
+        "immagine": "",
+        "nazione": {
+            "nome": "Australia",
+            "bandiera": ""
+        }
+    }
+]

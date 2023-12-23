@@ -1,0 +1,15 @@
+<div>
+    <div class="flex justify-center">
+        <input type="text" class="rounded-2xl w-80 bg-[#2b2b2b]" placeholder="Inserisci un nome">
+    </div>
+    <div class="container flex flex-row flex-wrap">
+        <div class="basis-1/2 justify-center" *ngFor="let item of items">
+            <a routerLink="dettaglio">
+                <img [src]="item.logo" alt="" class="p-2">
+            </a>
+            <h2 class="text-white text-center pb-5">
+                {{item.nome}}
+            </h2>
+        </div>
+    </div>
+</div>

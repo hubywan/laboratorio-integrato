@@ -11,6 +11,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { ClassificheComponent } from "./classifiche/classifiche.component";
 import { ClassificheAnnoComponent } from "./classifiche-anno/classifiche-anno.component";
 import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti.component";
+import { ListaScuderieComponent } from "./lista-scuderie/lista-scuderie.component";
 @NgModule({
     imports: [
         BrowserModule,
@@ -27,6 +28,7 @@ import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti
         ClassificheComponent,
         ClassificheAnnoComponent,
         ClassificaPilotiComponent,
+        ListaScuderieComponent,
     ],
 
     bootstrap: [AppComponent],

@@ -1,0 +1,16 @@
+[
+    {
+        "id": 4,
+        "nome": "Lewis Hamilton",
+        "puntiCarriera": 4595.5,
+        "nazione": {
+            "nome": "Inghilterra",
+            "bandiera": ""
+        },
+        "scuderia": {
+            "id": 4,
+            "nome": "Merchedes",
+            "logo": ""
+        }
+    }
+]

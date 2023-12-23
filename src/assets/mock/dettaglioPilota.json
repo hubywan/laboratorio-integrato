@@ -1,0 +1,29 @@
+{
+    "id": 2,
+    "nome": "Lewis Hamilton",
+    "immagine": "",
+    "nazione": {
+        "nome": "Inghilterra",
+        "bandiera": ""
+    },
+    "numero": 16,
+    "dataNascita": "",
+    "nGrandprix": 23,
+    "Podio": 3,
+    "vittorieCampionati": 4,
+    "vittorieTotali": 129,
+    "scuderie": [
+        {
+            "id": 2,
+            "nome": "Merchedes"
+        },
+        {
+            "id": 2,
+            "nome": "Merchedes"
+        },
+        {
+            "id": 2,
+            "nome": "Merchedes"
+        }
+    ]
+}

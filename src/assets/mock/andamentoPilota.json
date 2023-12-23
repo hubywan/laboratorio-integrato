@@ -1,6 +1,6 @@
 [
     {
-        "id": 20,
+        "idGara": 20,
         "Competizione": {
             "id": 5,
             "nome": "Australia Grand Prix"
@@ -8,7 +8,7 @@
         "puntiParziali": 10
     },
     {
-        "id": 20,
+        "idGara": 20,
         "Competizione": {
             "id": 5,
             "nome": "Australia Grand Prix"
@@ -16,7 +16,7 @@
         "puntiParziali": 10
     },
     {
-        "id": 20,
+        "idGara": 20,
         "Competizione": {
             "id": 5,
             "nome": "Australia Grand Prix"
@@ -24,7 +24,7 @@
         "puntiParziali": 10
     },
     {
-        "id": 20,
+        "idGara": 20,
         "Competizione": {
             "id": 5,
             "nome": "Australia Grand Prix"
