@@ -1,7 +1,7 @@
 {
     "id": 5,
     "nome": "Merchedes",
-    "logo": "",
+    "logo": "https://media.api-sports.io/formula-1/teams/1.png",
     "sede": "Milton Keynes, United Kingdom",
     "campionatiVinti": 30,
     "gareVinte": 129,
@@ -15,6 +15,13 @@
         {
             "id": 2,
             "nome": "Lewis Hamilton",
+            "immagine": "https://media.api-sports.io/formula-1/drivers/20.png",
+            "bandiera": ""
+        },
+        {
+            "id": 2,
+            "nome": "Sebastian Vettel",
+            "immagine": "https://media.api-sports.io/formula-1/drivers/20.png",
             "bandiera": ""
         }
     ]
