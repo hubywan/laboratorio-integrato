@@ -1,1 +1,14 @@
-<h1>Tracciati</h1>
+<div>
+    <div class="flex justify-center">
+        <input type="text" class="rounded-2xl w-80 bg-[#2b2b2b]" placeholder="Inserisci un nome">
+    </div>
+    <div class="w-full flex flex-col justify-center p-7" *ngFor="let item of items">
+        <img [src]="item.immagine" alt="" class="flex justify-center">
+        <div class="flex flex-col ms-4">
+            <h2 class="text-[#686868] text-sm">{{item.nazione.nome}}</h2>
+            <h2 class="text-white text-xl">
+                {{item.nome}}
+            </h2>
+        </div>
+    </div>
+</div>
