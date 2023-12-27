@@ -7,8 +7,8 @@ import { ClassificheAnnoComponent } from "./classifiche-anno/classifiche-anno.co
 import { ListaTracciatiComponent } from "./lista-tracciati/lista-tracciati.component";
 import { ArticoliComponent } from "./articoli/articoli.component";
 import { LoginComponent } from "./login/login.component";
+import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.component";
 import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti.component";
-import { ClassificaGranPremiComponent } from "./classifica-gran-premi/classifica-gran-premi.component";
 import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-scuderie.component";
 import { ClassificheComponent } from "./classifiche/classifiche.component";
 import { ListaPilotiComponent } from "./lista-piloti/listaPiloti.component";
@@ -32,7 +32,7 @@ const routes: Routes = [
             },
             {
                 path: "gran-premi",
-                component: ClassificaGranPremiComponent,
+                component: ListaGranPremiComponent,
             },
             {
                 path: "scuderie",

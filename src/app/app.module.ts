@@ -13,6 +13,7 @@ import { ClassificheAnnoComponent } from "./classifiche-anno/classifiche-anno.co
 import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti.component";
 import { ListaScuderieComponent } from "./lista-scuderie/lista-scuderie.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
+import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.component";
 @NgModule({
     imports: [
         BrowserModule,
@@ -31,6 +32,7 @@ import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scude
         ClassificaPilotiComponent,
         ListaScuderieComponent,
         DettaglioScuderieComponent,
+        ListaGranPremiComponent,
     ],
 
     bootstrap: [AppComponent],
