@@ -1,34 +1,26 @@
 [
     {
-        "idGara": 20,
-        "Competizione": {
-            "id": 5,
-            "nome": "Australia Grand Prix"
-        },
-        "puntiParziali": 10
+        "annoStagione": 2012,
+        "punti": 90
     },
     {
-        "idGara": 20,
-        "Competizione": {
-            "id": 5,
-            "nome": "Australia Grand Prix"
-        },
-        "puntiParziali": 10
+        "annoStagione": 2012,
+        "punti": 90
     },
     {
-        "idGara": 20,
-        "Competizione": {
-            "id": 5,
-            "nome": "Australia Grand Prix"
-        },
-        "puntiParziali": 10
+        "annoStagione": 2012,
+        "punti": 90
     },
     {
-        "idGara": 20,
-        "Competizione": {
-            "id": 5,
-            "nome": "Australia Grand Prix"
-        },
-        "puntiParziali": 10
+        "annoStagione": 2012,
+        "punti": 90
+    },
+    {
+        "annoStagione": 2012,
+        "punti": 90
+    },
+    {
+        "annoStagione": 2012,
+        "punti": 90
     }
 ]

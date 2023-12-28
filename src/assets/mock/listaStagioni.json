@@ -1,7 +1,26 @@
 [
     {
         "anno": 2012,
-        "immagine": "",
+        "isFinished": true
+    },
+    {
+        "anno": 2012,
+        "isFinished": true
+    },
+    {
+        "anno": 2012,
+        "isFinished": true
+    },
+    {
+        "anno": 2012,
+        "isFinished": true
+    },
+    {
+        "anno": 2012,
+        "isFinished": true
+    },
+    {
+        "anno": 2012,
         "isFinished": true
     }
 ]

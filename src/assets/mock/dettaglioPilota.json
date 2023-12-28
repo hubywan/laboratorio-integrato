@@ -8,22 +8,25 @@
     },
     "numero": 16,
     "dataNascita": "",
-    "nGrandprix": 23,
-    "Podio": 3,
+    "ngrandprix": 23,
+    "podio": 3,
     "vittorieCampionati": 4,
     "vittorieTotali": 129,
     "scuderie": [
         {
             "id": 2,
-            "nome": "Merchedes"
+            "nome": "Merchedes",
+            "logo": ""
         },
         {
             "id": 2,
-            "nome": "Merchedes"
+            "nome": "Merchedes",
+            "logo": ""
         },
         {
             "id": 2,
-            "nome": "Merchedes"
+            "nome": "Merchedes",
+            "logo": ""
         }
     ]
 }

@@ -13,6 +13,7 @@ import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-sc
 import { ClassificheComponent } from "./classifiche/classifiche.component";
 import { ListaPilotiComponent } from "./lista-piloti/listaPiloti.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
+import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
@@ -42,6 +43,7 @@ const routes: Routes = [
     },
     { path: "articoli", component: ArticoliComponent },
     { path: "login", component: LoginComponent },
+    { path: "area-riservata", component: AreaRiservataComponent },
     { path: "", redirectTo: "home", pathMatch: "full" },
 ];
 
