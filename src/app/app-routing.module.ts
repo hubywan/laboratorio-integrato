@@ -13,6 +13,7 @@ import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-sc
 import { ClassificheComponent } from "./classifiche/classifiche.component";
 import { ListaPilotiComponent } from "./lista-piloti/listaPiloti.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
+import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 
 const routes: Routes = [
@@ -22,6 +23,7 @@ const routes: Routes = [
     { path: "scuderie", component: ListaScuderieComponent },
     { path: "scuderie/dettaglio", component: DettaglioScuderieComponent },
     { path: "piloti", component: ListaPilotiComponent },
+    { path: "dettaglio-pilota", component: DettaglioPilotaComponent },
     { path: "tracciati", component: ListaTracciatiComponent },
     {
         path: "classifiche-anno",
