@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
-import { MockDataService } from "src/services/lista-gran-premi.service";
+import { ApiService } from "src/services/api.service";
+import * as dayjs from "dayjs";
+
 @Component({
     selector: "app-lista-gran-premi",
     templateUrl: "./lista-gran-premi.component.html",
@@ -7,14 +9,15 @@ import { MockDataService } from "src/services/lista-gran-premi.service";
 })
 export class ListaGranPremiComponent {
     items: any;
+    formattedDate: string = "";
 
-    constructor(private mockDataService: MockDataService) {}
+    constructor(private apiservice: ApiService) {}
 
     ngOnInit(): void {
-        this.mockDataService.getMockData().subscribe(
+        this.apiservice.getListaGranPremi(2023).subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati mock ottenuti:", this.items);
+                console.log("Dati api ottenuti:", this.items);
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);
