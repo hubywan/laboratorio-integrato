@@ -1,23 +1,39 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
-import * as dayjs from "dayjs";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "app-lista-gran-premi",
     templateUrl: "./lista-gran-premi.component.html",
     styleUrls: ["./lista-gran-premi.component.css"],
 })
-export class ListaGranPremiComponent {
+export class ListaGranPremiComponent implements OnInit {
     items: any;
     formattedDate: string = "";
+    selectedYear: number = 2023;
 
-    constructor(private apiservice: ApiService) {}
+    constructor(
+        private apiservice: ApiService,
+        private route: ActivatedRoute
+    ) {}
 
     ngOnInit(): void {
-        this.apiservice.getListaGranPremi(2023).subscribe(
+        this.route.queryParams.subscribe((params) => {
+            this.selectedYear = +params["anno"] || this.selectedYear;
+            this.fetchDataForYear(this.selectedYear);
+        });
+    }
+
+    fetchDataForYear(year: number): void {
+        this.apiservice.getListaGranPremi(year).subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati api ottenuti:", this.items);
+                console.log(
+                    "Dati API ottenuti per l'anno",
+                    year,
+                    ":",
+                    this.items
+                );
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);
