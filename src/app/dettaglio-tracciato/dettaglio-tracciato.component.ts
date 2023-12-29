@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
-import { MockDataService } from "src/services/dettaglio-scuderia.service";
+import { MockDataService } from "src/services/dettaglio-tracciato.service";
 
 @Component({
-    selector: "app-dettaglio-scuderia",
-    templateUrl: "./dettaglio-scuderia.component.html",
-    styleUrls: ["./dettaglio-scuderia.component.css"],
+    selector: "app-dettaglio-tracciato",
+    templateUrl: "./dettaglio-tracciato.component.html",
+    styleUrls: ["./dettaglio-tracciato.component.css"],
 })
-export class DettaglioScuderieComponent {
+export class DettaglioTracciatoComponent {
     items: any;
 
     constructor(private mockDataService: MockDataService) {}

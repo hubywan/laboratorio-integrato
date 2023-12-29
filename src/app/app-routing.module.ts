@@ -15,6 +15,7 @@ import { ListaPilotiComponent } from "./lista-piloti/listaPiloti.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
 import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
+import { DettaglioTracciatoComponent } from "./dettaglio-tracciato/dettaglio-tracciato.component";
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
@@ -25,6 +26,7 @@ const routes: Routes = [
     { path: "piloti", component: ListaPilotiComponent },
     { path: "dettaglio-pilota", component: DettaglioPilotaComponent },
     { path: "tracciati", component: ListaTracciatiComponent },
+    { path: "dettaglio-tracciato", component: DettaglioTracciatoComponent },
     {
         path: "classifiche-anno",
         component: ClassificheAnnoComponent,
