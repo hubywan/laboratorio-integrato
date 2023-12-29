@@ -1,1 +1,12 @@
-[{}]
+{
+    "id": 1,
+    "nome": "Australia Gran Prix",
+    "nazione": "Australia",
+    "bandiera": "https://nsbandiere.it/wp-content/uploads/2022/10/bandiera-italia-ns-bandiere-del-mondo.webp",
+    "data": "2012-03-18 09:00:00",
+    "stato": "completato",
+    "circuito": {
+        "id": 3,
+        "nome": "Melbourne Grand Prix Circuit"
+    }
+}

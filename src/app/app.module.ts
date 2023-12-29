@@ -9,8 +9,8 @@ import { FormsModule } from "@angular/forms";
 import { NavbarComponent } from "./navbar/navbar.component";
 import { FooterComponent } from "./footer/footer.component";
 import { ClassificheComponent } from "./classifiche/classifiche.component";
-import { Stagione2023Component } from "./stagione-2023/stagione-2023.component";
-
+import { ClassificheAnnoComponent } from "./classifiche-anno/classifiche-anno.component";
+import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti.component";
 @NgModule({
     imports: [
         BrowserModule,
@@ -25,7 +25,8 @@ import { Stagione2023Component } from "./stagione-2023/stagione-2023.component";
         NavbarComponent,
         FooterComponent,
         ClassificheComponent,
-        Stagione2023Component,
+        ClassificheAnnoComponent,
+        ClassificaPilotiComponent,
     ],
 
     bootstrap: [AppComponent],
