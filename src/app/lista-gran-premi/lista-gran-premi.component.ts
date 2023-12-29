@@ -13,7 +13,7 @@ export class ListaGranPremiComponent {
     ngOnInit(): void {
         this.mockDataService.getMockData().subscribe(
             (data) => {
-                this.items = data.grandPremi;
+                this.items = data;
                 console.log("Dati mock ottenuti:", this.items);
             },
             (error) => {

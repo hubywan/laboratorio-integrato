@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { ApiService } from "src/services/dettaglio-pilota.service";
+import { ApiService } from "src/services/api.service";
 @Component({
     selector: "app-dettaglio-pilota",
     templateUrl: "./dettaglio-pilota.component.html",
