@@ -1,0 +1,19 @@
+{
+    "id": 1,
+    "nome": "Melbourne Grand Prix Circuit",
+    "immagine": "",
+    "nazione": {
+        "nome": "Australia",
+        "bandiera": "https://nsbandiere.it/wp-content/uploads/2022/10/bandiera-italia-ns-bandiere-del-mondo.webp"
+    },
+    "video": "",
+    "descrizione": "",
+    "lunghezza": "5.303",
+    "esordio": "1996",
+    "giroRecord": {
+        "id": 45,
+        "nome": "Micheal Schumacher",
+        "tempo": "1:24.125",
+        "anno": "2004"
+    }
+}

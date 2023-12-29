@@ -1,22 +1,23 @@
-{
-    "articoli": [
-        {
-            "id": 1,
-            "titolo": "leclerc si caga addosso",
-            "autore": "Stephen King",
-            "data": "2023-03-15T06:00:00+00:00"
-        },
-        {
-            "id": 2,
-            "titolo": "leclerc si caga addosso di nuovo",
-            "autore": "mario rossi",
-            "data": "2023-03-15T06:00:00+00:00"
-        },
-        {
-            "id": 3,
-            "titolo": "leclerc muore",
-            "autore": "stefano gigio",
-            "data": "2023-03-15T06:00:00+00:00"
-        }
-    ]
-}
+[
+    {
+        "id": 1,
+        "titolo": "leclerc si caga addosso",
+        "autore": "Stephen King",
+        "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut erat ac dolor ullamcorper vulputate nec id purus. Fusce feugiat nulla quis scelerisque sagittis.   Cras ornare accumsan purus quis fringilla.",
+        "data": "2023-03-15T06:00:00+00:00"
+    },
+    {
+        "id": 2,
+        "titolo": "leclerc si caga addosso di nuovo",
+        "autore": "mario rossi",
+        "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut erat ac dolor ullamcorper vulputate nec id purus. Fusce feugiat nulla quis scelerisque sagittis.   Cras ornare accumsan purus quis fringilla.",
+        "data": "2023-03-15T06:00:00+00:00"
+    },
+    {
+        "id": 3,
+        "titolo": "leclerc muore",
+        "autore": "stefano gigio",
+        "testo": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam ut erat ac dolor ullamcorper vulputate nec id purus. Fusce feugiat nulla quis scelerisque sagittis.   Cras ornare accumsan purus quis fringilla.",
+        "data": "2023-03-15T06:00:00+00:00"
+    }
+]

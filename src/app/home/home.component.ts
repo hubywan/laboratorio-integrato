@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { OnInit } from "@angular/core";
-import { MockDataService } from "src/services/mock-service";
+import { MockDataService } from "src/services/classifica-ultima.service";
 
 @Component({
     selector: "app-home",
@@ -15,7 +15,7 @@ export class HomeComponent {
     ngOnInit(): void {
         this.mockDataService.getMockData().subscribe(
             (data) => {
-                this.items = data.classifica;
+                this.items = data;
                 console.log("Dati mock ottenuti:", this.items);
             },
             (error) => {

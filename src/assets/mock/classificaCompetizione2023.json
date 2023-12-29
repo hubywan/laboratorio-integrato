@@ -39,8 +39,32 @@
                 }
             },
             "posizione": 1,
-            "tempo": "1:56:30.265"
-        },
+            "tempo": "1:56:30.265",
+            "punti": 120
+        }
+    ],
+    "classificaSprint": [
+        {
+            "pilota": {
+                "id": 4,
+                "nome": "Lewis Hamilton",
+                "immagine": "",
+                "nazione": {
+                    "nome": "Australia",
+                    "bandiera": "https://nsbandiere.it/wp-content/uploads/2022/10/bandiera-italia-ns-bandiere-del-mondo.webp"
+                },
+                "scuderia": {
+                    "id": 7,
+                    "nome": "Mercedes",
+                    "logo": ""
+                }
+            },
+            "posizione": 1,
+            "tempo": "1:56:30.265",
+            "punti": 120
+        }
+    ],
+    "classificaQualificheSprint": [
         {
             "pilota": {
                 "id": 4,
@@ -58,7 +82,9 @@
             },
             "posizione": 1,
             "tempo": "1:56:30.265"
-        },
+        }
+    ],
+    "classificaQualifiche": [
         {
             "pilota": {
                 "id": 4,
@@ -76,25 +102,9 @@
             },
             "posizione": 1,
             "tempo": "1:56:30.265"
-        },
-        {
-            "pilota": {
-                "id": 4,
-                "nome": "Lewis Hamilton",
-                "immagine": "",
-                "nazione": {
-                    "nome": "Australia",
-                    "bandiera": "https://nsbandiere.it/wp-content/uploads/2022/10/bandiera-italia-ns-bandiere-del-mondo.webp"
-                },
-                "scuderia": {
-                    "id": 7,
-                    "nome": "Mercedes",
-                    "logo": ""
-                }
-            },
-            "posizione": 1,
-            "tempo": "1:56:30.265"
-        },
+        }
+    ],
+    "classificaProve": [
         {
             "pilota": {
                 "id": 4,
