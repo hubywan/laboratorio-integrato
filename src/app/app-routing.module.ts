@@ -15,6 +15,7 @@ import { ListaPilotiComponent } from "./lista-piloti/listaPiloti.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
 import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
+import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
@@ -46,6 +47,7 @@ const routes: Routes = [
     { path: "articoli", component: ArticoliComponent },
     { path: "login", component: LoginComponent },
     { path: "area-riservata", component: AreaRiservataComponent },
+    { path: "stesura-articolo", component: StesuraArticoloComponent },
     { path: "", redirectTo: "home", pathMatch: "full" },
 ];
 

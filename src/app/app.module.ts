@@ -15,6 +15,8 @@ import { ListaScuderieComponent } from "./lista-scuderie/lista-scuderie.componen
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
 import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.component";
 import { ListaTracciatiComponent } from "./lista-tracciati/lista-tracciati.component";
+import { ArticoliComponent } from "./articoli/articoli.component";
+import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 @NgModule({
     imports: [
         BrowserModule,
@@ -35,6 +37,7 @@ import { ListaTracciatiComponent } from "./lista-tracciati/lista-tracciati.compo
         DettaglioScuderieComponent,
         ListaGranPremiComponent,
         ListaTracciatiComponent,
+        AreaRiservataComponent,
     ],
 
     bootstrap: [AppComponent],
