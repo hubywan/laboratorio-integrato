@@ -1,13 +1,11 @@
 import { Component } from "@angular/core";
 import { MockDataService } from "src/services/articoli.service";
 
-
 @Component({
     selector: "app-area-riservata",
     templateUrl: "./area-riservata.component.html",
     styleUrls: ["./area-riservata.component.css"],
 })
-
 export class AreaRiservataComponent {
     items: any;
 
@@ -25,5 +23,3 @@ export class AreaRiservataComponent {
         );
     }
 }
-=======
-export class AreaRiservataComponent {}
