@@ -1,1 +1,9 @@
 <h1>Classifiche</h1>
+<div class="flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10">
+    <div *ngFor="let item of items" class="w-40 h-32 bg-white rounded-2xl flex justify-center items-center m-2" (click)="redirectToClassificheAnno(item.anno)">
+        <h1 class="text-black">{{item.anno}}</h1>
+
+    </div>
+</div>
+<h1>Classifiche</h1>
+

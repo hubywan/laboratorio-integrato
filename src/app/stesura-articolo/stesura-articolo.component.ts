@@ -1,14 +1,12 @@
 import { Component } from "@angular/core";
 import { MockDataService } from "src/services/articoli.service";
 
-
 @Component({
-    selector: "app-area-riservata",
-    templateUrl: "./area-riservata.component.html",
-    styleUrls: ["./area-riservata.component.css"],
+    selector: "app-stesura-articolo",
+    templateUrl: "./stesura-articolo.component.html",
+    styleUrls: ["./stesura-articolo.component.css"],
 })
-
-export class AreaRiservataComponent {
+export class StesuraArticoloComponent {
     items: any;
 
     constructor(private mockDataService: MockDataService) {}
@@ -25,5 +23,3 @@ export class AreaRiservataComponent {
         );
     }
 }
-=======
-export class AreaRiservataComponent {}
