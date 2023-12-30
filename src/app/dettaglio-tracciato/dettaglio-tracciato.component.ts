@@ -1,14 +1,12 @@
 import { Component } from "@angular/core";
-import { MockDataService } from "src/services/articoli.service";
-
+import { MockDataService } from "src/services/dettaglio-tracciato.service";
 
 @Component({
-    selector: "app-area-riservata",
-    templateUrl: "./area-riservata.component.html",
-    styleUrls: ["./area-riservata.component.css"],
+    selector: "app-dettaglio-tracciato",
+    templateUrl: "./dettaglio-tracciato.component.html",
+    styleUrls: ["./dettaglio-tracciato.component.css"],
 })
-
-export class AreaRiservataComponent {
+export class DettaglioTracciatoComponent {
     items: any;
 
     constructor(private mockDataService: MockDataService) {}
@@ -25,5 +23,3 @@ export class AreaRiservataComponent {
         );
     }
 }
-=======
-export class AreaRiservataComponent {}
