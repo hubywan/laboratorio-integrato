@@ -19,7 +19,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 2,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -36,7 +36,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 3,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -53,7 +53,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 4,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -70,7 +70,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 5,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -87,7 +87,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 6,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -104,7 +104,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 7,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -121,7 +121,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 8,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -138,7 +138,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 9,
         "punti": 250,
         "scuderia": {
             "id": 3,
@@ -155,7 +155,7 @@
     {
         "id": 20,
         "nome": "Lewis Hamilton",
-        "posizione": 1,
+        "posizione": 10,
         "punti": 250,
         "scuderia": {
             "id": 3,

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
-import { MockDataService } from "src/services/lista-stagioni.service";
+import { ApiService } from "src/services/api.service";
 
 @Component({
     selector: "app-classifiche",
@@ -10,16 +10,13 @@ import { MockDataService } from "src/services/lista-stagioni.service";
 export class ClassificheComponent {
     items: any;
 
-    constructor(
-        private mockDataService: MockDataService,
-        private router: Router
-    ) {}
+    constructor(private apiservice: ApiService, private router: Router) {}
 
     ngOnInit(): void {
-        this.mockDataService.getMockData().subscribe(
+        this.apiservice.getListaStagioni().subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati mock ottenuti:", this.items);
+                console.log("Dati api ottenuti:", this.items);
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);

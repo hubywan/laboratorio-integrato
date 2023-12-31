@@ -40,5 +40,34 @@ export class ApiService {
                 })
             );
     }
-
+    getListaStagioni() {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http.get("http://localhost:8090/stagioni", options).pipe(
+            map((data: any) => {
+                return data;
+            })
+        );
+    }
+    getClassifica(anno: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(`http://localhost:8090/piloti/classifica/${anno}`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
 }
