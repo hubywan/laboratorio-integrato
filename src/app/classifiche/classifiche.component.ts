@@ -24,7 +24,7 @@ export class ClassificheComponent {
         );
     }
     redirectToClassificheAnno(anno: number): void {
-        this.router.navigate(["/classifiche-anno"], {
+        this.router.navigate(["/classifiche-anno/piloti"], {
             queryParams: { anno },
         });
     }

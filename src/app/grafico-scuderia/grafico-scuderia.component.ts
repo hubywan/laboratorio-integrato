@@ -1,12 +1,13 @@
-import { Component } from "@angular/core";
-import { MockDataService } from "src/services/dettaglio-scuderia.service";
+import { Component, ElementRef, ViewChild, AfterViewInit } from "@angular/core";
+import Chart from "chart.js/auto";
+import { MockDataService } from "src/services/grafico-scuderia.service";
 
 @Component({
-    selector: "app-dettaglio-scuderia",
-    templateUrl: "./dettaglio-scuderia.component.html",
-    styleUrls: ["./dettaglio-scuderia.component.css"],
+    selector: "app-grafico-scuderia",
+    templateUrl: "./grafico-scuderia.component.html",
+    styleUrls: ["./grafico-scuderia.component.css"],
 })
-export class DettaglioScuderieComponent {
+export class GraficoScuderiaComponent {
     items: any;
 
     constructor(private mockDataService: MockDataService) {}

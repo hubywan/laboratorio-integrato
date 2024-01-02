@@ -1,25 +1,29 @@
 <div>
-    <div class="flex justify-center">
-        <img [src]="items.logo" alt="">
-    </div>
-    <div class="flex flex-col text-center">
-        <h2 class="text-white text-xl">{{items.nome}}</h2>
-        <h3 class="text-white text-xs">{{items.sede}}</h3>
-    </div>
-    <div class="bg-[#2a2a2a] rounded-2xl m-5 flex flex-row justify-around">
+    <div class="flex flex-col lg:flex-row justify-center">
         <div>
-            <p class="text-white text-base p-4 text-center">Campionati</p>
-            <h2 class="text-white text-4xl p-4 pt-0 text-center">4</h2>
+            <div class="flex justify-center">
+                <img [src]="items.logo" alt="">
+            </div>
+            <div class="flex flex-col text-center">
+                <h2 class="text-white text-xl">{{items.nome}}</h2>
+                <h3 class="text-white text-xs">{{items.sede}}</h3>
+            </div>
         </div>
-        <div>
-            <p class="text-white text-base p-4 text-center">Gare</p>
-            <h2 class="text-white text-4xl p-4 pt-0 text-center">129</h2>
+        <div class="bg-[#2a2a2a] rounded-2xl mx-9 m-5 flex flex-row justify-around lg:w-96 h-28">
+            <div>
+                <p class="text-white text-base p-4 text-center">Campionati</p>
+                <h2 class="text-white text-4xl p-4 pt-0 text-center">4</h2>
+            </div>
+            <div>
+                <p class="text-white text-base p-4 text-center">Gare</p>
+                <h2 class="text-white text-4xl p-4 pt-0 text-center">129</h2>
+            </div>
         </div>
     </div>
     <div>
         <h2 class="text-white text-xl text-center mb-4 mt-6">Piloti del TEAM</h2>
         <div class=" flex flex-row flex-wrap justify-center">
-            <div *ngFor="let piloti of items.piloti" class="">
+            <div *ngFor="let piloti of items.piloti" class="lg:mx-5">
                 <div class="bg-[#2a2a2a] rounded-2xl  h-44 w-44 mx-1 p-2">
                     <h3 class="text-white text-center">{{piloti.nome}}</h3>
                     <div class="flex justify-center align-bottom">
@@ -30,9 +34,10 @@
             </div>
         </div>
     </div>
-    <div>
+    <hr class="hr-custom mx-20 rounded mt-12 lg:mx-48">
+    <div class="flex items-center flex-col mx-9">
         <h2 class="text-white text-xl text-center mb-4 mt-6">Dati Generali</h2>
-        <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4">
+        <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4 custom-width">
             <p class="text-base"><span class="text-white">Anno esordio:</span> {{items.annoEsordio }}</p>
             <p class="text-base"><span class="text-white">Presidente: </span> {{items.presidente}}</p>
             <p class="text-base"><span class="text-white">Direttore: </span> {{items.direttore }}</p>
@@ -43,8 +48,12 @@
     </div>
     <div>
         <h2 class="text-white text-xl text-center mb-4 mt-6">Variazione del punteggio negli anni</h2>
-        <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4">
-            <h3>grafico</h3>
+        <div class="flex flex-col items-center mx-9">
+            <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4 custom-width">
+                <h3>
+                    <app-grafico-scuderia></app-grafico-scuderia>
+                </h3>
+            </div>
         </div>
     </div>
 </div>

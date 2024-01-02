@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
-import { MockDataService } from "src/services/dettaglio-scuderia.service";
+import { MockDataService } from "src/services/lista-piloti.service";
 
 @Component({
-    selector: "app-dettaglio-scuderia",
-    templateUrl: "./dettaglio-scuderia.component.html",
-    styleUrls: ["./dettaglio-scuderia.component.css"],
+    selector: "app-lista-piloti",
+    templateUrl: "./lista-piloti.component.html",
+    styleUrls: ["./lista-piloti.component.css"],
 })
-export class DettaglioScuderieComponent {
+export class ListaPilotiComponent {
     items: any;
 
     constructor(private mockDataService: MockDataService) {}
@@ -21,6 +21,5 @@ export class DettaglioScuderieComponent {
                 console.error("Errore durante il recupero dei dati:", error);
             }
         );
-        this.mockDataService.getMockData();
     }
 }

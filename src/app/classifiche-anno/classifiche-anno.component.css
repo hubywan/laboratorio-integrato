@@ -1,3 +1,6 @@
 .custom-button-width {
     width: 109px;
 }
+.custom-active-button {
+    background-color: #e54f2c;
+}

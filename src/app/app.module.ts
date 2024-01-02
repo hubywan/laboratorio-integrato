@@ -17,6 +17,8 @@ import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.com
 import { ListaTracciatiComponent } from "./lista-tracciati/lista-tracciati.component";
 import { ArticoliComponent } from "./articoli/articoli.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
+import { GraficoScuderiaComponent } from "./grafico-scuderia/grafico-scuderia.component";
+import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 
 @NgModule({
     imports: [
@@ -35,10 +37,12 @@ import { AreaRiservataComponent } from "./area-riservata/area-riservata.componen
         ClassificheAnnoComponent,
         ClassificaPilotiComponent,
         ListaScuderieComponent,
+        ListaPilotiComponent,
         DettaglioScuderieComponent,
         ListaGranPremiComponent,
         ListaTracciatiComponent,
         AreaRiservataComponent,
+        GraficoScuderiaComponent,
     ],
 
     bootstrap: [AppComponent],

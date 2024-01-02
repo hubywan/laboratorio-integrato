@@ -11,13 +11,12 @@ import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.com
 import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti.component";
 import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-scuderie.component";
 import { ClassificheComponent } from "./classifiche/classifiche.component";
-import { ListaPilotiComponent } from "./lista-piloti/listaPiloti.component";
+import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
 import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 import { DettaglioTracciatoComponent } from "./dettaglio-tracciato/dettaglio-tracciato.component";
-
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
