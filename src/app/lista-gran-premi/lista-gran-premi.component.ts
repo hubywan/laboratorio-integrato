@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
 import { ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-lista-gran-premi",
@@ -14,7 +15,8 @@ export class ListaGranPremiComponent implements OnInit {
 
     constructor(
         private apiservice: ApiService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private router: Router
     ) {}
 
     ngOnInit(): void {
@@ -39,5 +41,10 @@ export class ListaGranPremiComponent implements OnInit {
                 console.error("Errore durante il recupero dei dati:", error);
             }
         );
+    }
+    redirectToDettaglioGranPremio(idgara: number): void {
+        this.router.navigate(["/dettaglio-gran-premio"], {
+            queryParams: { idgara },
+        });
     }
 }

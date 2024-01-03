@@ -24,6 +24,26 @@ export class ApiService {
                 })
             );
     }
+    getDettaglioScuderia(id: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+        });
+        const options = {
+            headers: headers,
+        };
+
+        return this.http
+            .get(
+                `http://localhost:8090/scuderie/${id}
+`,
+                options
+            )
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
     getListaGranPremi(anno: number) {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",
@@ -64,6 +84,25 @@ export class ApiService {
         };
         return this.http
             .get(`http://localhost:8090/piloti/classifica/${anno}`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
+    getDettaglioGranPremio(idgara: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(
+                `http://localhost:8090/competizioni/classifica/${idgara}`,
+                options
+            )
             .pipe(
                 map((data: any) => {
                     return data;

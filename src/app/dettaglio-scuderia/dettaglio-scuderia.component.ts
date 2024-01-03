@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { MockDataService } from "src/services/dettaglio-scuderia.service";
+import { ApiService } from "src/services/api.service";
 
 @Component({
     selector: "app-dettaglio-scuderia",
@@ -9,18 +9,17 @@ import { MockDataService } from "src/services/dettaglio-scuderia.service";
 export class DettaglioScuderieComponent {
     items: any;
 
-    constructor(private mockDataService: MockDataService) {}
+    constructor(private apiservice: ApiService) {}
 
     ngOnInit(): void {
-        this.mockDataService.getMockData().subscribe(
+        this.apiservice.getDettaglioScuderia(7).subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati mock ottenuti:", this.items);
+                console.log("Dati api ottenuti:", this.items);
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);
             }
         );
-        this.mockDataService.getMockData();
     }
 }

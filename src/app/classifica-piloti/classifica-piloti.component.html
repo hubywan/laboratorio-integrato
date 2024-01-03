@@ -1,6 +1,40 @@
 <div class="w-full">
-    <div *ngFor="let item of items" class="my-8">
-        <div class="rounded-3xl flex flex-row border" style="height: 140px">
+    <div class="flex flex-col lg:flex-row justify-center">
+        <div class="lg:hidden">
+            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
+                {{items[0].posizione}}°
+            </div>
+        </div>
+        <div class="lg:hidden">
+            <div class="lg:w-80 lg:h-96 bg-slate-600 m-1">
+                {{items[1].posizione}}°
+            </div>
+        </div>
+        <div class="lg:hidden">
+            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
+                {{items[2].posizione}}°
+            </div>
+        </div>
+
+        <!-- Elementi nell'ordine 1,0,2 per dispositivi desktop -->
+        <div class="hidden lg:flex lg:place-items-baseline">
+            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1 	">
+                {{items[1].posizione}}°
+            </div>
+        </div>
+        <div class="hidden lg:flex">
+            <div class="lg:w-80 lg:h-96 bg-slate-600 m-1">
+                {{items[0].posizione}}°
+            </div>
+        </div>
+        <div class="hidden lg:flex">
+            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
+                {{items[2].posizione}}°
+            </div>
+        </div>
+    </div>
+    <div *ngFor="let item of items; let i = index" class="my-8">
+        <div *ngIf="i >= 3" class="rounded-3xl flex flex-row border" style="height: 140px">
             <div style="
             position:absolute;
             filter: brightness(0.2) blur(6px);

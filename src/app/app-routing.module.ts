@@ -13,6 +13,7 @@ import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-sc
 import { ClassificheComponent } from "./classifiche/classifiche.component";
 import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
+import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-gran-premio.component";
 import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
@@ -47,6 +48,7 @@ const routes: Routes = [
         ],
     },
     { path: "articoli", component: ArticoliComponent },
+    { path: "dettaglio-gran-premio", component: DettaglioGranPremioComponent },
     { path: "login", component: LoginComponent },
     { path: "area-riservata", component: AreaRiservataComponent },
     { path: "stesura-articolo", component: StesuraArticoloComponent },
