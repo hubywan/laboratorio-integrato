@@ -49,6 +49,7 @@ const routes: Routes = [
     },
     { path: "articoli", component: ArticoliComponent },
     { path: "dettaglio-gran-premio", component: DettaglioGranPremioComponent },
+    { path: "dettaglio-scuderia", component: DettaglioScuderieComponent },
     { path: "login", component: LoginComponent },
     { path: "area-riservata", component: AreaRiservataComponent },
     { path: "stesura-articolo", component: StesuraArticoloComponent },

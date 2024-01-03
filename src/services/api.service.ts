@@ -90,6 +90,22 @@ export class ApiService {
                 })
             );
     }
+    getClassificaScuderie(anno: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(`http://localhost:8090/scuderie/classifica/${anno}`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
     getDettaglioGranPremio(idgara: number) {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",

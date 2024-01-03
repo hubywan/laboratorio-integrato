@@ -1,1 +1,9 @@
-<h1>Classifica Scuderie</h1>
+<div *ngFor="let item of items" class="flex flex-row mx-7 my-5" (click)="redirectToDettaglioScuderia(item.id)">
+    <div class=" basis-1/2 flex justify-center items-center bg-[#2a2a2a] rounded-2xl p-1">
+        <img [src]="item.logo" class="max-h-20 object-contain">
+    </div>
+    <div class="basis-1/2 p-4">
+        <h2 class="text-white text-xl font-semibold">{{item.nome}}</h2>
+        <h2 class="text-white text-base">Pt:{{item.punti}}</h2>
+    </div>
+</div>

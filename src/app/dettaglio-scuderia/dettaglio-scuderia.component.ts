@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiService } from "src/services/api.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "app-dettaglio-scuderia",
@@ -8,14 +9,30 @@ import { ApiService } from "src/services/api.service";
 })
 export class DettaglioScuderieComponent {
     items: any;
+    selectedIdScuderia: number = 1;
 
-    constructor(private apiservice: ApiService) {}
+    constructor(
+        private apiservice: ApiService,
+        private route: ActivatedRoute
+    ) {}
 
     ngOnInit(): void {
-        this.apiservice.getDettaglioScuderia(7).subscribe(
+        this.route.queryParams.subscribe((params) => {
+            this.selectedIdScuderia = +params["id"] || this.selectedIdScuderia;
+            this.fetchDataForId(this.selectedIdScuderia); // Passa this.selectedIdGara alla funzione
+        });
+    }
+    fetchDataForId(idgara: number): void {
+        // Aggiungi il parametro idgara
+        this.apiservice.getDettaglioScuderia(idgara).subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati api ottenuti:", this.items);
+                console.log(
+                    "Dati api ottenuti per id ",
+                    idgara,
+                    ":",
+                    this.items
+                );
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);

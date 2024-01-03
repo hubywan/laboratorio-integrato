@@ -11,6 +11,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { ClassificheComponent } from "./classifiche/classifiche.component";
 import { ClassificheAnnoComponent } from "./classifiche-anno/classifiche-anno.component";
 import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti.component";
+import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-scuderie.component";
 import { ListaScuderieComponent } from "./lista-scuderie/lista-scuderie.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
 import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.component";
@@ -37,6 +38,7 @@ import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-
         ClassificheComponent,
         ClassificheAnnoComponent,
         ClassificaPilotiComponent,
+        ClassificaScuderieComponent,
         ListaScuderieComponent,
         ListaPilotiComponent,
         DettaglioScuderieComponent,
