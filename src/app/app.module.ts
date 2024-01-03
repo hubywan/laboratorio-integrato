@@ -19,6 +19,7 @@ import { ArticoliComponent } from "./articoli/articoli.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 import { GraficoScuderiaComponent } from "./grafico-scuderia/grafico-scuderia.component";
 import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
+import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-gran-premio.component";
 
 @NgModule({
     imports: [
@@ -39,6 +40,7 @@ import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
         ListaScuderieComponent,
         ListaPilotiComponent,
         DettaglioScuderieComponent,
+        DettaglioGranPremioComponent,
         ListaGranPremiComponent,
         ListaTracciatiComponent,
         AreaRiservataComponent,

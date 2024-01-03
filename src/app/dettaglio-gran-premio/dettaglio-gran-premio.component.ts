@@ -9,6 +9,15 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class DettaglioGranPremioComponent {
     items: any;
+    showAllClassGP = false;
+    showAllSprint = false;
+    showAllSQ1 = false;
+    showAllSQ2 = false;
+    showAllSQ3 = false;
+    showAllQ1 = false;
+    showAllQ2 = false;
+    showAllQ3 = false;
+    showAllP1 = false;
     selectedIdGara: number = 1;
 
     constructor(
