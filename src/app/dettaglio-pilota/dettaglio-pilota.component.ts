@@ -11,7 +11,7 @@ export class DettaglioPilotaComponent {
     constructor(private apiservice: ApiService) {}
 
     ngOnInit(): void {
-        this.apiservice.getDettaglioPilota(7).subscribe(
+        this.apiservice.getDettaglioPilota(1).subscribe(
             (data) => {
                 this.items = data;
                 console.log("Dati api ottenuti:", this.items);

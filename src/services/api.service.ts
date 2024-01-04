@@ -51,7 +51,6 @@ export class ApiService {
         const options = {
             headers: headers,
         };
-
         return this.http
             .get(`http://localhost:8090/competizioni/${anno}`, options)
             .pipe(
@@ -60,6 +59,7 @@ export class ApiService {
                 })
             );
     }
+
     getListaStagioni() {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",

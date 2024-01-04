@@ -17,19 +17,52 @@
         </div>
 
         <!-- Elementi nell'ordine 1,0,2 per dispositivi desktop -->
-        <div class="hidden lg:flex lg:place-items-baseline">
-            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1 	">
-                {{items[1].posizione}}°
+        <div class="hidden lg:flex lg:flex-row items-end relative overflow-hidden pt-14">
+            <div class="lg:w-72 lg:h-52 bg-slate-600 m-1 rounded-3xl">
+                <h2 class="text-white text-6xl absolute top-0 left-0 mt-20 ms-5">
+                    {{items[1].posizione}}°
+                </h2>
+                <img [src]="items[1].immagine" class="h-48 absolute top-0 left-0 ms-14 mt-7">
+                <div class="bg-[#2a2a2a] absolute w-72 h-24 mt-28 rounded-b-3xl flex flex-col">
+                    <div class="mt-3 ms-3">
+                        <h2 class="text-white text-xl">{{items[1].nome}}</h2>
+                        <h2 class="text-white text-base">{{items[1].scuderia.nome}}</h2>
+                    </div>
+                    <div class="flex justify-end me-6 ">
+                        <h2 class="text-white text-base">{{items[1].punti}} pt.</h2>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hidden lg:flex">
-            <div class="lg:w-80 lg:h-96 bg-slate-600 m-1">
-                {{items[0].posizione}}°
+            <div class="lg:w-80 lg:h-64 bg-slate-600 m-1 rounded-3xl">
+                <h2 class="text-white text-6xl absolute top-0 left-0 mt-8 ml-80">
+                    {{items[0].posizione}}°
+                </h2>
+                <img [src]="items[0].immagine" class="h-60 absolute top-0 left-0 mt-0 ml-96">
+                <div class="bg-[#2a2a2a] absolute w-80 h-24 mt-40 rounded-b-3xl flex flex-col">
+                    <div class="mt-3 ms-3">
+                        <h2 class="text-white text-xl">{{items[0].nome}}</h2>
+                        <h2 class="text-white text-base">{{items[0].scuderia.nome}}</h2>
+                    </div>
+                    <div class="flex justify-end me-6 ">
+                        <h2 class="text-white text-base">{{items[0].punti}} pt.</h2>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="hidden lg:flex">
-            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
-                {{items[2].posizione}}°
+            <div class="lg:w-72 lg:h-52 bg-slate-600 m-1 rounded-3xl">
+                <h2 class="text-white text-6xl absolute top-0 right-0 mt-20 me-52">
+                    {{items[2].posizione}}°
+                </h2>
+                <!-- appena ho immagine giusta si mette quella  -->
+                <img [src]="items[4].immagine" class="h-48 absolute top-0 right-0 me-12 mt-7">
+                <div class="bg-[#2a2a2a] absolute w-72 h-24 mt-28 rounded-b-3xl flex flex-col">
+                    <div class="mt-3 ms-3">
+                        <h2 class="text-white text-xl">{{items[2].nome}}</h2>
+                        <h2 class="text-white text-base">{{items[2].scuderia.nome}}</h2>
+                    </div>
+                    <div class="flex justify-end me-6 ">
+                        <h2 class="text-white text-base">{{items[2].punti}} pt.</h2>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
