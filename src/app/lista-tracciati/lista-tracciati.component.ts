@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { MockDataService } from "src/services/lista-tracciati.service";
-
+import { ApiService } from "src/services/api.service";
+import { Router } from "@angular/router";
 @Component({
     selector: "app-lista-tracciati",
     templateUrl: "./lista-tracciati.component.html",
@@ -9,17 +9,22 @@ import { MockDataService } from "src/services/lista-tracciati.service";
 export class ListaTracciatiComponent {
     items: any;
 
-    constructor(private mockDataService: MockDataService) {}
+    constructor(private apiservice: ApiService, private router: Router) {}
 
     ngOnInit(): void {
-        this.mockDataService.getMockData().subscribe(
+        this.apiservice.getListaCircuiti().subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati mock ottenuti:", this.items);
+                console.log("Dati api ottenuti:", this.items);
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);
             }
         );
+    }
+    redirectToDettaglioCircuito(id: number): void {
+        this.router.navigate(["/dettaglio-tracciato"], {
+            queryParams: { id },
+        });
     }
 }

@@ -8,6 +8,22 @@ import { map } from "rxjs";
 export class ApiService {
     constructor(private http: HttpClient) {}
 
+    getDettaglioCircuito(id: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+        });
+        const options = {
+            headers: headers,
+        };
+
+        return this.http
+            .get(`http://localhost:8090/circuiti/${id}`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
     getDettaglioPilota(id: number) {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",
@@ -64,6 +80,19 @@ export class ApiService {
             headers: headers,
         };
         return this.http.get(`http://localhost:8090/piloti`, options).pipe(
+            map((data: any) => {
+                return data;
+            })
+        );
+    }
+    getListaCircuiti() {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http.get(`http://localhost:8090/circuiti`, options).pipe(
             map((data: any) => {
                 return data;
             })
