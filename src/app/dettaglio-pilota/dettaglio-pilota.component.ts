@@ -1,6 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, AfterViewInit, OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
 import { ActivatedRoute } from "@angular/router";
+
+declare var Chart: any;
 
 @Component({
     selector: "app-dettaglio-pilota",

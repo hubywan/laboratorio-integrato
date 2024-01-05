@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, OnInit } from "@angular/core";
-import { MockDataService } from "src/services/grafico-scuderia.service";
+import { ApiService } from "src/services/api.service";
 
 declare var Chart: any;
 
@@ -10,14 +10,14 @@ declare var Chart: any;
 })
 export class GraficoScuderiaComponent implements OnInit, AfterViewInit {
     items: any;
+    id: number = 1;
 
-    constructor(private mockDataService: MockDataService) {}
-
+    constructor(private apiservice: ApiService) {}
     ngOnInit(): void {
-        this.mockDataService.getMockData().subscribe(
+        this.apiservice.getAndamentoScuderia(this.id).subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati mock ottenuti:", this.items);
+                console.log("Dati api ottenuti:", this.items);
                 this.createChart();
             },
             (error) => {
