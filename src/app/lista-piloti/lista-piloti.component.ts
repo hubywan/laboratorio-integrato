@@ -8,6 +8,7 @@ import { Router } from "@angular/router";
     styleUrls: ["./lista-piloti.component.css"],
 })
 export class ListaPilotiComponent {
+    searchName: string = "";
     items: any;
 
     constructor(private apiservice: ApiService, private router: Router) {}
@@ -26,5 +27,14 @@ export class ListaPilotiComponent {
         this.router.navigate(["/dettaglio-pilota"], {
             queryParams: { id },
         });
+    }
+    get filteredItems(): any[] {
+        if (!this.searchName.trim()) {
+            return this.items;
+        } else {
+            return this.items.filter((item: any) =>
+                item.nome.toLowerCase().includes(this.searchName.toLowerCase())
+            );
+        }
     }
 }

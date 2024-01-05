@@ -1,18 +1,15 @@
 <div>
     <div class="flex justify-center">
-        <input type="text" class="rounded-2xl w-80 bg-[#2b2b2b]" placeholder="Inserisci un nome">
+        <input type="text" class="rounded-2xl w-80 bg-[#2b2b2b]" placeholder="Inserisci un nome" [(ngModel)]="searchName">
     </div>
-    <div class="w-full flex flex-col justify-center p-5" *ngFor="let item of items" (click)="redirectToDettaglioPilota(item.id)">
-        <!-- Togliere BG red quando ci saranno bandiere -->
-        <div class="grid grid-cols-9 text-center bg-red-600 rounded-8 h-[20vh]">
+    <div class="w-full flex flex-col justify-center p-5" *ngFor="let item of filteredItems; let i = index" (click)="redirectToDettaglioPilota(item.id)">
+        <div class="grid grid-cols-9 text-center bg-[#2a2a2a] rounded-8 h-[20vh]">
             <div class="col-span-5 p-4 ms-11 mt-3">
                 <p class="text-white text-sm mb-2">{{item.nazione.nome}}</p>
                 <p class="text-xl mb-2"><strong class="text-white">{{item.nome}}</strong></p>
                 <p class="text-white text-sm">Punti carriera: <strong class="text-white">{{item.puntiCarriera}}</strong></p>
             </div>
-            <!-- Togliere BG blue quando ci sarà immagine -->
             <div class="col-span-4 flex flex-col justify-end items-center">
-                <!-- Togliere quando ci sarà immagine -->
                 <img class="max-h-[20vh]" [src]="item.immagine" alt="">
             </div>
         </div>
