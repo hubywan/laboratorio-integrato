@@ -216,7 +216,7 @@
 
 
 <div class="mb-8" *ngIf="items.classificaP1 && items.classificaP1.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Prove libere </h2>
+    <h2 class="text-center text-white text-base">Classifica Prova libera 1</h2>
     <div *ngFor="let item of (showAllP1 ? items.classificaP1 : items.classificaP1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
         <div class="flex flex-row justify-between">
             <h2 class="text-base text-white">{{item.posizione}}</h2>
@@ -234,5 +234,52 @@
     </div>
 </div>
 <div class="flex justify-center" *ngIf="!items.classificaP1 || items.classificaP1.length === 0">
+    <p class="text-white"></p>
+</div>
+
+
+<div class="mb-8" *ngIf="items.classificaP2 && items.classificaP2.length > 0">
+    <h2 class="text-center text-white text-base">Classifica Prova libera 2</h2>
+    <div *ngFor="let item of (showAllP2 ? items.classificaP2 : items.classificaP2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+        <div class="flex flex-row justify-between">
+            <h2 class="text-base text-white">{{item.posizione}}</h2>
+            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+            <h2 class="text-base text-white">{{item.nome}}</h2>
+        </div>
+        <div>
+            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <a (click)="showAllP2 = !showAllP2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+            Mostra {{showAllP2 ? 'meno' : 'tutti'}} risultati {{showAllP2 ? '(freccia su)' : '(freccia giu)'}}
+        </a>
+    </div>
+</div>
+<div class="flex justify-center" *ngIf="!items.classificaP2 || items.classificaP2.length === 0">
+    <p class="text-white"></p>
+</div>
+
+
+
+<div class="mb-8" *ngIf="items.classificaP3 && items.classificaP3.length > 0">
+    <h2 class="text-center text-white text-base">Classifica Prova libera 3</h2>
+    <div *ngFor="let item of (showAllP3 ? items.classificaP3 : items.classificaP3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+        <div class="flex flex-row justify-between">
+            <h2 class="text-base text-white">{{item.posizione}}</h2>
+            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+            <h2 class="text-base text-white">{{item.nome}}</h2>
+        </div>
+        <div>
+            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        </div>
+    </div>
+    <div class="flex justify-center">
+        <a (click)="showAllP3 = !showAllP3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+            Mostra {{showAllP3 ? 'meno' : 'tutti'}} risultati {{showAllP3 ? '(freccia su)' : '(freccia giu)'}}
+        </a>
+    </div>
+</div>
+<div class="flex justify-center" *ngIf="!items.classificaP3 || items.classificaP3.length === 0">
     <p class="text-white"></p>
 </div>

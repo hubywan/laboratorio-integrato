@@ -14,11 +14,13 @@ import { ClassificaPilotiComponent } from "./classifica-piloti/classifica-piloti
 import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-scuderie.component";
 import { ListaScuderieComponent } from "./lista-scuderie/lista-scuderie.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
+import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.component";
 import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.component";
 import { ListaTracciatiComponent } from "./lista-tracciati/lista-tracciati.component";
 import { ArticoliComponent } from "./articoli/articoli.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 import { GraficoScuderiaComponent } from "./grafico-scuderia/grafico-scuderia.component";
+import { GraficoPilotaComponent } from "./grafico-pilota/grafico-pilota.component";
 import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-gran-premio.component";
 
@@ -42,11 +44,13 @@ import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-
         ListaScuderieComponent,
         ListaPilotiComponent,
         DettaglioScuderieComponent,
+        DettaglioPilotaComponent,
         DettaglioGranPremioComponent,
         ListaGranPremiComponent,
         ListaTracciatiComponent,
         AreaRiservataComponent,
         GraficoScuderiaComponent,
+        GraficoPilotaComponent,
     ],
 
     bootstrap: [AppComponent],

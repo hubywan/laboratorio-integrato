@@ -33,17 +33,14 @@ export class ApiService {
         };
 
         return this.http
-            .get(
-                `http://localhost:8090/scuderie/${id}
-`,
-                options
-            )
+            .get(`http://localhost:8090/scuderie/${id}`, options)
             .pipe(
                 map((data: any) => {
                     return data;
                 })
             );
     }
+
     getListaGranPremi(anno: number) {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",
@@ -58,6 +55,19 @@ export class ApiService {
                     return data;
                 })
             );
+    }
+    getListaPiloti() {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http.get(`http://localhost:8090/piloti`, options).pipe(
+            map((data: any) => {
+                return data;
+            })
+        );
     }
 
     getListaStagioni() {

@@ -18,6 +18,8 @@ export class DettaglioGranPremioComponent {
     showAllQ2 = false;
     showAllQ3 = false;
     showAllP1 = false;
+    showAllP2 = false;
+    showAllP3 = false;
     selectedIdGara: number = 1;
 
     constructor(
@@ -27,7 +29,7 @@ export class DettaglioGranPremioComponent {
     ngOnInit(): void {
         this.route.queryParams.subscribe((params) => {
             this.selectedIdGara = +params["idgara"] || this.selectedIdGara;
-            this.fetchDataForId(this.selectedIdGara); // Passa this.selectedIdGara alla funzione
+            this.fetchDataForId(this.selectedIdGara);
         });
     }
 

@@ -1,3 +1,57 @@
-<h1>Dettaglio Pilota</h1>
-<h2>{{items.nome}}</h2>
-<img [src]=items.immagine alt="">
+<div class="grid grid-cols-2 grid-rows-1 p-10 mb-16">
+    <div class="relative">
+        <img class="absolute bottom-0 h-full z-20" [src]="items.immagine" alt="">
+        <img class="absolute bottom-0 rounded-3xl" [src]="items.nazione.bandiera" alt="">
+        <p class="text-white text-4xl absolute right-0">{{items.numero}}</p>
+    </div>
+    <div class="p-11 col-span-1 aspect-square flex flex-col justify-center">
+        <p class="text"><strong class="text-white">{{items.nome}}</strong></p>
+        <p class="text-white mt-3">{{items.nazione.nome}}</p>
+        <p class="text-white mt-3">{{items.dataNascita}}</p>
+    </div>
+</div>
+
+
+<div class="text-center p-5 mb-16">
+    <p class="text-white mb-4 text-xl">TEAM</p>
+    <div class="flex flex-row justify-center gap-6">
+        <div *ngFor="let item of items.scuderie" class="w-32 h-32 bg-[#2a2a2a] rounded-2xl p-2 flex justify-center items-center">
+            <img [src]="item.logo">
+        </div>
+    </div>
+</div>
+
+<div class="grid grid-cols-2 gap-8 p-5 mb-10">
+    <div class="bg-[#2a2a2a] p-4 rounded-3xl">
+        <p class="mt-3 text-center text-white text-base">Numero Grand Prix</p>
+        <p class="mt-5 text-4xl text-center text-white">{{items.ngrandprix}}</p>
+    </div>
+    <div class="bg-[#2a2a2a] p-4 rounded-3xl">
+        <p class="mt-3 text-center text-white text-base">Numero Podi</p>
+        <p class="mt-5 text-4xl text-center text-white">{{items.podio}}</p>
+    </div>
+</div>
+
+<div class="p-5">
+    <div class="bg-[#2a2a2a] rounded-2xl flex flex-row justify-around mb-10">
+        <div>
+            <p class="text-white text-base p-4 text-center">Campionati</p>
+            <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.vittorieCampionati}}</h2>
+        </div>
+        <div>
+            <p class="text-white text-base p-4 text-center">Gare</p>
+            <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.vittorieTotali}}</h2>
+        </div>
+    </div>
+</div>
+
+<div>
+    <h2 class="text-white text-xl text-center mb-4 mt-6">Variazione del punteggio negli anni</h2>
+    <div class="flex flex-col items-center mx-9">
+        <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4 custom-size">
+            <h3>
+                <app-grafico-scuderia></app-grafico-scuderia>
+            </h3>
+        </div>
+    </div>
+</div>
