@@ -23,6 +23,7 @@ import { GraficoScuderiaComponent } from "./grafico-scuderia/grafico-scuderia.co
 import { GraficoPilotaComponent } from "./grafico-pilota/grafico-pilota.component";
 import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-gran-premio.component";
+import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-articolo.component";
 
 @NgModule({
     imports: [
@@ -51,6 +52,8 @@ import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-
         AreaRiservataComponent,
         GraficoScuderiaComponent,
         GraficoPilotaComponent,
+        ArticoliComponent,
+        DettaglioArticoloComponent,
     ],
 
     bootstrap: [AppComponent],

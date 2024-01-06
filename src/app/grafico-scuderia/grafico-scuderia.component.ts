@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
+import { ActivatedRoute } from "@angular/router";
 
 declare var Chart: any;
 
@@ -10,14 +11,24 @@ declare var Chart: any;
 })
 export class GraficoScuderiaComponent implements OnInit, AfterViewInit {
     items: any;
-    id: number = 1;
+    selectedIdPilota: number = 1;
 
-    constructor(private apiservice: ApiService) {}
+    constructor(
+        private apiservice: ApiService,
+        private route: ActivatedRoute
+    ) {}
     ngOnInit(): void {
-        this.apiservice.getAndamentoScuderia(this.id).subscribe(
+        this.route.queryParams.subscribe((params) => {
+            this.selectedIdPilota = +params["id"] || this.selectedIdPilota;
+            this.fetchDataForId(this.selectedIdPilota);
+        });
+    }
+
+    fetchDataForId(id: number): void {
+        this.apiservice.getAndamentoScuderia(id).subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati api ottenuti:", this.items);
+                console.log("Dati api ottenuti per id ", id, ":", this.items);
                 this.createChart();
             },
             (error) => {

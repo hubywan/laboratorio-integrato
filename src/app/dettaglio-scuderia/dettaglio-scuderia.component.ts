@@ -19,11 +19,10 @@ export class DettaglioScuderieComponent {
     ngOnInit(): void {
         this.route.queryParams.subscribe((params) => {
             this.selectedIdScuderia = +params["id"] || this.selectedIdScuderia;
-            this.fetchDataForId(this.selectedIdScuderia); // Passa this.selectedIdGara alla funzione
+            this.fetchDataForId(this.selectedIdScuderia);
         });
     }
     fetchDataForId(idgara: number): void {
-        // Aggiungi il parametro idgara
         this.apiservice.getDettaglioScuderia(idgara).subscribe(
             (data) => {
                 this.items = data;

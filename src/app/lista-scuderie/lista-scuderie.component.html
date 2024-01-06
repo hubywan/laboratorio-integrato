@@ -3,8 +3,8 @@
         <input type="text" class="rounded-2xl w-80 bg-[#2b2b2b]" placeholder="Inserisci un nome">
     </div>
     <div class="container flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10">
-        <div class="" *ngFor="let item of items">
-            <a routerLink="dettaglio">
+        <div *ngFor="let item of items" (click)="redirectToDettaglioScuderia(item.id)">
+            <a routerLink=" dettaglio">
                 <img [src]="item.logo" alt="" class="p-2 flex text-center w-48 h-max-48 lg:mx-3">
                 <h2 class="text-white text-center pb-5 ">
                     {{item.nome}}

@@ -1,1 +1,13 @@
-<h1>Articoli</h1>
+<div class="flex flex-wrap -mx-2">
+    <div *ngFor="let item of items" class="w-1/3 px-5 mb-4">
+        <a (click)="redirectToDettaglioArticolo(item.id)">
+            <div class=" w-full rounded-md bg-zinc-500 p-0.5 card">
+                <img [src]="item.immagine" alt="Load..." class="w-full" />
+                <div class="bg-ziflex flex-col p-4">
+                    <h2 class="text-black">{{ item.titolo }}</h2>
+                    <p class="text-black">{{ item.testo }}</p>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

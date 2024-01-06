@@ -18,6 +18,7 @@ import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.co
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 import { DettaglioTracciatoComponent } from "./dettaglio-tracciato/dettaglio-tracciato.component";
+import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-articolo.component";
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },
@@ -48,6 +49,7 @@ const routes: Routes = [
         ],
     },
     { path: "articoli", component: ArticoliComponent },
+    { path: "dettaglio-articolo", component: DettaglioArticoloComponent },
     { path: "dettaglio-gran-premio", component: DettaglioGranPremioComponent },
     { path: "dettaglio-scuderia", component: DettaglioScuderieComponent },
     { path: "login", component: LoginComponent },

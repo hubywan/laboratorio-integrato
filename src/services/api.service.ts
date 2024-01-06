@@ -85,6 +85,21 @@ export class ApiService {
             })
         );
     }
+    getListaPilotibyAnno(anno: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(`http://localhost:8090/piloti?anno=${anno}`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
     getListaCircuiti() {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",
@@ -93,6 +108,19 @@ export class ApiService {
             headers: headers,
         };
         return this.http.get(`http://localhost:8090/circuiti`, options).pipe(
+            map((data: any) => {
+                return data;
+            })
+        );
+    }
+    getListaScuderie() {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http.get(`http://localhost:8090/scuderie`, options).pipe(
             map((data: any) => {
                 return data;
             })
@@ -191,6 +219,38 @@ export class ApiService {
         };
         return this.http
             .get(`http://localhost:8090/piloti/${id}/andamento`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
+    getArticoli() {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(`http://localhost:8090/articoli/recenti`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
+    getDettaglioArticolo(id: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(`http://localhost:8090/articoli/${id}`, options)
             .pipe(
                 map((data: any) => {
                     return data;

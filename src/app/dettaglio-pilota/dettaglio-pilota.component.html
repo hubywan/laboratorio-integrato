@@ -1,6 +1,6 @@
 <div class="grid grid-cols-2 grid-rows-1 p-10 mb-16">
     <div class="relative">
-        <img class="absolute bottom-0 h-full z-20" [src]="items.immagine" alt="">
+        <img class="absolute bottom-0 h-full z-20 object-cover" [src]="items.immagine" alt="">
         <img class="absolute bottom-0 rounded-3xl" [src]="items.nazione.bandiera" alt="">
         <p class="text-white text-4xl absolute right-0">{{items.numero}}</p>
     </div>
@@ -10,8 +10,6 @@
         <p class="text-white mt-3">{{items.dataNascita}}</p>
     </div>
 </div>
-
-
 <div class="text-center p-5 mb-16">
     <p class="text-white mb-4 text-xl">TEAM</p>
     <div class="flex flex-row justify-center gap-6">

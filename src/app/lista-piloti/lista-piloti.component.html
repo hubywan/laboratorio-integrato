@@ -1,6 +1,29 @@
 <div>
-    <div class="flex justify-center">
-        <input type="text" class="w-80 bg-[#2b2b2b] rounded-2xl" placeholder="Inserisci un nome" [(ngModel)]="searchName">
+    <div class="flex justify-center items-center space-x-4">
+        <div class="flex flex-col">
+            <label for="">filtra per nome</label>
+            <input type="text" class="w-80 bg-[#2b2b2b] rounded-2xl my-1 border-0" placeholder="Inserisci un nome" [(ngModel)]="searchName">
+        </div>
+
+        <div class="flex flex-col">
+            <label for="filters">Filtra per anno</label>
+            <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0" [(ngModel)]="selectedYear" (change)="onYearChange()">
+                <option value="">Seleziona un anno</option>
+                <option>2012</option>
+                <option>2013</option>
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+            </select>
+        </div>
+
     </div>
     <div class="w-full flex flex-col justify-center p-5" *ngFor="let item of filteredItems; let i = index" (click)="redirectToDettaglioPilota(item.id)">
         <div class="grid grid-cols-9 text-center bg-[#2a2a2a] rounded-2xl h-[20vh]">

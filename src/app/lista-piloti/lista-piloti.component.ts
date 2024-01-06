@@ -10,8 +10,12 @@ import { Router } from "@angular/router";
 export class ListaPilotiComponent {
     searchName: string = "";
     items: any;
+    selectedYear: number | undefined;
+    availableYears: number[] = [];
+    selectedFilter: string = "";
 
     constructor(private apiservice: ApiService, private router: Router) {}
+
     ngOnInit(): void {
         this.apiservice.getListaPiloti().subscribe(
             (data) => {
@@ -23,11 +27,33 @@ export class ListaPilotiComponent {
             }
         );
     }
+    onYearChange(): void {
+        if (this.selectedYear) {
+            this.apiservice.getListaPilotibyAnno(this.selectedYear).subscribe(
+                (data) => {
+                    this.items = data;
+                    console.log(
+                        "Dati filtrati per anno:",
+                        this.selectedYear,
+                        this.items
+                    );
+                },
+                (error) => {
+                    console.error(
+                        "Errore durante il recupero dei dati per l'anno:",
+                        error
+                    );
+                }
+            );
+        } else {
+        }
+    }
     redirectToDettaglioPilota(id: number): void {
         this.router.navigate(["/dettaglio-pilota"], {
             queryParams: { id },
         });
     }
+
     get filteredItems(): any[] {
         if (!this.searchName.trim()) {
             return this.items;
