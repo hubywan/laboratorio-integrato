@@ -21,6 +21,8 @@ import { ArticoliComponent } from "./articoli/articoli.component";
 import { AreaRiservataComponent } from "./area-riservata/area-riservata.component";
 import { GraficoScuderiaComponent } from "./grafico-scuderia/grafico-scuderia.component";
 import { GraficoPilotaComponent } from "./grafico-pilota/grafico-pilota.component";
+import { GraficoPilotaAndamentoStagioneComponent } from "./grafico-pilota-andamento-stagione/grafico-pilota-andamento-stagione.component";
+import { TabellaPilotaAndamentoStagioneComponent } from "./tabella-pilota-andamento-stagione/tabella-pilota-andamento-stagione.component";
 import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-gran-premio.component";
 import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-articolo.component";
@@ -53,6 +55,8 @@ import { CaroselloHomeComponent } from "./carosello-home/carosello-home.componen
         AreaRiservataComponent,
         GraficoScuderiaComponent,
         GraficoPilotaComponent,
+        GraficoPilotaAndamentoStagioneComponent,
+        TabellaPilotaAndamentoStagioneComponent,
         ArticoliComponent,
         DettaglioArticoloComponent,
         CaroselloHomeComponent,

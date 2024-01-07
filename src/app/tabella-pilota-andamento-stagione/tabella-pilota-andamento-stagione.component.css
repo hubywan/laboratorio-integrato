@@ -1,0 +1,5 @@
+.scroll {
+    max-height: 300px; /* Altezza massima del contenitore */
+    overflow-y: auto; /* Permette la scrollbar verticale quando necessario */
+    /* Altri stili desiderati */
+}

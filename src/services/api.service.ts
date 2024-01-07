@@ -225,6 +225,25 @@ export class ApiService {
                 })
             );
     }
+    getAndamentoStagionePilota(id: number | null) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(
+                `http://localhost:8090/piloti/${id}/andamentostagione`,
+                options
+            )
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
     getArticoli() {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",

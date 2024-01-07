@@ -1,19 +1,167 @@
 <div class="w-full">
-    <div class="flex flex-col lg:flex-row justify-center">
-        <div class="lg:hidden" (click)="redirectToDettaglioPilota(items[0].id)">
-            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
-                {{items[0].posizione}}°
+    <div class="flex flex-col lg:flex-row justify-center ">
+        <div class="lg:hidden my-4 mx-4">
+            <div class="lg:w-72 lg:h-80 rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px" (click)="redirectToDettaglioPilota(items[0].id)" [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}">
+                <div class="flex items-center w-3/12">
+                    <h3 class="text-5xl text-white font-bold ms-3">
+                        {{items[0].posizione}}°
+                    </h3>
+                </div>
+                <div class="flex flex-row w-4/12">
+                    <div class="text-white flex flex-row max-w-xs">
+                        <div class="custom-width relative">
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{items[0].immagine}}')"></div>
+                            <img src="{{items[0].immagine}}" class="opacity-0 object-cover custom-width">
+                        </div>
+                    </div>
+                    <div class="flex mt-7">
+                        <img [src]="items[0].nazione.bandiera" class="h-5 w-5 rounded-full object-cover lg:hidden">
+                    </div>
+                </div>
+                <div class="flex flex-col m-2 my-5 w-5/12 justify-between">
+                    <div>
+                        <h3 class="text-white text-base text-center">
+                            {{items[0].nome}}
+                        </h3>
+                        <h3 class="text-white text-sm text-center">
+                            {{items[0].scuderia.nome}}
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl text-center ">
+                            {{items[0].punti}} pt.
+                        </h3>
+                    </div>
+                </div>
             </div>
+            <div *ngIf="showMoreData && showMoreData[0]" class="second-div h-96 bg-[#393939]">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-white">Andamento stagionale</h2>
+                    </div>
+                    <div>
+                        <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
+                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+            </div>
+
+            <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(0,items[0].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+            </a>
         </div>
-        <div class="lg:hidden" (click)="redirectToDettaglioPilota(items[1].id)">
-            <div class="lg:w-80 lg:h-96 bg-slate-600 m-1">
-                {{items[1].posizione}}°
+
+        <div class="lg:hidden my-4 mx-4">
+            <div class="lg:w-72 lg:h-80 rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px" (click)="redirectToDettaglioPilota(items[1].id)" [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}">
+                <div class="flex items-center w-3/12">
+                    <h3 class="text-5xl text-white font-bold ms-3">
+                        {{items[1].posizione}}°
+                    </h3>
+                </div>
+                <div class="flex flex-row w-4/12">
+                    <div class="text-white flex flex-row max-w-xs">
+                        <div class="custom-width relative">
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{items[1].immagine}}')"></div>
+                            <img src="{{items[1].immagine}}" class="opacity-0 object-cover custom-width">
+                        </div>
+                    </div>
+                    <div class="flex mt-7">
+                        <img [src]="items[1].nazione.bandiera" class="h-5 w-5 rounded-full object-cover lg:hidden">
+                    </div>
+                </div>
+                <div class="flex flex-col m-2 my-5 w-5/12 justify-between">
+                    <div>
+                        <h3 class="text-white text-base text-center">
+                            {{items[1].nome}}
+                        </h3>
+                        <h3 class="text-white text-sm text-center">
+                            {{items[1].scuderia.nome}}
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl text-center ">
+                            {{items[1].punti}} pt.
+                        </h3>
+                    </div>
+                </div>
             </div>
+            <div *ngIf="showMoreData && showMoreData[1]" class="second-div h-96 bg-[#393939]">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-white">Andamento stagionale</h2>
+                    </div>
+                    <div>
+                        <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
+                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+            </div>
+
+            <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(1,items[1].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+            </a>
         </div>
-        <div class="lg:hidden" (click)="redirectToDettaglioPilota(items[2].id)">
-            <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
-                {{items[2].posizione}}°
+        <div class="lg:hidden my-4 mx-4">
+            <div class="lg:w-72 lg:h-80 rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px" (click)="redirectToDettaglioPilota(items[2].id)" [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}">
+                <div class="flex items-center w-3/12">
+                    <h3 class="text-5xl text-white font-bold ms-3">
+                        {{items[2].posizione}}°
+                    </h3>
+                </div>
+                <div class="flex flex-row w-4/12">
+                    <div class="text-white flex flex-row max-w-xs">
+                        <div class="custom-width relative">
+                            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{items[2].immagine}}')"></div>
+                            <img src="{{items[2].immagine}}" class="opacity-0 object-cover custom-width">
+                        </div>
+                    </div>
+                    <div class="flex mt-7">
+                        <img [src]="items[2].nazione.bandiera" class="h-5 w-5 rounded-full object-cover lg:hidden">
+                    </div>
+                </div>
+                <div class="flex flex-col m-2 my-5 w-5/12 justify-between">
+                    <div>
+                        <h3 class="text-white text-base text-center">
+                            {{items[2].nome}}
+                        </h3>
+                        <h3 class="text-white text-sm text-center">
+                            {{items[2].scuderia.nome}}
+                        </h3>
+                    </div>
+                    <div>
+                        <h3 class="text-white text-xl text-center ">
+                            {{items[2].punti}} pt.
+                        </h3>
+                    </div>
+                </div>
             </div>
+            <div *ngIf="showMoreData && showMoreData[2]" class="second-div h-96 bg-[#393939]">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-white">Andamento stagionale</h2>
+                    </div>
+                    <div>
+                        <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
+                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+            </div>
+
+            <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(2,items[2].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+            </a>
         </div>
 
         <div class="hidden lg:flex lg:flex-row items-end relative overflow-hidden pt-48">
@@ -68,55 +216,64 @@
             </div>
         </div>
     </div>
-    <div *ngFor="let item of items; let i = index" class="my-8 mx-4">
-        <div *ngIf="i >= 3" class="rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px" [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}" (click)="redirectToDettaglioPilota(item.id)">
-            <div class="flex items-center w-3/12">
-                <h3 class="text-5xl text-white font-bold ms-3">
-                    {{item.posizione}}°
+</div>
+<div *ngFor="let item of items; let i = index" class="my-8 mx-4">
+    <div *ngIf="i >= 3" class="rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px" [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}" (click)="redirectToDettaglioPilota(item.id)">
+        <div class="flex items-center w-3/12">
+            <h3 class="text-5xl text-white font-bold ms-3">
+                {{item.posizione}}°
+            </h3>
+        </div>
+        <div class="flex flex-row w-4/12">
+            <div class="text-white flex flex-row max-w-xs">
+                <div class="custom-width relative">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{item.immagine}}')"></div>
+                    <img src="{{item.immagine}}" class="opacity-0 object-cover custom-width">
+                </div>
+            </div>
+            <div class="flex mt-7">
+                <img [src]="item.nazione.bandiera" class="h-5 w-5 rounded-full object-cover lg:hidden">
+            </div>
+        </div>
+        <div class="flex flex-col m-2 my-5 w-5/12 justify-between">
+            <div>
+                <h3 class="text-white text-base text-center">
+                    {{item.nome}}
+                </h3>
+                <h3 class="text-white text-sm text-center">
+                    {{item.scuderia.nome}}
                 </h3>
             </div>
-            <div class="flex flex-row w-4/12">
-                <div class="text-white flex flex-row max-w-xs">
-                    <div class="custom-width relative">
-                        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{item.immagine}}')"></div>
-                        <img src="{{item.immagine}}" class="opacity-0 object-cover custom-width">
-                    </div>
-                </div>
-                <div class="flex mt-7">
-                    <img [src]="item.nazione.bandiera" class="h-5 w-5 rounded-full object-cover lg:hidden">
-                </div>
-            </div>
-            <div class="flex flex-col m-2 my-5 w-5/12 justify-between">
-                <div>
-                    <h3 class="text-white text-base text-center">
-                        {{item.nome}}
-                    </h3>
-                    <h3 class="text-white text-sm text-center">
-                        {{item.scuderia.nome}}
-                    </h3>
-                </div>
-                <div>
-                    <h3 class="text-white text-xl text-center ">
-                        {{item.punti}} pt.
-                    </h3>
-                </div>
-            </div>
-        </div>
-        <div *ngIf="showMoreData && showMoreData[i]" class="second-div h-72 bg-[#393939]">
             <div>
-                <button>tabella</button>
-                <button>grafico</button>
+                <h3 class="text-white text-xl text-center ">
+                    {{item.punti}} pt.
+                </h3>
             </div>
-            <p>Andamento stagionale per pilota id: {{ i }}</p>
         </div>
-
-        <a *ngIf="selectedYear === 2023 && i >= 3" (click)="toggleMoreData(i)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
-            <h3 class="text-white">visualizza andamento stagionale (freccia verso il basso)</h3>
-        </a>
+    </div>
+    <div *ngIf="showMoreData && showMoreData[i]" class="second-div h-96 bg-[#393939]">
+        <div class="flex justify-between">
+            <div>
+                <h2 class="text-white">Andamento stagionale</h2>
+            </div>
+            <div>
+                <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
+                <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
+            </div>
+        </div>
+        <div>
+        </div>
+        <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+        <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
     </div>
 
-    <div class="rounded-3xl flex flex-row border" style="height: 140px">
-        <div style="
+    <a *ngIf=" selectedYear===2023 && i>= 3" (click)="toggleMoreData(i,item.id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+        <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+    </a>
+</div>
+
+<div class="rounded-3xl flex flex-row border" style="height: 140px">
+    <div style="
             position:absolute;
             filter: brightness(0.2) blur(6px);
             width: 100%;
@@ -125,24 +282,23 @@
             background-image: url({{items[3].nazione.bandiera}});
             background-size: cover;
             "></div>
-        <div class="flex items-center">
-            <h3 class="text-7xl text-white font-bold">
-                {{items[3].posizione}}°
-            </h3>
-        </div>
-        <div class=" text-white flex flex-row">
-            <img src="{{items[3].immagine}}" alt="">
-        </div>
-        <div>
-            <h3 class="text-white">
-                {{items[3].nome}}
-            </h3>
-            <h3 class="text-white">
-                {{items[3].scuderia.nome}}
-            </h3>
-            <h3 class="text-white">
-                {{items[3].punti}}
-            </h3>
-        </div>
+    <div class="flex items-center">
+        <h3 class="text-7xl text-white font-bold">
+            {{items[3].posizione}}°
+        </h3>
+    </div>
+    <div class=" text-white flex flex-row">
+        <img src="{{items[3].immagine}}" alt="">
+    </div>
+    <div>
+        <h3 class="text-white">
+            {{items[3].nome}}
+        </h3>
+        <h3 class="text-white">
+            {{items[3].scuderia.nome}}
+        </h3>
+        <h3 class="text-white">
+            {{items[3].punti}}
+        </h3>
     </div>
 </div>
