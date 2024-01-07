@@ -183,7 +183,22 @@
         </div>
     </section>
     <hr class="hr-chi-siamo mx-20 rounded mt-12">
-    <app-carosello-home></app-carosello-home>
+    <section class="">
+        <div class="calendario-2024 ms-7 mt-7">
+
+            <div class="bg-[#2a2a2a] rounded-lg image-item h-64 w-40 flex justify-center" *ngFor="let item of carosello">
+                <div class=" flex flex-col items-center">
+                    <img src="../../assets/img/stagione2012.jpg" alt="img-1" class="image-item w-24 h-24 rounded-full">
+                    <h2 class="text-white text-custom">{{carosello.nazione}}</h2>
+                    <H3 class="text-white text-custom">Bahrain Grand Prix</H3>
+                    <h2 class="text-white text-5xl p-2">29-02</h2>
+                    <h2 class="text-white">febbraio-marzo</h2>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
     <section class="newsletter">
 
     </section>

@@ -24,6 +24,7 @@ import { GraficoPilotaComponent } from "./grafico-pilota/grafico-pilota.componen
 import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-gran-premio.component";
 import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-articolo.component";
+import { CaroselloHomeComponent } from "./carosello-home/carosello-home.component";
 
 @NgModule({
     imports: [
@@ -54,6 +55,7 @@ import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-artic
         GraficoPilotaComponent,
         ArticoliComponent,
         DettaglioArticoloComponent,
+        CaroselloHomeComponent,
     ],
 
     bootstrap: [AppComponent],

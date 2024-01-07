@@ -1,0 +1,31 @@
+.calendario-2024 {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+}
+
+.image-item {
+    scroll-snap-align: start;
+    display: inline-block;
+    max-width: 100%;
+    margin: 10px;
+}
+.text-custom {
+    font-size: 14px;
+}
+.calendario-2024::-webkit-scrollbar {
+    height: 5px;
+}
+
+.calendario-2024::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+.calendario-2024::-webkit-scrollbar-thumb {
+    background: #e54f2c;
+    border-radius: 4px;
+}
+
+.calendario-2024::-webkit-scrollbar-thumb:hover {
+    background: #e54f2c;
+}
