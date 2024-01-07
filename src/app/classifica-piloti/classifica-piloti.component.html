@@ -1,23 +1,23 @@
 <div class="w-full">
     <div class="flex flex-col lg:flex-row justify-center">
-        <div class="lg:hidden">
+        <div class="lg:hidden" (click)="redirectToDettaglioPilota(items[0].id)">
             <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
                 {{items[0].posizione}}°
             </div>
         </div>
-        <div class="lg:hidden">
+        <div class="lg:hidden" (click)="redirectToDettaglioPilota(items[1].id)">
             <div class="lg:w-80 lg:h-96 bg-slate-600 m-1">
                 {{items[1].posizione}}°
             </div>
         </div>
-        <div class="lg:hidden">
+        <div class="lg:hidden" (click)="redirectToDettaglioPilota(items[2].id)">
             <div class="lg:w-72 lg:h-80 bg-slate-600 m-1">
                 {{items[2].posizione}}°
             </div>
         </div>
 
         <div class="hidden lg:flex lg:flex-row items-end relative overflow-hidden pt-48">
-            <div class="lg:w-72 lg:h-36 bg-[#cccccc] m-1 rounded-3xl">
+            <div class="lg:w-72 lg:h-36 bg-[#cccccc] m-1 rounded-3xl" (click)="redirectToDettaglioPilota(items[1].id)">
                 <h2 class="text-white text-6xl absolute top-0 left-0 mt-20 ms-5">
                     {{items[1].posizione}}°
                 </h2>
@@ -32,7 +32,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:w-80 lg:h-36 bg-[#cccccc] m-1 rounded-3xl rounded-b-">
+            <div class="lg:w-80 lg:h-36 bg-[#cccccc] m-1 rounded-3xl" (click)=" redirectToDettaglioPilota(items[0].id)">
                 <h2 class="text-white text-6xl absolute top-0 left-0 mt-8 ml-80">
                     {{items[0].posizione}}°
                 </h2>
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <div class="lg:w-72 lg:h-36 bg-[#cccccc] m-1 rounded-3xl">
+            <div class="lg:w-72 lg:h-36 bg-[#cccccc] m-1 rounded-3xl" (click)="redirectToDettaglioPilota(items[2].id)">
                 <h2 class="text-white text-6xl absolute top-0 right-0 mt-20 me-52">
                     {{items[2].posizione}}°
                 </h2>
@@ -69,7 +69,7 @@
         </div>
     </div>
     <div *ngFor="let item of items; let i = index" class="my-8 mx-4">
-        <div *ngIf="i >= 3" class="rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px">
+        <div *ngIf="i >= 3" class="rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px" [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}" (click)="redirectToDettaglioPilota(item.id)">
             <div class="flex items-center w-3/12">
                 <h3 class="text-5xl text-white font-bold ms-3">
                     {{item.posizione}}°
@@ -102,6 +102,17 @@
                 </div>
             </div>
         </div>
+        <div *ngIf="showMoreData && showMoreData[i]" class="second-div h-72 bg-[#393939]">
+            <div>
+                <button>tabella</button>
+                <button>grafico</button>
+            </div>
+            <p>Andamento stagionale per pilota id: {{ i }}</p>
+        </div>
+
+        <a *ngIf="selectedYear === 2023 && i >= 3" (click)="toggleMoreData(i)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+            <h3 class="text-white">visualizza andamento stagionale (freccia verso il basso)</h3>
+        </a>
     </div>
 
     <div class="rounded-3xl flex flex-row border" style="height: 140px">
