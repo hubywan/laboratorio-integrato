@@ -1,15 +1,38 @@
 <div>
-    <div class="flex justify-center mt-10">
-        <input type="text" class="rounded-2xl w-80 bg-[#2b2b2b]" placeholder="Inserisci un nome">
-    </div>
-    <div class="container flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10">
-        <div *ngFor="let item of items" (click)="redirectToDettaglioScuderia(item.id)">
-            <a routerLink=" dettaglio">
-                <img [src]="item.logo" alt="" class="p-2 flex text-center w-48 h-max-48 lg:mx-3">
-                <h2 class="text-white text-center pb-5 ">
-                    {{item.nome}}
-                </h2>
-            </a>
+    <div class="flex justify-center items-center space-x-4 flex-col lg:flex-row">
+        <div class="flex flex-col">
+            <label for="">filtra per nome</label>
+            <input type="text" class="w-80 bg-[#2b2b2b] rounded-2xl my-1 border-0" placeholder="Inserisci un nome" [(ngModel)]="searchName">
+        </div>
+
+        <div class="flex flex-col">
+            <label for="filters">Filtra per anno</label>
+            <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0" [(ngModel)]="selectedYear" (change)="onYearChange()">
+                <option value="">Seleziona un anno</option>
+                <option>2012</option>
+                <option>2013</option>
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+            </select>
         </div>
     </div>
-</div>
+    <div>
+        <div class="container flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10">
+            <div *ngFor="let item of filteredItems; let i = index" (click)="redirectToDettaglioScuderia(item.id)" class="h-44 w-44 m-3 rounded-lg overflow-hidden bg-[#0E0E0E]">
+                <a>
+                    <img [src]="item.logo" alt="" class="w-full h-28 object-contain">
+                    <h2 class="text-white text-center px-2 py-3 text-lg">
+                        {{item.nome}}
+                    </h2>
+                </a>
+            </div>
+        </div>
+    </div>

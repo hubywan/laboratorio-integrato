@@ -100,6 +100,21 @@ export class ApiService {
                 })
             );
     }
+    getListaDettagliobyAnno(anno: number) {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(`http://localhost:8090/scuderie?anno=${anno}`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
     getListaCircuiti() {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",

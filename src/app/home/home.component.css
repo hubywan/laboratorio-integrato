@@ -14,3 +14,6 @@
     background: #e54f2c;
     border-radius: 0.75rem;
 }
+.w-custom {
+    max-width: 800px;
+}

@@ -22,16 +22,12 @@ export class DettaglioScuderieComponent {
             this.fetchDataForId(this.selectedIdScuderia);
         });
     }
-    fetchDataForId(idgara: number): void {
-        this.apiservice.getDettaglioScuderia(idgara).subscribe(
+
+    fetchDataForId(id: number): void {
+        this.apiservice.getDettaglioScuderia(id).subscribe(
             (data) => {
                 this.items = data;
-                console.log(
-                    "Dati api ottenuti per id ",
-                    idgara,
-                    ":",
-                    this.items
-                );
+                console.log("Dati api ottenuti per id ", id, ":", this.items);
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);

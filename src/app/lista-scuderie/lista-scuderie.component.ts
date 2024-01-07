@@ -7,10 +7,13 @@ import { Router } from "@angular/router";
     styleUrls: ["./lista-scuderie.component.css"],
 })
 export class ListaScuderieComponent {
+    searchName: string = "";
     items: any;
+    selectedYear: number | undefined;
+    availableYears: number[] = [];
+    selectedFilter: string = "";
 
     constructor(private apiservice: ApiService, private router: Router) {}
-
     ngOnInit(): void {
         this.apiservice.getListaScuderie().subscribe(
             (data) => {
@@ -22,9 +25,41 @@ export class ListaScuderieComponent {
             }
         );
     }
+    onYearChange(): void {
+        if (this.selectedYear) {
+            this.apiservice
+                .getListaDettagliobyAnno(this.selectedYear)
+                .subscribe(
+                    (data) => {
+                        this.items = data;
+                        console.log(
+                            "Dati filtrati per anno:",
+                            this.selectedYear,
+                            this.items
+                        );
+                    },
+                    (error) => {
+                        console.error(
+                            "Errore durante il recupero dei dati per l'anno:",
+                            error
+                        );
+                    }
+                );
+        } else {
+        }
+    }
     redirectToDettaglioScuderia(id: number): void {
         this.router.navigate(["/dettaglio-scuderia"], {
             queryParams: { id },
         });
+    }
+    get filteredItems(): any[] {
+        if (!this.searchName.trim()) {
+            return this.items;
+        } else {
+            return this.items.filter((item: any) =>
+                item.nome.toLowerCase().includes(this.searchName.toLowerCase())
+            );
+        }
     }
 }

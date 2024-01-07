@@ -1,6 +1,7 @@
-<div class="flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10">
-    <a *ngFor="let item of items" class="w-40 h-32 rounded-2xl flex justify-center items-center m-2" (click)="redirectToClassificheAnno(item.anno)">
-        <div style="
+<div class="h-max flex items-center">
+    <div class="flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10 ">
+        <a *ngFor="let item of items" class="w-40 h-32 rounded-2xl flex justify-center items-center m-2" (click)="redirectToClassificheAnno(item.anno)">
+            <div style="
             position:absolute;
             filter: brightness(0.3);
             width: 160px;
@@ -10,8 +11,7 @@
             background-size:cover;
             border-radius: 15px;
             "></div>
-        <h1 class="text-white">{{item.anno}}</h1>
-    </a>
-
+            <h1 class="text-white">{{item.anno}}</h1>
+        </a>
+    </div>
 </div>
-{{items.anno}}
