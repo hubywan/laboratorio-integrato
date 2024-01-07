@@ -10,3 +10,7 @@
 .font-data {
     font-size: 9px;
 }
+.button {
+    background: #e54f2c;
+    border-radius: 0.75rem;
+}
