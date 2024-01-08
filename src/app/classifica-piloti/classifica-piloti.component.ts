@@ -58,7 +58,6 @@ export class ClassificaPilotiComponent {
             queryParams: { id },
         });
     }
-    // Metodo per inizializzare l'array showSecondDiv
     initializeShowMoreData() {
         this.showMoreData = this.items.map(() => false);
     }

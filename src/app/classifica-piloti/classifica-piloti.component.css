@@ -1,3 +1,6 @@
 .custom-width {
     max-width: 100px;
 }
+.custom-width-lg {
+    max-width: 200px;
+}

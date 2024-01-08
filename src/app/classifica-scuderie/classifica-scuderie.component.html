@@ -1,10 +1,12 @@
-<div *ngFor="let item of items" class="flex flex-row mx-7 my-5" (click)="redirectToDettaglioScuderia(item.id)">
-    <div class=" basis-1/2 flex justify-center items-center rounded-2xl p-3">
-        <img [src]="item.logo" class="w-full h-28 object-contain">
+<div class="max-w-7xl mx-auto">
+    <div *ngFor="let item of items" class="flex flex-row mx-7 my-5" (click)="redirectToDettaglioScuderia(item.id)">
+        <div class=" basis-1/2 flex justify-center items-center rounded-2xl p-3">
+            <img [src]="item.logo" class="w-full h-28 object-contain">
+        </div>
+        <div class="basis-1/2 p-4">
+            <h2 class="text-white text-xl font-semibold">{{item.nome}}</h2>
+            <h2 class="text-white text-base">Pt: {{item.punti}}</h2>
+        </div>
+        <h2 class="text-white absolute text-4xl font-bold">{{item.posizione}}°</h2>
     </div>
-    <div class="basis-1/2 p-4">
-        <h2 class="text-white text-xl font-semibold">{{item.nome}}</h2>
-        <h2 class="text-white text-base">Pt: {{item.punti}}</h2>
-    </div>
-    <h2 class="text-white absolute text-4xl font-bold">{{item.posizione}}°</h2>
 </div>
