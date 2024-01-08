@@ -11,7 +11,7 @@ body {
     fill: #3c3c3a;
 }
 .navbar {
-    height: 43px;
+    height: 73px;
     display: flex;
     overflow: hidden;
     justify-content: space-between;
@@ -64,6 +64,7 @@ body {
     }
     .navbar {
         flex-direction: column;
+        height: 43px;
     }
     .navbar-links {
         display: block;

@@ -1,32 +1,38 @@
-<div class="mx-auto p-6 flex flex-col">
-    <!-- Riga 1, Colonna  -->
-    <div class="p-2 mb-4 flex items-center justify-center">
-        {{items.immagine}}
-        <!-- Da togliere quando arriva l'immagine -->
-        <img src="https://upload.wikimedia.org/wikipedia/it/8/8b/BohemianRhapsody.jpg" alt="">
+<div class="max-w-7xl mx-auto p-6 flex flex-col">
+    <div class="xl:hidden p-2 mb-4 flex items-center justify-center">
+        <img [src]="items.immagine" alt="">
     </div>
 
-    <!-- Riga 1, Colonna 2 -->
-    <div class="p-2 mb-4 text-center">
-        <p class="text-sm text-white mb-1">{{items.nazione.nome}}</p>
+    <div class="xl:hidden p-2 mb-6 text-center">
+        <p class="text-sm text-[#949494] mb-1">{{items.nazione.nome}}</p>
         <p class="text-xl text-white">{{items.nome}}</p>
     </div>
 
-    <!-- Riga 2, Colonna 1 -->
-    <div class="bg-card p-2 mb-4 grid grid-rows-2 grid-cols-2 place-items-center rounded-8">
+    <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 p-10 mb-16 mx-36">
+        <div class="p-2 mb-4 flex flex-col justify-start items-start">
+            <p class="text-xl text-[#949494] mb-1">{{items.nazione.nome}}</p>
+            <strong>
+                <p class="text-4xl text-white">{{items.nome}}</p>
+            </strong>
+        </div>
+        <div class="p-2 mb-4 flex items-center justify-center">
+            <img [src]="items.immagine" alt="">
+        </div>
+    </div>
+
+    <div class="xl:hidden bg-[#2a2a2a] p-2 mb-6 grid grid-rows-2 grid-cols-2 place-items-center rounded-2xl">
         <p class="text-sm text-white">Lunghezza</p>
         <p class="text-sm text-white">Esordio</p>
         <p class="text-3xl text-white">{{items.lunghezza}}</p>
         <p class="text-3xl text-white">{{items.esordio}}</p>
     </div>
 
-    <!-- Riga 2, Colonna 2 -->
-    <p class="text-xl text-center text-white m-2">Giro Record</p>
-    <div class="bg-card p-2 mb-4 rounded-8">
+    <p class="xl:hidden text-xl text-center text-white m-2">Giro Record</p>
+    <div class="xl:hidden bg-[#2a2a2a] p-2 mb-10 rounded-8">
         <div class="flex flex-col place-items-center">
             <p class="text-2xl text-white">{{items.giroRecord.nome}}</p>
             <div>
-                <div class="grid grid-rows-1 grid-cols-1 place-items-center">
+                <div class="grid grid-rows-2 grid-cols-2 place-items-center">
                     <p class="text-sm text-white">Tempo</p>
                     <p class="text-sm text-white">Anno</p>
                     <p class="text-3xl text-white">{{items.giroRecord.tempo}}</p>
@@ -36,24 +42,60 @@
         </div>
     </div>
 
-    <!-- Riga 3 -->
-    <div class="p-2 mb-4">
-        <div class="flex flex-col">
-            <div class="text-xl text-center mb-2 text-white">Descrizione</div>
-            <div>
-                <p class="text-white">{{items.descrizione}}</p>
-                <!-- Da togliere quando arriva la descrizione -->
-                <p class="text-white">Ciao, sono Maurizio Crozza, e voglio dirti una cosa. Ogni anno la Toscana è depredata della sua terra stessa. Ogni giorno un po' di Toscana muore. Forse per gli incendi? No no no no no. Forse per i saccheggi? No no no no no. Forse perché...? No no no no no. La Toscana muore perché ogni giorno qualcuno porta via un sasso.
-                    Se ognuno di noi portasse via un sasso, la Toscana si espanderebbe in tutto il mondo e nessuno potrebbe riconoscere più la Toscana, perché sarebbe ormai in tutto il mondo, quindi tutto il mondo si potrebbe chiamare Toscana, quindi la Toscana non esisterebbe più. Non portare via un sasso dalla Toscana, perché altrimenti non sappiamo più dov'è la Toscana.
-                    Ciao, sono Maurizio Crozza. Ogni anno in Toscana ne sparisce circa un pochettino. Quest'anno la Toscana è 52 metri sotto il livello normale della sua Toscanità. Perché i sassi sono stati portati via in tutta fretta, così, come se nulla fosse. Non portare via il sasso dalla Toscana, altrimenti la Toscana non la riconosceremo più. È una campagna per la Toscana in Italia.
-                </p>
+    <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 text-center mx-36">
+        <strong>
+            <p class="text-white text-2xl">Dati generali</p>
+        </strong>
+        <strong>
+            <p class="text-white text-2xl">Giro record</p>
+        </strong>
+    </div>
+
+    <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 p-10 mb-16 gap-8 mx-36">
+        <div class="grid grid-cols-2 grid-rows-1 gap-8 text-center">
+            <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center">
+                <p class="text-sm text-white">Lunghezza</p>
+                <p class="text-3xl text-white">{{items.lunghezza}}</p>
+            </div>
+            <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center">
+                <p class="text-sm text-white">Esordio</p>
+                <p class="text-3xl text-white">{{items.esordio}}</p>
+            </div>
+        </div>
+        <div class="bg-[#2a2a2a] rounded-2xl">
+            <div class="flex flex-col place-items-center p-10">
+                <p class="text-2xl text-white">{{items.giroRecord.nome}}</p>
+                <div>
+                    <div class="grid grid-rows-2 grid-cols-2 place-items-center">
+                        <p class="text-sm text-white">Tempo</p>
+                        <p class="text-sm text-white">Anno</p>
+                        <p class="text-3xl text-white">{{items.giroRecord.tempo}}</p>
+                        <p class="text-3xl text-white">{{items.giroRecord.anno}}</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Riga 4 -->
-    <div class="p-2 mb-4 flex items-center justify-center">
+    <div class="p-2 mb-20 xl:mx-48">
+        <div class="flex flex-col">
+            <strong>
+                <div class="text-xl text-center mb-5 text-white xl:text-start xl:text-2xl">Descrizione</div>
+            </strong>
+            <div>
+                <p class="text-white">{{items.descrizione}}</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- video da sostituire non appena abbiamo link -->
+    <div class="xl:hidden flex items-center justify-center p-2 mb-4 ">
         {{items.video}}
-        <iframe class="rounded-8" src="https://www.youtube.com/embed/fJ9rUzIMcZQ?si=wDXmB5MbwRV3gC2W" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe class="rounded-2xl" src="https://www.youtube.com/embed/1Vv7O_6exTc?si=jKA-w-K8OyMaS6JO" title="Australia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen width="400" height="275"></iframe>
+    </div>
+
+    <div class="hidden xl:flex items-center justify-center p-2 mb-4">
+        {{items.video}}
+        <iframe class="rounded-2xl" src="https://www.youtube.com/embed/1Vv7O_6exTc?si=jKA-w-K8OyMaS6JO" title="Australia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen width="800" height="450"></iframe>
     </div>
 </div>

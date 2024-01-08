@@ -159,3 +159,31 @@
         d <br>f <br>g <br>h <br>j
     </div>
 </div>
+<section class="confronto">
+    <div>
+
+        <div class="flex justify-center">
+            <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0">
+                <option value="">Nome Pilota</option>
+                <option>2012</option>
+                <option>2013</option>
+                <option>2014</option>
+                <option>2015</option>
+                <option>2016</option>
+                <option>2017</option>
+                <option>2018</option>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+            </select>
+            <select id=" filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0" (click)="OnSelect()">
+                <option value="">Nome Pilota</option>
+                <option *ngFor="let item of ElencoPiloti" [value]="item.nome">{{ item.nome }}</option>
+
+            </select>
+        </div>
+
+    </div>
+</section>

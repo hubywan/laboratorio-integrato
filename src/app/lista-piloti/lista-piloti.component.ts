@@ -27,6 +27,7 @@ export class ListaPilotiComponent {
             }
         );
     }
+
     onYearChange(): void {
         if (this.selectedYear) {
             this.apiservice.getListaPilotibyAnno(this.selectedYear).subscribe(

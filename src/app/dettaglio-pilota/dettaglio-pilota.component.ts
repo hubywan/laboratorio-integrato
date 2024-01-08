@@ -10,6 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 export class DettaglioPilotaComponent {
     items: any;
     selectedIdPilota: number = 1;
+    ElencoPiloti: any;
 
     constructor(
         private apiservice: ApiService,
@@ -20,6 +21,17 @@ export class DettaglioPilotaComponent {
             this.selectedIdPilota = +params["id"] || this.selectedIdPilota;
             this.fetchDataForId(this.selectedIdPilota);
         });
+    }
+    getPiloti(): void {
+        this.apiservice.getListaPiloti().subscribe(
+            (data) => {
+                this.ElencoPiloti = data;
+                console.log("Datai ottenuti:", this.ElencoPiloti);
+            },
+            (error) => {
+                console.error("Errore durante il recupero dei dati:", error);
+            }
+        );
     }
 
     fetchDataForId(id: number): void {
@@ -32,5 +44,8 @@ export class DettaglioPilotaComponent {
                 console.error("Errore durante il recupero dei dati:", error);
             }
         );
+    }
+    OnSelect() {
+        this.getPiloti();
     }
 }
