@@ -46,7 +46,7 @@ export class HomeComponent {
             (data) => {
                 this.articoli = data;
                 console.log("Dati api ottenuti:", this.articoli);
-                this.getImagesForArticoli(this.articoli); // Chiamata per ottenere le immagini
+                this.getImagesForArticoli(this.articoli);
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);
@@ -55,8 +55,8 @@ export class HomeComponent {
     }
     getImagesForArticoli(articoli: any[]): void {
         articoli.forEach((articolo) => {
-            const id = articolo.id; // Supponendo che ogni articolo abbia un campo 'id' che identifica l'articolo
-            this.getImmagine(id, articolo); // Passiamo anche l'articolo alla funzione getImmagine
+            const id = articolo.id;
+            this.getImmagine(id, articolo);
         });
     }
 
@@ -80,10 +80,8 @@ export class HomeComponent {
         this.apiservice.getImmagineArticoli(id).subscribe(
             (data: any) => {
                 console.log("Array di byte:", data);
-                const blob = new Blob([data], { type: "image/png" }); // Sostituisci 'image/png' con il tipo di immagine che stai gestendo
+                const blob = new Blob([data], { type: "image/png" });
                 const url = window.URL.createObjectURL(blob);
-                // Assegniamo l'URL dell'immagine all'articolo corrispondente
-                // Assicurati che la struttura dell'articolo abbia un campo 'imageUrl'
                 articolo.imageUrl = url;
             },
             (error) => {

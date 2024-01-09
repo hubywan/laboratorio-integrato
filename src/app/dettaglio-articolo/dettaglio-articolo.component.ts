@@ -8,7 +8,7 @@ import { ActivatedRoute } from "@angular/router";
     styleUrls: ["./dettaglio-articolo.component.css"],
 })
 export class DettaglioArticoloComponent {
-    items: any;
+    articolo: any;
     selectedIdArticolo: number = 1;
 
     constructor(
@@ -25,8 +25,13 @@ export class DettaglioArticoloComponent {
     fetchDataForId(id: number): void {
         this.apiservice.getDettaglioArticolo(id).subscribe(
             (data) => {
-                this.items = data;
-                console.log("Dati api ottenuti per id ", id, ":", this.items);
+                this.articolo = data;
+                console.log(
+                    "Dati api ottenuti per id ",
+                    id,
+                    ":",
+                    this.articolo
+                );
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);

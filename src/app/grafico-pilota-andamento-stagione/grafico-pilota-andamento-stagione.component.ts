@@ -1,6 +1,5 @@
 import { Component, AfterViewInit, OnInit, Input } from "@angular/core";
 import { ApiService } from "src/services/api.service";
-import { ActivatedRoute } from "@angular/router";
 
 declare var Chart: any;
 
@@ -13,24 +12,26 @@ export class GraficoPilotaAndamentoStagioneComponent
     implements OnInit, AfterViewInit
 {
     items: any;
-    selectedIdPilota: number = 25;
+    @Input() idPilota = 0;
+    // selectedIdPilota: number = 25;
 
-    constructor(
-        private apiservice: ApiService,
-        private route: ActivatedRoute
-    ) {}
+    constructor(private apiservice: ApiService) {}
     ngOnInit(): void {
-        this.route.queryParams.subscribe((params) => {
-            this.selectedIdPilota = +params["id"] || this.selectedIdPilota;
-            this.fetchDataForId(this.selectedIdPilota);
-        });
+        if (this.idPilota !== 0) {
+            this.fetchDataForId(this.idPilota);
+        }
     }
 
     fetchDataForId(id: number): void {
         this.apiservice.getAndamentoStagionePilota(id).subscribe(
             (data) => {
                 this.items = data;
-                console.log("Dati api ottenuti per id ", id, ":", this.items);
+                console.log(
+                    "Dati api ottenuti per id ",
+                    this.idPilota,
+                    ":",
+                    this.items
+                );
                 this.createChart();
             },
             (error) => {
@@ -42,9 +43,14 @@ export class GraficoPilotaAndamentoStagioneComponent
     ngAfterViewInit(): void {}
 
     createChart(): void {
-        const ctx = document.getElementById("myChart");
+        const ctx = document.getElementById("myChart") as HTMLCanvasElement;
         const years = this.items.map((item: any) => item.competizione.nome);
         const points = this.items.map((item: any) => item.punti);
+
+        let existingChart = Chart.getChart(ctx);
+        if (existingChart) {
+            existingChart.destroy(); // distruggi il grafico esistente se presente
+        }
 
         const myChart = new Chart(ctx, {
             type: "line",

@@ -11,17 +11,16 @@ declare var Chart: any;
 })
 export class TabellaPilotaAndamentoStagioneComponent {
     items: any;
-    selectedIdPilota: number = 25;
+    @Input() idPilota = 0;
 
     constructor(
         private apiservice: ApiService,
         private route: ActivatedRoute
     ) {}
     ngOnInit(): void {
-        this.route.queryParams.subscribe((params) => {
-            this.selectedIdPilota = +params["id"] || this.selectedIdPilota;
-            this.fetchDataForId(this.selectedIdPilota);
-        });
+        if (this.idPilota !== 0) {
+            this.fetchDataForId(this.idPilota);
+        }
     }
 
     fetchDataForId(id: number): void {

@@ -1,15 +1,21 @@
-<div class="flex items-center justify-center h-screen">
-    <div *ngIf="items" class="w-80 rounded-md bg-zinc-500 p-0.5 card">
-        <img [src]="items.immagine" alt="Load..." />
-        <div class="bg-ziflex flex-col p-4">
-            <h2 class="text-black">{{ items.titolo }}</h2>
-            <p class="text-black">{{ items.long }}</p>
+<div class="flex items-center justify-center h-screen pb-20 pt-20 ">
+    <div *ngIf="articolo" class="w-full lg:w-2/4 rounded-md p-0.5 card">
+        <img [src]="articolo.immagine" alt="Load..." />
+        <div class="bg-ziflex flex-col pt-5">
+            <h2 class="text-white">{{ articolo.titolo }}</h2>
+            <p class="text-white">{{ articolo.long }}</p>
             <div class="mt-4">
-                <p class="text-black">Data:</p>
-                <p class="text-gray-600">{{ items.data }}</p>
+                <p class="text-white pt-5">{{ articolo.data }}</p>
+                <br>
+                <p class="text-white ">Condividi :
+                    <a href=""><i class="fab fa-facebook p-2"></i></a>
+                    <a href=""><i class="fab fa-instagram p-2"></i></a>
+                    <a href=""><i class="fab fa-telegram p-2"></i></a>
+                    <a href=""><i class="fab fa-whatsapp p-2"></i></a>
+                </p>
             </div>
         </div>
     </div>
 
-    <h1 *ngIf="!items">Caricamento in corso...</h1>
+    <h1 *ngIf="!articolo">Caricamento in corso...</h1>
 </div>

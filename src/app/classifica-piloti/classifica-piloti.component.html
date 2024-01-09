@@ -48,14 +48,13 @@
                     </div>
                     <div>
                     </div>
-                    <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
-                    <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+                    <app-grafico-pilota-andamento-stagione [idPilota]="items[0].id" *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                    <app-tabella-pilota-andamento-stagione [idPilota]="items[0].id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
                 </div>
 
-                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(0,items[0].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(0); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
                     <h3 class="text-white text-center">visualizza andamento stagionale</h3>
                 </a>
-
             </div>
 
 
@@ -105,11 +104,11 @@
                     </div>
                     <div>
                     </div>
-                    <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
-                    <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+                    <app-grafico-pilota-andamento-stagione [idPilota]="items[1].id" *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                    <app-tabella-pilota-andamento-stagione [idPilota]="items[1].id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
                 </div>
 
-                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(1,items[1].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(1); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
                     <h3 class="text-white text-center">visualizza andamento stagionale</h3>
                 </a>
             </div>
@@ -161,11 +160,11 @@
                     </div>
                     <div>
                     </div>
-                    <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
-                    <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+                    <app-grafico-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                    <app-tabella-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
                 </div>
 
-                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(2,items[2].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(2); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
                     <h3 class="text-white text-center">visualizza andamento stagionale</h3>
                 </a>
             </div>
@@ -228,69 +227,70 @@
     </div>
     <div class="hidden lg:flex flex-row justify-center gap-4">
 
-        <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(1,items[1].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center" style="width: 300px; left: 453px;">
+        <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(1); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center" style="width: 300px; left: 453px;">
             <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
         </a>
-        <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(0,items[0].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center" style="width: 380px; left: 453px;">
+        <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(0); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center" style="width: 380px; left: 453px;">
             <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
         </a>
-        <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(2,items[2].id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center" style="width: 300px; left: 453px;">
+        <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(2); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center" style="width: 300px; left: 453px;">
             <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
         </a>
     </div>
     <div class="hidden lg:block">
+        <div class="flex justify-center">
+            <div *ngIf="showMoreData && showMoreData[1]" class="h-96 bg-[#393939]" Style="width: 1014px;">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-white">Andamento stagionale</h2>
+                    </div>
+                    <div>
+                        <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
+                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <app-grafico-pilota-andamento-stagione [idPilota]="items[1].id" *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                <app-tabella-pilota-andamento-stagione [idPilota]="items[1].id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+            </div>
+            <div *ngIf="showMoreData && showMoreData[0]" class="h-96 bg-[#393939]" Style="width: 1014px;">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-white">Andamento stagionale</h2>
+                    </div>
+                    <div>
+                        <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
+                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
+                    </div>
+                </div>
+                <div>
+                </div>
+                <app-grafico-pilota-andamento-stagione [idPilota]="items[0].id" *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                <app-tabella-pilota-andamento-stagione [idPilota]="items[0].id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+            </div>
 
-        <div *ngIf="showMoreData && showMoreData[1]" class="second-div h-96 bg-[#393939]" Style="width: 1248px;">
-            <div class="flex justify-between">
-                <div>
-                    <h2 class="text-white">Andamento stagionale</h2>
+            <div *ngIf="showMoreData && showMoreData[2]" class="h-96 bg-[#393939]" Style="width: 1014px;">
+                <div class="flex justify-between">
+                    <div>
+                        <h2 class="text-white">Andamento stagionale</h2>
+                    </div>
+                    <div>
+                        <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
+                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
+                    </div>
                 </div>
                 <div>
-                    <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
-                    <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
                 </div>
+                <app-grafico-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+                <app-tabella-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
             </div>
-            <div>
-            </div>
-            <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
-            <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
-        </div>
-        <div *ngIf="showMoreData && showMoreData[0]" class="second-div h-96 bg-[#393939]" Style="width: 1248px;">
-            <div class="flex justify-between">
-                <div>
-                    <h2 class="text-white">Andamento stagionale</h2>
-                </div>
-                <div>
-                    <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
-                    <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
-                </div>
-            </div>
-            <div>
-            </div>
-            <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
-            <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
-        </div>
-
-        <div *ngIf="showMoreData && showMoreData[2]" class="second-div h-96 bg-[#393939]" Style="width: 1248px;">
-            <div class="flex justify-between">
-                <div>
-                    <h2 class="text-white">Andamento stagionale</h2>
-                </div>
-                <div>
-                    <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
-                    <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button>
-                </div>
-            </div>
-            <div>
-            </div>
-            <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
-            <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
         </div>
     </div>
 
     <!-- qui ce il resto -->
     <div *ngFor="let item of items; let i = index" class="my-10 lg:my-28 mx-4">
-        <div *ngIf="i >= 3" class="lg:hidden rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px; " [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}" (click)="redirectToDettaglioPilota(item.id)">
+        <div *ngIf="i >= 3" class="lg:hidden rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px; " [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}">
             <div class="flex items-center w-3/12">
                 <h3 class="text-5xl text-white font-bold ms-3">
                     {{item.posizione}}°
@@ -350,7 +350,7 @@
                 </div>
             </div>
         </div>
-        <div *ngIf="showMoreData && showMoreData[i]" class="second-div h-96 bg-[#393939]">
+        <div *ngIf="showMoreData && showMoreData[i] && i>= 3" class="second-div h-96 bg-[#393939]">
             <div class="flex justify-between">
                 <div>
                     <h2 class="text-white">Andamento stagionale</h2>
@@ -362,11 +362,11 @@
             </div>
             <div>
             </div>
-            <app-grafico-pilota-andamento-stagione *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
-            <app-tabella-pilota-andamento-stagione *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
+            <app-grafico-pilota-andamento-stagione [idPilota]="item.id" *ngIf="showGrafico"></app-grafico-pilota-andamento-stagione>
+            <app-tabella-pilota-andamento-stagione [idPilota]="item.id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
         </div>
 
-        <a *ngIf=" selectedYear===2023 && i>= 3" (click)="toggleMoreData(i,item.id); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+        <a *ngIf=" selectedYear===2023 && i>= 3" (click)="toggleMoreData(i); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
             <h3 class="text-white text-center">visualizza andamento stagionale</h3>
         </a>
     </div>

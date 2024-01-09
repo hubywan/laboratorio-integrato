@@ -61,15 +61,12 @@ export class ClassificaPilotiComponent {
     initializeShowMoreData() {
         this.showMoreData = this.items.map(() => false);
     }
-
-    toggleMoreData(index: number, id: number) {
-        this.showMoreData[index] = !this.showMoreData[index];
-        if (!this.showMoreData[index]) {
-            this.router.navigate(["/classifiche-anno/piloti"]);
-        } else {
-            this.router.navigate(["/classifiche-anno/piloti"], {
-                queryParams: { id },
-            });
+    toggleMoreData(index: number) {
+        for (let i = 0; i < this.showMoreData.length; i++) {
+            if (i !== index) {
+                this.showMoreData[i] = false;
+            }
         }
+        this.showMoreData[index] = !this.showMoreData[index];
     }
 }
