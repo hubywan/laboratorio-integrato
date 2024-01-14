@@ -1,285 +1,287 @@
-<div class="flex flex-row justify-start">
-    <div class="flex items-center mx-5">
-        <img [src]="items.competizione.nazione.bandiera" alt="" class="rounded-full h-20 w-20 mx-3 object-cover">
-    </div>
-    <div>
-        <h2 class="text-base">{{items.competizione.nazione.nome}}</h2>
-        <h2 class="text-white text-xl font-bold">{{items.competizione.nome}}</h2>
-        <h2 class="text-white text-sm">{{items.circuito.nome}}</h2>
-    </div>
-</div>
-<div class="flex flex-col items-center my-10">
-    <h2 class="text-white text-xl">Data:{{items.data}}</h2>
-    <h2 class="text-white text-xl">Stato:{{items.stato}}</h2>
-</div>
-
-<div class="">
-    <h2 class="text-center text-white text-base">Giro più veloce</h2>
-    <div class="bg-[#2a2a2a] rounded-2xl p-4 m-4 flex flex-row justify-around">
-        <div>
-            <h2 class="text-white text-base text-center">Pilota</h2>
-            <h2 class="text-white text-lg text-center">{{items.giroVeloce.pilota.nome}}</h2>
+<div class="max-w-7xl mx-auto">
+    <div class="flex flex-row justify-start">
+        <div class="flex items-center mx-5">
+            <img [src]="items.competizione.nazione.bandiera" alt="" class="rounded-full h-20 w-20 mx-3 object-cover">
         </div>
         <div>
-            <h2 class="text-white text-base text-center">Tempo</h2>
-            <h2 class="text-white text-lg text-center">{{items.giroVeloce.tempo}}</h2>
+            <h2 class="text-base">{{items.competizione.nazione.nome}}</h2>
+            <h2 class="text-white text-xl font-bold">{{items.competizione.nome}}</h2>
+            <h2 class="text-white text-sm">{{items.circuito.nome}}</h2>
         </div>
     </div>
-</div>
-
-
-<div class="mb-8">
-    <h2 class="text-center text-white text-base">Classifica Gran prix</h2>
-    <div *ngFor="let item of (showAllClassGP ? items.classificaGranPremio : items.classificaGranPremio.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione.bandiera" class="h-6 w-6 rounded-full object-cover mx-2">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
-        </div>
-        <div>
-            <h2 class="text-base text-white">{{ (item.punti !== null && item.punti !== undefined) ? item.punti + 'pt' : item.tempo }}</h2>
-        </div>
+    <div class="flex flex-col items-center my-10">
+        <h2 class="text-white text-xl">Data:{{items.data}}</h2>
+        <h2 class="text-white text-xl">Stato:{{items.stato}}</h2>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllClassGP = !showAllClassGP" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllClassGP ? 'meno' : 'tutti'}} risultati {{showAllClassGP ? '(freccia su)' : '(freccia giu)'}}
-        </a>
-    </div>
-</div>
 
-
-<div class="mb-8" *ngIf="items.classificaSprint && items.classificaSprint.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Sprint</h2>
-    <div *ngFor="let item of (showAllSprint ? items.classificaSprint : items.classificaSprint.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
-        </div>
-        <div>
-            <h2 class="text-base text-white">{{ (item.punti !== null && item.punti !== undefined) ? item.punti + 'pt' : item.tempo }}</h2>
+    <div class="">
+        <h2 class="text-center text-white text-base">Giro più veloce</h2>
+        <div class="bg-[#2a2a2a] rounded-2xl p-4 m-4 flex flex-row justify-around">
+            <div>
+                <h2 class="text-white text-base text-center">Pilota</h2>
+                <h2 class="text-white text-lg text-center">{{items.giroVeloce.pilota.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-white text-base text-center">Tempo</h2>
+                <h2 class="text-white text-lg text-center">{{items.giroVeloce.tempo}}</h2>
+            </div>
         </div>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllSprint = !showAllSprint" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllSprint ? 'meno' : 'tutti'}} risultati {{showAllSprint ? '(freccia su)' : '(freccia giu)'}}
-        </a>
-    </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaSprint || items.classificaSprint.length === 0">
-    <p class="text-white"></p>
-</div>
 
 
-<div class="mb-8" *ngIf="items.classificaSQ1 && items.classificaSQ1.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 1 </h2>
-    <div *ngFor="let item of (showAllSQ1 ? items.classificaSQ1 : items.classificaSQ1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
+    <div class="mb-8">
+        <h2 class="text-center text-white text-base">Classifica Gran prix</h2>
+        <div *ngFor="let item of (showAllClassGP ? items.classificaGranPremio : items.classificaGranPremio.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione.bandiera" class="h-6 w-6 rounded-full object-cover mx-2">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{ (item.punti !== null && item.punti !== undefined) ? item.punti + 'pt' : item.tempo }}</h2>
+            </div>
         </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        <div class="flex justify-center">
+            <a (click)="showAllClassGP = !showAllClassGP" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllClassGP ? 'meno' : 'tutti'}} risultati {{showAllClassGP ? '(freccia su)' : '(freccia giu)'}}
+            </a>
         </div>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllSQ1 = !showAllSQ1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllSQ1 ? 'meno' : 'tutti'}} risultati {{showAllSQ1 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
-    </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaSQ1 || items.classificaSQ1.length === 0">
-    <p class="text-white"></p>
-</div>
 
 
-<div class="mb-8" *ngIf="items.classificaSQ2 && items.classificaSQ2.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 2 </h2>
-    <div *ngFor="let item of (showAllSQ2 ? items.classificaSQ2 : items.classificaSQ2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
+    <div class="mb-8" *ngIf="items.classificaSprint && items.classificaSprint.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Sprint</h2>
+        <div *ngFor="let item of (showAllSprint ? items.classificaSprint : items.classificaSprint.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{ (item.punti !== null && item.punti !== undefined) ? item.punti + 'pt' : item.tempo }}</h2>
+            </div>
         </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        <div class="flex justify-center">
+            <a (click)="showAllSprint = !showAllSprint" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllSprint ? 'meno' : 'tutti'}} risultati {{showAllSprint ? '(freccia su)' : '(freccia giu)'}}
+            </a>
         </div>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllSQ2 = !showAllSQ2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllSQ2 ? 'meno' : 'tutti'}} risultati {{showAllSQ2 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
+    <div class="flex justify-center" *ngIf="!items.classificaSprint || items.classificaSprint.length === 0">
+        <p class="text-white"></p>
     </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaSQ2 || items.classificaSQ2.length === 0">
-    <p class="text-white"></p>
-</div>
 
 
-
-<div class="mb-8" *ngIf="items.classificaSQ3 && items.classificaSQ3.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 3 </h2>
-    <div *ngFor="let item of (showAllSQ3 ? items.classificaSQ3 : items.classificaSQ3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
+    <div class="mb-8" *ngIf="items.classificaSQ1 && items.classificaSQ1.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 1 </h2>
+        <div *ngFor="let item of (showAllSQ1 ? items.classificaSQ1 : items.classificaSQ1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
         </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
-        </div>
-    </div>
-    <div class="flex justify-center">
-        <a (click)="showAllSQ3 = !showAllSQ3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllSQ3 ? 'meno' : 'tutti'}} risultati {{showAllSQ3 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
-    </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaSQ3 || items.classificaSQ3.length === 0">
-    <p class="text-white"></p>
-</div>
-
-
-
-<div class="mb-8" *ngIf="items.classificaQ1 && items.classificaQ1.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Qualifica 1 </h2>
-    <div *ngFor="let item of (showAllQ1 ? items.classificaQ1 : items.classificaQ1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
-        </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        <div class="flex justify-center">
+            <a (click)="showAllSQ1 = !showAllSQ1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllSQ1 ? 'meno' : 'tutti'}} risultati {{showAllSQ1 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
         </div>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllQ1 = !showAllQ1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllQ1 ? 'meno' : 'tutti'}} risultati {{showAllQ1 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
+    <div class="flex justify-center" *ngIf="!items.classificaSQ1 || items.classificaSQ1.length === 0">
+        <p class="text-white"></p>
     </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaQ1 || items.classificaQ1.length === 0">
-    <p class="text-white"></p>
-</div>
 
 
-
-<div class="mb-8" *ngIf="items.classificaQ2 && items.classificaQ2.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Qualifica 2 </h2>
-    <div *ngFor="let item of (showAllQ2 ? items.classificaQ2 : items.classificaQ2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
+    <div class="mb-8" *ngIf="items.classificaSQ2 && items.classificaSQ2.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 2 </h2>
+        <div *ngFor="let item of (showAllSQ2 ? items.classificaSQ2 : items.classificaSQ2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
         </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
-        </div>
-    </div>
-    <div class="flex justify-center">
-        <a (click)="showAllQ2 = !showAllQ2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllQ2 ? 'meno' : 'tutti'}} risultati {{showAllQ2 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
-    </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaQ2 || items.classificaQ2.length === 0">
-    <p class="text-white"></p>
-</div>
-
-
-
-
-<div class="mb-8" *ngIf="items.classificaQ3 && items.classificaQ3.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Qualifica 3 </h2>
-    <div *ngFor="let item of (showAllQ3 ? items.classificaQ3 : items.classificaQ3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
-        </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        <div class="flex justify-center">
+            <a (click)="showAllSQ2 = !showAllSQ2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllSQ2 ? 'meno' : 'tutti'}} risultati {{showAllSQ2 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
         </div>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllQ3 = !showAllQ3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllQ3 ? 'meno' : 'tutti'}} risultati {{showAllQ3 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
+    <div class="flex justify-center" *ngIf="!items.classificaSQ2 || items.classificaSQ2.length === 0">
+        <p class="text-white"></p>
     </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaQ3 || items.classificaQ3.length === 0">
-    <p class="text-white"></p>
-</div>
 
 
 
-<div class="mb-8" *ngIf="items.classificaP1 && items.classificaP1.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Prova libera 1</h2>
-    <div *ngFor="let item of (showAllP1 ? items.classificaP1 : items.classificaP1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
+    <div class="mb-8" *ngIf="items.classificaSQ3 && items.classificaSQ3.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 3 </h2>
+        <div *ngFor="let item of (showAllSQ3 ? items.classificaSQ3 : items.classificaSQ3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
         </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
-        </div>
-    </div>
-    <div class="flex justify-center">
-        <a (click)="showAllP1 = !showAllP1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllP1 ? 'meno' : 'tutti'}} risultati {{showAllP1 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
-    </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaP1 || items.classificaP1.length === 0">
-    <p class="text-white"></p>
-</div>
-
-
-<div class="mb-8" *ngIf="items.classificaP2 && items.classificaP2.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Prova libera 2</h2>
-    <div *ngFor="let item of (showAllP2 ? items.classificaP2 : items.classificaP2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
-        </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        <div class="flex justify-center">
+            <a (click)="showAllSQ3 = !showAllSQ3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllSQ3 ? 'meno' : 'tutti'}} risultati {{showAllSQ3 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
         </div>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllP2 = !showAllP2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllP2 ? 'meno' : 'tutti'}} risultati {{showAllP2 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
+    <div class="flex justify-center" *ngIf="!items.classificaSQ3 || items.classificaSQ3.length === 0">
+        <p class="text-white"></p>
     </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaP2 || items.classificaP2.length === 0">
-    <p class="text-white"></p>
-</div>
 
 
 
-<div class="mb-8" *ngIf="items.classificaP3 && items.classificaP3.length > 0">
-    <h2 class="text-center text-white text-base">Classifica Prova libera 3</h2>
-    <div *ngFor="let item of (showAllP3 ? items.classificaP3 : items.classificaP3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-        <div class="flex flex-row justify-between">
-            <h2 class="text-base text-white">{{item.posizione}}</h2>
-            <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
-            <h2 class="text-base text-white">{{item.nome}}</h2>
+    <div class="mb-8" *ngIf="items.classificaQ1 && items.classificaQ1.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Qualifica 1 </h2>
+        <div *ngFor="let item of (showAllQ1 ? items.classificaQ1 : items.classificaQ1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
         </div>
-        <div>
-            <h2 class="text-base text-white">{{item.tempo}}</h2>
+        <div class="flex justify-center">
+            <a (click)="showAllQ1 = !showAllQ1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllQ1 ? 'meno' : 'tutti'}} risultati {{showAllQ1 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
         </div>
     </div>
-    <div class="flex justify-center">
-        <a (click)="showAllP3 = !showAllP3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-            Mostra {{showAllP3 ? 'meno' : 'tutti'}} risultati {{showAllP3 ? '(freccia su)' : '(freccia giu)'}}
-        </a>
+    <div class="flex justify-center" *ngIf="!items.classificaQ1 || items.classificaQ1.length === 0">
+        <p class="text-white"></p>
     </div>
-</div>
-<div class="flex justify-center" *ngIf="!items.classificaP3 || items.classificaP3.length === 0">
-    <p class="text-white"></p>
+
+
+
+    <div class="mb-8" *ngIf="items.classificaQ2 && items.classificaQ2.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Qualifica 2 </h2>
+        <div *ngFor="let item of (showAllQ2 ? items.classificaQ2 : items.classificaQ2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a (click)="showAllQ2 = !showAllQ2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllQ2 ? 'meno' : 'tutti'}} risultati {{showAllQ2 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
+        </div>
+    </div>
+    <div class="flex justify-center" *ngIf="!items.classificaQ2 || items.classificaQ2.length === 0">
+        <p class="text-white"></p>
+    </div>
+
+
+
+
+    <div class="mb-8" *ngIf="items.classificaQ3 && items.classificaQ3.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Qualifica 3 </h2>
+        <div *ngFor="let item of (showAllQ3 ? items.classificaQ3 : items.classificaQ3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a (click)="showAllQ3 = !showAllQ3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllQ3 ? 'meno' : 'tutti'}} risultati {{showAllQ3 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
+        </div>
+    </div>
+    <div class="flex justify-center" *ngIf="!items.classificaQ3 || items.classificaQ3.length === 0">
+        <p class="text-white"></p>
+    </div>
+
+
+
+    <div class="mb-8" *ngIf="items.classificaP1 && items.classificaP1.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Prova libera 1</h2>
+        <div *ngFor="let item of (showAllP1 ? items.classificaP1 : items.classificaP1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a (click)="showAllP1 = !showAllP1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllP1 ? 'meno' : 'tutti'}} risultati {{showAllP1 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
+        </div>
+    </div>
+    <div class="flex justify-center" *ngIf="!items.classificaP1 || items.classificaP1.length === 0">
+        <p class="text-white"></p>
+    </div>
+
+
+    <div class="mb-8" *ngIf="items.classificaP2 && items.classificaP2.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Prova libera 2</h2>
+        <div *ngFor="let item of (showAllP2 ? items.classificaP2 : items.classificaP2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a (click)="showAllP2 = !showAllP2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllP2 ? 'meno' : 'tutti'}} risultati {{showAllP2 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
+        </div>
+    </div>
+    <div class="flex justify-center" *ngIf="!items.classificaP2 || items.classificaP2.length === 0">
+        <p class="text-white"></p>
+    </div>
+
+
+
+    <div class="mb-8" *ngIf="items.classificaP3 && items.classificaP3.length > 0">
+        <h2 class="text-center text-white text-base">Classifica Prova libera 3</h2>
+        <div *ngFor="let item of (showAllP3 ? items.classificaP3 : items.classificaP3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between">
+                <h2 class="text-base text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+                <h2 class="text-base text-white">{{item.nome}}</h2>
+            </div>
+            <div>
+                <h2 class="text-base text-white">{{item.tempo}}</h2>
+            </div>
+        </div>
+        <div class="flex justify-center">
+            <a (click)="showAllP3 = !showAllP3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
+                Mostra {{showAllP3 ? 'meno' : 'tutti'}} risultati {{showAllP3 ? '(freccia su)' : '(freccia giu)'}}
+            </a>
+        </div>
+    </div>
+    <div class="flex justify-center" *ngIf="!items.classificaP3 || items.classificaP3.length === 0">
+        <p class="text-white"></p>
+    </div>
 </div>

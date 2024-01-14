@@ -11,6 +11,7 @@ export class DettaglioPilotaComponent {
     items: any;
     selectedIdPilota: number = 1;
     ElencoPiloti: any;
+    selectedPilota: any;
 
     constructor(
         private apiservice: ApiService,
@@ -47,5 +48,29 @@ export class DettaglioPilotaComponent {
     }
     OnSelect() {
         this.getPiloti();
+    }
+    onSelectChange(event: any) {
+        this.selectedPilota = event.target.value;
+
+        if (this.selectedPilota) {
+            this.apiservice.getDettaglioPilota(this.selectedPilota).subscribe(
+                (data) => {
+                    this.selectedIdPilota = data;
+                    console.log(
+                        "Dati API ottenuti per il pilota",
+                        this.selectedPilota,
+                        ":",
+                        data
+                    );
+                },
+                (error) => {
+                    console.error(
+                        "Errore durante il recupero dei dati del pilota:",
+                        error
+                    );
+                }
+            );
+        } else {
+        }
     }
 }

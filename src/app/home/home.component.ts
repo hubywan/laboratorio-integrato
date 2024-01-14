@@ -2,6 +2,7 @@ import { Component } from "@angular/core";
 import { OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
 import { ActivatedRoute } from "@angular/router";
+import { Renderer2, ElementRef } from "@angular/core";
 
 @Component({
     selector: "app-home",
@@ -31,7 +32,9 @@ export class HomeComponent {
 
     constructor(
         private apiservice: ApiService,
-        private route: ActivatedRoute
+        private route: ActivatedRoute,
+        private renderer: Renderer2,
+        private el: ElementRef
     ) {}
 
     ngOnInit(): void {

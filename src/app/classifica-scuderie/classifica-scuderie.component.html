@@ -1,12 +1,115 @@
-<div class="max-w-7xl mx-auto">
-    <div *ngFor="let item of items" class="flex flex-row mx-7 my-5" (click)="redirectToDettaglioScuderia(item.id)">
-        <div class=" basis-1/2 flex justify-center items-center rounded-2xl p-3">
-            <img [src]="item.logo" class="w-full h-28 object-contain">
+<div class="max-w-7xl mx-auto hidden lg:block mt-32">
+    <div class="w-full flex items-end justify-center mb-20" style="height: 450px;">
+        <div class="flex felx-row items-end justify-center gap-6 relative">
+            <div class="w-80 h-28 bg-[#2a2a2a] rounded-2xl" (click)="redirectToDettaglioScuderia(items[1].id)">
+                <img [src]="items[1].logo" class="absolute max-h-64 max-w-xs" style="top: -234px; left:38px; max-width: 300px;">
+                <h2 class="absolute text-white text-5xl" style="top: 17px; left:16px;">{{items[1].posizione}}°</h2>
+                <div class="flex flex-col justify-center items-center h-full">
+                    <h2 class="text-white">{{items[1].nome}}</h2>
+                    <p class="text-white">{{items[1].punti}}</p>
+                </div>
+            </div>
+            <div class="w-80 h-40 bg-[#2a2a2a] rounded-2xl" (click)="redirectToDettaglioScuderia(items[0].id)">
+                <h2 class="absolute text-white text-5xl" style="top: -26px; right:596px;">{{items[0].posizione}}°</h2>
+                <img [src]="items[0].logo" class="absolute max-h-64 max-w-xs" style="top: -288px; left:405px; max-width: 300px;">
+                <div class="flex flex-col justify-center items-center h-full">
+                    <h2 class="text-white">{{items[0].nome}}</h2>
+                    <p class="text-white">{{items[0].punti}}</p>
+                </div>
+            </div>
+            <div class="w-80 h-28 bg-[#2a2a2a] rounded-2xl" (click)="redirectToDettaglioScuderia(items[2].id)">
+                <h2 class="absolute text-white text-5xl" style="top: 17px; right:250px;">{{items[2].posizione}}°</h2>
+                <img [src]="items[2].logo" class="absolute max-h-64" style="top: -234px; right:-4px; max-width: 300px;">
+                <div class="flex flex-col justify-center items-center h-full">
+                    <h2 class="text-white">{{items[2].nome}}</h2>
+                    <p class="text-white">{{items[2].punti}}</p>
+                </div>
+            </div>
         </div>
-        <div class="basis-1/2 p-4">
-            <h2 class="text-white text-xl font-semibold">{{item.nome}}</h2>
-            <h2 class="text-white text-base">Pt: {{item.punti}}</h2>
+    </div>
+    <hr class="hr-chi-siamo mx-20 rounded mt-12">
+
+    <div *ngFor="let item of items; let i = index" class=" my-6 mt-20">
+        <div *ngIf="i >= 3" class="rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px;" (click)="redirectToDettaglioScuderia(item.id)">
+            <div class="flex items-center justify-center w-1/12">
+                <h3 class="text-5xl text-white font-bold ms-3">
+                    {{item.posizione}}°
+                </h3>
+            </div>
+            <div class="flex flex-row w-2/12">
+                <div class="text-white flex flex-row">
+                    <div class="flex items-center">
+                        <img [src]="item.logo" class="object-cover max-h-32">
+                    </div>
+                </div>
+            </div>
+            <div class="w-3/12 flex items-center justify-center">
+                <h3 class="text-white text-2xl text-center">
+                    {{item.nome}}
+                </h3>
+            </div>
+            <div class="w-3/12 flex items-center justify-center">
+                <h3 class="text-white text-2xl text-center">
+                    {{item.punti}} pt.
+                </h3>
+            </div>
+            <div class="w-3/12 flex flex-col justify-center items-end mr-5 gap-4">
+                <div *ngFor="let pilota of item.piloti">
+                    <div>
+                        <h2 class="text-white">{{pilota.nome}}</h2>
+                    </div>
+                </div>
+            </div>
         </div>
-        <h2 class="text-white absolute text-4xl font-bold">{{item.posizione}}°</h2>
+    </div>
+
+</div>
+
+<div class="lg:hidden">
+    <div *ngFor="let item of items; let i = index" class="my-6">
+        <div *ngIf="i < 3" class="relative flex flex-row " style="height: 140px;" (click)="redirectToDettaglioScuderia(item.id)">
+            <div class="absolute bottom-0">
+                <h2 class="text-white text-5xl">
+                    {{item.posizione}}°
+                </h2>
+            </div>
+            <div class="w-1/2 p-7">
+                <img [src]="item.logo" class="object-cover max-h-32">
+            </div>
+            <div class="w-1/2 flex flex-col items-start justify-center">
+                <h2 class="text-white">
+                    {{item.nome}}
+                </h2>
+                <h2 class="text-white">
+                    Pt: {{item.punti}}
+                </h2>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="lg:hidden">
+    <div *ngFor="let item of items; let i = index" class="my-6">
+        <div *ngIf="i >= 3" class="relative flex flex-row " style="height: 140px;" (click)="redirectToDettaglioScuderia(item.id)">
+            <div class="absolute bottom-0">
+                <h2 class="text-white text-5xl">
+                    {{item.posizione}}°
+                </h2>
+            </div>
+            <div class="w-1/2 p-7">
+                <img [src]="item.logo" class="object-cover max-h-32">
+            </div>
+            <div class="w-1/2 flex flex-col items-start justify-center">
+                <h2 class="text-white">
+                    {{item.nome}}
+                </h2>
+                <h2 class="text-white">
+                    Pt: {{item.punti}}
+                </h2>
+            </div>
+
+
+        </div>
     </div>
 </div>
