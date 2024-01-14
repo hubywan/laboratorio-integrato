@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { ChangeDetectorRef } from "@angular/core";
 
 @Component({
     selector: "app-navbar",
@@ -6,11 +7,11 @@ import { Component } from "@angular/core";
     styleUrls: ["./navbar.component.css"],
 })
 export class NavbarComponent {
-    isMenuOpen: boolean = false;
-    toggleMenu() {
-        this.isMenuOpen = !this.isMenuOpen;
-    }
-    closeMenu() {
-        this.isMenuOpen = false;
+    isOverlayActive = false;
+
+    toggleOverlay() {
+        console.log("Toggle Overlay");
+        this.isOverlayActive = !this.isOverlayActive;
+        console.log("isOverlayActive:", this.isOverlayActive);
     }
 }
