@@ -1,21 +1,19 @@
 <button class="bg-white text-black font-bold rounded-xl m-5 mt-8 text-base">+ Nuovo articolo</button>
 <div>
-    <div *ngFor="let item of items" class="bg-[#2a2a2a]  rounded-2xl m-4 ">
-        <div>
-            <img src="https://media.gqitalia.it/photos/63f7b303e2ee6cc2ec48bb7b/16:9/w_3444,h_1937,c_limit/Leclerc%20-%20GettyImages-1468871901.jpg" class="rounded-t-2xl h-36 w-full object-cover">
-        </div>
-        <div class="p-5">
-            <div class="w-full">
-                <h2 class="text-white text-2xl font-bold">
-                    {{item.titolo}}
-                </h2>
+    <div class="m-8" *ngFor="let item of items">
+        <div class="w-custom h-80 rounded-xl bg-[#2a2a2a] mb-14" (click)="redirectToDettaglioArticolo(item.id)">
+            <div>
+                <img [src]="item.imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
             </div>
-            <div class="w-full flex justify-end pt-8">
-                <p class="text-white">
-                    {{item.data}}
-                </p>
+            <div class="flex flex-col justify-between p-4 h-36">
+                <div>
+                    <h2 class="text-xl text-white">{{item.titolo}}</h2>
+                </div>
+                <div class="flex justify-end">
+                    <p class="font-data text-white">{{item.dataPubblicazione}}</p>
+                </div>
             </div>
         </div>
+
     </div>
 </div>
-<h1>Area Riservata</h1>

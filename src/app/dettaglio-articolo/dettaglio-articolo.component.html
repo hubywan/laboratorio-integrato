@@ -1,6 +1,6 @@
 <div class="flex items-center justify-center h-screen pb-20 pt-20 ">
     <div *ngIf="articolo" class="w-full lg:w-2/4 rounded-md p-0.5 card">
-        <img src={{articolo.imageUrl}} alt="Load..." />
+        <img [src]="articolo.imageUrl" alt="Immagine articolo">
         <div class="bg-ziflex flex-col pt-5">
             <h2 class="text-white">{{ articolo.titolo }}</h2>
             <p class="text-white">{{ articolo.long }}</p>

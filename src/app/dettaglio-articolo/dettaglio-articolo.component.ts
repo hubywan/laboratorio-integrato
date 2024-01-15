@@ -28,29 +28,15 @@ export class DettaglioArticoloComponent implements OnInit {
             (data) => {
                 this.articolo = data;
                 console.log("Dati API ottenuti per ID", id, ":", this.articolo);
-
-                // Chiamata per ottenere le immagini degli articoli
-                this.getImagesForArticoli([this.articolo]);
+                this.getImagesForArticolo(this.articolo);
             },
             (error) => {
                 console.error("Errore durante il recupero dei dati:", error);
             }
         );
     }
-
-    getImagesForArticoli(items: any[]): void {
-        items.forEach((item) => {
-            if (item && item.imageUrl) {
-                // L'immagine è già presente, non c'è bisogno di chiamare la funzione getImmagine
-                console.log("Immagine già disponibile:", item.imageUrl);
-            } else if (item && item.articolo) {
-                const currentArticolo = item.articolo;
-                this.getImmagine(this.selectedIdArticolo, currentArticolo);
-            }
-        });
-    }
-
-    getImmagine(id: number, articolo: any): void {
+    getImmagine(articolo: any): void {
+        const id = articolo.id;
         this.apiservice.getImmagineArticoli(id).subscribe(
             (data: any) => {
                 console.log("Array di byte:", data);
@@ -65,5 +51,9 @@ export class DettaglioArticoloComponent implements OnInit {
                 );
             }
         );
+    }
+
+    getImagesForArticolo(articolo: any): void {
+        this.getImmagine(articolo);
     }
 }

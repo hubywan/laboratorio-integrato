@@ -1,8 +1,10 @@
 <div class="max-w-7xl mx-auto">
-    <h2 class="text-white " style="margin-left: 90px; margin-top:40px">CLASSIFICHE</h2>
+    <strong>
+        <p class="text-white text-2xl" style="margin-left: 80px; margin-top:40px">CLASSIFICHE</p>
+    </strong>
     <div class="h-max flex items-center">
         <div class="flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10 lg:mt-24">
-            <a *ngFor="let item of items" class="w-40 h-32 lg:w-52 lg:h-44 rounded-2xl flex justify-center items-center m-2 lg:m-2" (click)="redirectToClassificheAnno(item.anno)">
+            <a *ngFor="let item of items" class="w-40 h-32 lg:w-52 lg:h-44 rounded-2xl flex justify-center items-center m-2 lg:m-4" (click)="redirectToClassificheAnno(item.anno)">
                 <div style="
             position:absolute;
             filter: brightness(0.3);
@@ -11,7 +13,9 @@
             background-size:cover;
             border-radius: 15px;
             " class="w-40 h-32 lg:w-52 lg:h-44"></div>
-                <h1 class="text-white">{{item.anno}}</h1>
+                <strong>
+                    <p class="text-white text-4xl">{{item.anno}}</p>
+                </strong>
             </a>
         </div>
     </div>

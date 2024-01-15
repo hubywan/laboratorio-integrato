@@ -70,14 +70,14 @@
                     <div class="col-span-6 p-3 ms-11">
                         <p class="text-[#969696] text-lg mb-3">{{item.nazione.nome}}</p>
                         <!--Il nome del pilota va messo in corsivo-->
-                        <p class="text-3xl mb-3"><strong class="text-white">{{item.nome}}</strong></p>
+                        <p class="text-3xl mb-3 whitespace-nowrap"><strong class="text-white">{{item.nome}}</strong></p>
                         <p class="text-white text-lg">Punti carriera: <strong class="text-white">{{item.puntiCarriera}}</strong></p>
                     </div>
                     <div class="col-span-5 flex flex-col">
                         <div class="h-16 w-16 rounded-full relative top-3 right-3 overflow-hidden self-end">
                             <img src="{{item.nazione.bandiera}}" alt="" class="object-cover absolute w-full h-full rounded-full">
                         </div>
-                        <img class="max-h-[20vh] absolute bottom-5" src="{{item.immagine}}" style="max-width: 160px;">
+                        <img class="max-h-[20vh] absolute bottom-5 ms-5" src="{{item.immagine}}" style="max-width:160px;">
                     </div>
                 </div>
             </div>

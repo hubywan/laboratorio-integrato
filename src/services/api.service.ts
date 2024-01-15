@@ -309,19 +309,39 @@ export class ApiService {
     getImmagineArticoli(id: number): Observable<any> {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",
-            // Il tipo di content type potrebbe variare a seconda del server
-            // Ad esempio, per un array di byte, potrebbe essere "application/octet-stream"
             "Content-Type": "application/octet-stream",
         });
 
         const options = {
             headers: headers,
-            responseType: "arraybuffer" as "json", // Imposta responseType a 'arraybuffer' per ricevere un array di byte
+            responseType: "arraybuffer" as "json",
         };
 
         return this.http.get(
             `http://localhost:8090/articoli/${id}/img`,
             options
         );
+    }
+    getArticoloUtente(): Observable<any> {
+        const autToken = localStorage.getItem("autenticationToken");
+        if (autToken) {
+            const headers = new HttpHeaders({
+                "Access-Control-Allow-Origin": "*",
+                "Content-Type": "application/octet-stream",
+                Authorization: autToken,
+            });
+
+            const options = {
+                headers: headers,
+            };
+
+            return this.http.get(
+                `http://localhost:8090/utente/articoli`,
+                options
+            );
+        } else {
+            console.error("Token non trovato nel local storage");
+            return new Observable();
+        }
     }
 }

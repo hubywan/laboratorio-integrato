@@ -27,6 +27,8 @@ import { ListaPilotiComponent } from "./lista-piloti/lista-piloti.component";
 import { DettaglioGranPremioComponent } from "./dettaglio-gran-premio/dettaglio-gran-premio.component";
 import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-articolo.component";
 import { CaroselloHomeComponent } from "./carosello-home/carosello-home.component";
+import { LoginComponent } from "./login/login.component";
+import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 
 @NgModule({
     imports: [
@@ -60,6 +62,8 @@ import { CaroselloHomeComponent } from "./carosello-home/carosello-home.componen
         ArticoliComponent,
         DettaglioArticoloComponent,
         CaroselloHomeComponent,
+        LoginComponent,
+        StesuraArticoloComponent,
     ],
 
     bootstrap: [AppComponent],
