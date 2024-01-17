@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { OnInit } from "@angular/core";
+import * as dayjs from "dayjs";
+import "dayjs/locale/it";
 import { ApiService } from "src/services/api.service";
 import { ActivatedRoute } from "@angular/router";
 import { Renderer2, ElementRef } from "@angular/core";
@@ -44,10 +46,19 @@ export class HomeComponent {
             this.fetchArticoli();
         });
     }
+    formatDate(apiDateString: string): string {
+        const formattedDate = dayjs(apiDateString)
+            .locale("it")
+            .format("DD MMMM YYYY");
+        return formattedDate;
+    }
     fetchArticoli(): void {
         this.apiservice.getArticoli().subscribe(
             (data) => {
                 this.articoli = data;
+                this.articoli.forEach((articolo: any) => {
+                    articolo.data = this.formatDate(articolo.data);
+                });
                 console.log("Dati api ottenuti:", this.articoli);
                 this.getImagesForArticoli(this.articoli);
             },
@@ -56,6 +67,7 @@ export class HomeComponent {
             }
         );
     }
+
     getImagesForArticoli(articoli: any[]): void {
         articoli.forEach((articolo) => {
             const id = articolo.id;

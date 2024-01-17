@@ -187,6 +187,22 @@ export class ApiService {
                 })
             );
     }
+    getStagione2024() {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http
+            .get(`http://localhost:8090/gare/programmate`, options)
+            .pipe(
+                map((data: any) => {
+                    return data;
+                })
+            );
+    }
     getClassificaScuderie(anno: number) {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",

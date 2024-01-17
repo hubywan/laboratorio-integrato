@@ -1,0 +1,23 @@
+<h2 class="text-center text-white  font-bold text-3xl">Prossima gara stagione 2024:</h2>
+<h2 class="text-center text-[#cccccc] text-3xl mb-12">{{items[0].nome}}</h2>
+<div class="flex flex-row justify-center">
+    <div class="flex flex-col">
+        <div class="text-[#CCCCCC] flex justify-center lg:text-2xl m-2">GIORNI</div>
+        <div *ngIf="remainingTime.days > 0" class="bg-[#2a2a2a] rounded-2xl text-white font-bold text-5xl p-4 w-20 h-20 flex justify-center items-center lg:h-44 lg:w-44 lg:text-8xl">{{ remainingTime.days }}</div>
+    </div>
+    <h2 class="rounded-2xl text-white font-bold text-5xl flex items-center p-1 lg:text-8xl mt-10 lg:mx-4">:</h2>
+    <div class="flex flex-col">
+        <div class="text-[#CCCCCC] flex justify-center lg:text-2xl m-2">ORE</div>
+        <div class="bg-[#2a2a2a] rounded-2xl text-white font-bold text-5xl p-4 w-20 h-20 flex justify-center items-center lg:h-44 lg:w-44 lg:text-8xl">{{ remainingTime.hours }}</div>
+    </div>
+    <h2 class="rounded-2xl text-white font-bold text-5xl flex items-center p-1 lg:text-8xl mt-10 lg:mx-4">:</h2>
+    <div class="flex flex-col">
+        <div class="text-[#CCCCCC] flex justify-center lg:text-2xl m-2">MIN</div>
+        <div class="bg-[#2a2a2a] rounded-2xl text-white font-bold text-5xl p-4 w-20 h-20 flex justify-center items-center lg:h-44 lg:w-44 lg:text-8xl">{{ remainingTime.minutes }}</div>
+    </div>
+    <h2 class="rounded-2xl text-white font-bold text-5xl flex items-center p-1 lg:text-8xl mt-10 lg:mx-4">:</h2>
+    <div class="flex flex-col">
+        <div class="text-[#CCCCCC] flex justify-center lg:text-2xl m-2">SEC</div>
+        <div class="bg-[#2a2a2a] rounded-2xl text-white font-bold text-5xl p-4 w-20 h-20 flex justify-center items-center lg:h-44 lg:w-44 lg:text-8xl">{{ remainingTime.seconds }}</div>
+    </div>
+</div>

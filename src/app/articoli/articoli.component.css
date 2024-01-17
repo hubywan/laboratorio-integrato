@@ -2,3 +2,10 @@
     background: #e54f2c;
     border-radius: 0.75rem;
 }
+.card {
+    transition: transform 0.2s; /* Animazione fluida */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}

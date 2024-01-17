@@ -3,13 +3,13 @@
         <img [src]="items.immagine" alt="">
     </div>
 
-    <div class="xl:hidden p-2 mb-6 text-center">
+    <div class="xl:hidden p-2 mb-12 text-center">
         <p class="text-sm text-[#949494] mb-1">{{items.nazione.nome}}</p>
         <p class="text-xl text-white">{{items.nome}}</p>
     </div>
 
     <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 p-10 mb-16 mx-36">
-        <div class="p-2 mb-4 flex flex-col justify-start items-start">
+        <div class="p-2 mb-4 flex flex-col justify-center items-start">
             <p class="text-xl text-[#949494] mb-1">{{items.nazione.nome}}</p>
             <strong>
                 <p class="text-4xl text-white">{{items.nome}}</p>
@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div class="xl:hidden bg-[#2a2a2a] p-2 mb-6 grid grid-rows-2 grid-cols-2 place-items-center rounded-2xl">
+    <div class="xl:hidden bg-[#2a2a2a] p-2 mb-12 grid grid-rows-2 grid-cols-2 place-items-center rounded-2xl">
         <p class="text-sm text-white">Lunghezza</p>
         <p class="text-sm text-white">Esordio</p>
         <p class="text-3xl text-white">{{items.lunghezza}}</p>
@@ -28,7 +28,7 @@
     </div>
 
     <p class="xl:hidden text-xl text-center text-white m-2">Giro Record</p>
-    <div class="xl:hidden bg-[#2a2a2a] p-2 mb-10 rounded-8">
+    <div class="xl:hidden bg-[#2a2a2a] p-2 mb-12 rounded-2xl">
         <div class="flex flex-col place-items-center">
             <p class="text-2xl text-white">{{items.giroRecord.nome}}</p>
             <div>
@@ -51,24 +51,24 @@
         </strong>
     </div>
 
-    <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 p-10 mb-16 gap-8 mx-36">
+    <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 p-8 mb-16 gap-8 mx-36">
         <div class="grid grid-cols-2 grid-rows-1 gap-8 text-center">
-            <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center">
-                <p class="text-sm text-white">Lunghezza</p>
-                <p class="text-3xl text-white">{{items.lunghezza}}</p>
+            <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center gap-5">
+                <p class="text-xl text-white">Lunghezza</p>
+                <p class="text-4xl text-white">{{items.lunghezza}}</p>
             </div>
-            <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center">
-                <p class="text-sm text-white">Esordio</p>
-                <p class="text-3xl text-white">{{items.esordio}}</p>
+            <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center gap-5">
+                <p class="text-xl text-white">Esordio</p>
+                <p class="text-4xl text-white">{{items.esordio}}</p>
             </div>
         </div>
         <div class="bg-[#2a2a2a] rounded-2xl">
-            <div class="flex flex-col place-items-center p-10">
-                <p class="text-2xl text-white">{{items.giroRecord.nome}}</p>
+            <div class="flex flex-col place-items-center gap-4 p-8">
+                <p class="text-3xl text-white font-light">{{items.giroRecord.nome}}</p>
                 <div>
                     <div class="grid grid-rows-2 grid-cols-2 place-items-center">
-                        <p class="text-sm text-white">Tempo</p>
-                        <p class="text-sm text-white">Anno</p>
+                        <p class="text-base text-white">Tempo</p>
+                        <p class="text-base text-white">Anno</p>
                         <p class="text-3xl text-white">{{items.giroRecord.tempo}}</p>
                         <p class="text-3xl text-white">{{items.giroRecord.anno}}</p>
                     </div>
@@ -83,7 +83,7 @@
                 <div class="text-xl text-center mb-5 text-white xl:text-start xl:text-2xl">Descrizione</div>
             </strong>
             <div>
-                <p class="text-white">{{items.descrizione}}</p>
+                <p class="text-white text-base">{{items.descrizione}}</p>
             </div>
         </div>
     </div>

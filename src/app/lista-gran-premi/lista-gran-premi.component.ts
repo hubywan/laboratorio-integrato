@@ -2,6 +2,8 @@ import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
 import { ActivatedRoute } from "@angular/router";
 import { Router } from "@angular/router";
+import * as dayjs from "dayjs";
+import "dayjs/locale/it";
 
 @Component({
     selector: "app-lista-gran-premi",
@@ -25,11 +27,20 @@ export class ListaGranPremiComponent implements OnInit {
             this.fetchDataForYear(this.selectedYear);
         });
     }
+    formatDate(apiDateString: string): string {
+        const formattedDate = dayjs(apiDateString)
+            .locale("it")
+            .format("DD MMMM YYYY");
+        return formattedDate;
+    }
 
     fetchDataForYear(year: number): void {
         this.apiservice.getListaGranPremi(year).subscribe(
             (data) => {
                 this.items = data;
+                this.items.forEach((articolo: any) => {
+                    articolo.data = this.formatDate(articolo.data);
+                });
                 console.log(
                     "Dati API ottenuti per l'anno",
                     year,

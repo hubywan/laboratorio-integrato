@@ -15,7 +15,7 @@ export class ClassificheComponent {
     ngOnInit(): void {
         this.apiservice.getListaStagioni().subscribe(
             (data) => {
-                this.items = data;
+                this.items = data.slice(0, -1);
                 console.log("Dati api ottenuti:", this.items);
             },
             (error) => {
@@ -23,6 +23,7 @@ export class ClassificheComponent {
             }
         );
     }
+
     redirectToClassificheAnno(anno: number): void {
         this.router.navigate(["/classifiche-anno/piloti"], {
             queryParams: { anno },

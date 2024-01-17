@@ -1,12 +1,12 @@
 <div class="max-w-7xl mx-auto">
     <div class="flex flex-col lg:flex-row justify-center">
         <div>
-            <div class="flex justify-center">
-                <img [src]="items.logo" alt="" class="max-h-52">
+            <div class="flex justify-center my-10">
+                <img [src]="items.logo" alt="" class="max-h-52 " style="max-width: 250px;">
             </div>
-            <div class="flex flex-col text-center">
-                <h2 class="text-white text-xl">{{items.nome}}</h2>
-                <h3 class="text-white text-xs">{{items.sede}}</h3>
+            <div class="flex flex-col text-center mb-2">
+                <h2 class="text-white text-2xl font-bold">{{items.nome}}</h2>
+                <h3 class="text-white text-sm">{{items.sede}}</h3>
             </div>
         </div>
         <div class="bg-[#2a2a2a] rounded-2xl mx-9 m-5 flex flex-row justify-around lg:w-96 h-28">
@@ -21,7 +21,7 @@
         </div>
     </div>
     <div>
-        <h2 class="text-white text-xl text-center mb-4 mt-6">Piloti del TEAM</h2>
+        <h2 class="text-white font-bold text-2xl text-center mb-4 mt-6">Piloti del TEAM</h2>
         <div class=" flex flex-row flex-wrap justify-center">
             <div *ngFor="let piloti of items.piloti" class="lg:mx-5">
                 <div class="bg-[#2a2a2a] rounded-2xl  h-44 w-44 mx-1 p-2">
@@ -36,14 +36,14 @@
     </div>
     <hr class="hr-custom mx-20 rounded mt-12 lg:mx-48">
     <div class="flex items-center flex-col mx-9">
-        <h2 class="text-white text-xl text-center mb-4 mt-6">Dati Generali</h2>
-        <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4 custom-width">
-            <p class="text-base"><span class="text-white">Anno esordio:</span> {{items.annoEsordio }}</p>
-            <p class="text-base"><span class="text-white">Presidente: </span> {{items.presidente}}</p>
-            <p class="text-base"><span class="text-white">Direttore: </span> {{items.direttore }}</p>
-            <p class="text-base "><span class="text-white">Manager tecnico: </span> {{items.managerTecnico}}</p>
-            <p class="text-base"><span class="text-white">Telaio: </span> {{items.telaio}}</p>
-            <p class="text-base"><span class="text-white">Motore: </span> {{items.motore}}</p>
+        <h2 class="text-white text-2xl text-center font-bold mb-4 mt-6">Dati Generali</h2>
+        <div class="bg-[#2a2a2a] rounded-2xl mx-9 m-5 flex flex-col w-full p-6 gap-3">
+            <p class="text-base  text-white"><span class="text-white font-light text-lg">Anno esordio:</span> <span class="font-bold text-lg text-white"> {{items.annoEsordio }}</span></p>
+            <p class="text-base text-white"><span class="text-white font-light text-lg">Presidente: </span><span class="font-bold text-lg text-white"> {{items.presidente}}</span></p>
+            <p class="text-base"><span class="text-white font-light text-lg">Direttore: </span> <span class="font-bold text-lg text-white"> {{items.direttore}}</span></p>
+            <p class="text-base "><span class="text-white font-light text-lg">Manager tecnico: </span> <span class="font-bold text-lg text-white"> {{items.managerTecnico}}</span></p>
+            <p class="text-base"><span class="text-white font-light text-lg">Telaio: </span> <span class="font-bold text-lg text-white"> {{items.telaio}}</span></p>
+            <p class="text-base"><span class="text-white font-light text-lg">Motore: </span> <span class="font-bold text-lg text-white"> {{items.motore}}</span></p>
         </div>
     </div>
     <div>

@@ -57,7 +57,7 @@ export class DettaglioPilotaComponent {
                 (data) => {
                     this.selectedIdPilota = data;
                     console.log(
-                        "Dati API ottenuti per il pilota",
+                        "Dati API ottenuti per il secondo pilota",
                         this.selectedPilota,
                         ":",
                         data

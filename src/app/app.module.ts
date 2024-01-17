@@ -29,6 +29,7 @@ import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-artic
 import { CaroselloHomeComponent } from "./carosello-home/carosello-home.component";
 import { LoginComponent } from "./login/login.component";
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
+import { CountdownComponent } from "./countdown/countdown.component";
 
 @NgModule({
     imports: [
@@ -64,6 +65,7 @@ import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.co
         CaroselloHomeComponent,
         LoginComponent,
         StesuraArticoloComponent,
+        CountdownComponent,
     ],
 
     bootstrap: [AppComponent],
