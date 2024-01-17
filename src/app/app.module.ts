@@ -30,6 +30,7 @@ import { CaroselloHomeComponent } from "./carosello-home/carosello-home.componen
 import { LoginComponent } from "./login/login.component";
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 import { CountdownComponent } from "./countdown/countdown.component";
+import { ConfrontoPilotiComponent } from "./confronto-piloti/confronto-piloti.component";
 
 @NgModule({
     imports: [
@@ -66,6 +67,7 @@ import { CountdownComponent } from "./countdown/countdown.component";
         LoginComponent,
         StesuraArticoloComponent,
         CountdownComponent,
+        ConfrontoPilotiComponent,
     ],
 
     bootstrap: [AppComponent],
