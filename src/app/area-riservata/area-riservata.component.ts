@@ -36,6 +36,9 @@ export class AreaRiservataComponent {
             queryParams: { id },
         });
     }
+    redirectToStesuraArticolo(): void {
+        this.router.navigate(["/stesura-articolo"]);
+    }
     getImmagine(id: number, articolo: any): void {
         this.apiservice.getImmagineArticoli(id).subscribe(
             (data: any) => {

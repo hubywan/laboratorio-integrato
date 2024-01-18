@@ -28,7 +28,7 @@
     </div>
     <div>
         <div class="container flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10">
-            <div class="my-8" *ngFor="let item of filteredItems; let i = index" (click)="redirectToDettaglioCircuito(item.id)">
+            <div class="my-14" *ngFor="let item of filteredItems; let i = index" (click)="redirectToDettaglioCircuito(item.id)">
                 <a routerLink=" dettaglio">
                     <img [src]="item.immagine" alt="" class="p-2 flex text-center lg:mx-3" style="width: 360px; max-height: 240px;">
                     <h2 class="text-white text-center pb-5 ">
