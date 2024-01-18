@@ -8,11 +8,32 @@ import { Observable, of } from "rxjs";
 })
 export class AutService {
     private loginURL = "http://localhost:8090/areariservata/login";
+    private creazioneURL = "http://localhost:8090/articoli/nuovo";
 
     constructor(private http: HttpClient) {}
 
     login(utente: string, password: string): Observable<any> {
         const body = { utente, password };
         return this.http.post(`${this.loginURL}`, body);
+    }
+    creazioneArticolo(titolo: string, testo: string): Observable<any> {
+        const autToken = localStorage.getItem("autenticationToken");
+        if (autToken) {
+            var formData = new FormData();
+            formData.append("titolo", titolo);
+            formData.append("testo", testo);
+            const headers = new HttpHeaders({
+                Authorization: autToken,
+            });
+
+            const options = {
+                headers: headers,
+            };
+
+            return this.http.post(`${this.creazioneURL}`, formData, options);
+        } else {
+            console.error("Token non trovato nel local storage");
+            return new Observable();
+        }
     }
 }

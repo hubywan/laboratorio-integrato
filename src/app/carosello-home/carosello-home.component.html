@@ -2,9 +2,9 @@
     <div class="calendario-2024 ms-7 me-4 mt-7">
         <div class="bg-[#2a2a2a] rounded-2xl image-item h-72 w-48 flex justify-center" *ngFor="let item of items">
             <div class=" flex flex-col items-center">
-                <img src="../../assets/img/{{item.nazione}}.svg.png" alt="img-1" class="image-item w-24 h-24 rounded-full object-cover">
+                <img [src]=item.nazione.bandiera alt="img-1" class="image-item w-24 h-24 rounded-full object-cover">
                 <!-- <div style="background-image: url(../../assets/img/{{item.bandiera}}.svg.png);"></div> -->
-                <h2 class="text-custom font-bold text-[#B7B7B7]">{{item.nazione}}</h2>
+                <h2 class="text-custom font-bold text-[#B7B7B7]">{{item.nazione.nome}}</h2>
                 <h3 class="text-white text-base">{{item.nome}}</h3>
                 <h2 class="text-white text-7xl font-bold mt-2">{{item.dataDay}}</h2>
                 <h2 class="text-white">{{item.dataMonth}}</h2>

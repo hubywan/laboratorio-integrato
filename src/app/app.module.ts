@@ -68,6 +68,7 @@ import { ConfrontoPilotiComponent } from "./confronto-piloti/confronto-piloti.co
         StesuraArticoloComponent,
         CountdownComponent,
         ConfrontoPilotiComponent,
+        StesuraArticoloComponent,
     ],
 
     bootstrap: [AppComponent],
