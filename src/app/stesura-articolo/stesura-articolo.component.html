@@ -7,7 +7,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
             </svg>
             <span>Carica immagine</span>
-            <input id="caricaImmagine" type="file" accept="image/*" class="hidden" />
+            <input id="caricaImmagine" type="file" accept="image/*" class="hidden" (change)="handleFileSelect($event)" />
         </label>
         <!-- <textarea [(ngModel)]="testo" rows="16" cols="50" placeholder="Scrivi articolo" class="rounded-xl p-3 w-72 my-5 mt-8 bg-[#2a2a2a] border-0 text-white"></textarea> -->
         <input [(ngModel)]="testo" [ngModelOptions]="{standalone: true}">

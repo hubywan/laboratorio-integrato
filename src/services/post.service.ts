@@ -16,12 +16,17 @@ export class AutService {
         const body = { utente, password };
         return this.http.post(`${this.loginURL}`, body);
     }
-    creazioneArticolo(titolo: string, testo: string): Observable<any> {
+    creazioneArticolo(
+        titolo: string,
+        testo: string,
+        immagine: any
+    ): Observable<any> {
         const autToken = localStorage.getItem("autenticationToken");
         if (autToken) {
             var formData = new FormData();
             formData.append("titolo", titolo);
             formData.append("testo", testo);
+            formData.append("immagine", immagine);
             const headers = new HttpHeaders({
                 Authorization: autToken,
             });
