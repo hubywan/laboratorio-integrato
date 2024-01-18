@@ -15,7 +15,7 @@
 }
 @font-face {
     font-family: Futura-Bold;
-    src: url(/assets/font-futura/Futura\ Bold\ font.ttf);
+    src: url(/assets/font-futura/Futura\ Bold.otf);
 }
 .font-bold {
     font-family: "Futura-Bold", Arial, sans-serif;

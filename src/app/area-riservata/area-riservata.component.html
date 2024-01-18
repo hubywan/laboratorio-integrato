@@ -1,19 +1,20 @@
-<button class="bg-white text-black font-bold rounded-xl m-5 mt-8 text-base">+ Nuovo articolo</button>
-<div>
-    <div class="m-8" *ngFor="let item of items">
-        <div class="w-custom h-80 rounded-xl bg-[#2a2a2a] mb-14" (click)="redirectToDettaglioArticolo(item.id)">
-            <div>
-                <img [src]="item.imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
-            </div>
-            <div class="flex flex-col justify-between p-4 h-36">
+<div class="max-w-7xl mx-auto">
+    <button class="bg-white text-black rounded-xl m-5 mt-8 text-base">+ Nuovo articolo</button>
+    <div class="flex flex-col lg:flex-row justify-start">
+        <div class="m-8" *ngFor="let item of items">
+            <div class=" h-80 rounded-xl bg-[#2a2a2a] mb-14" (click)="redirectToDettaglioArticolo(item.id)">
                 <div>
-                    <h2 class="text-xl text-white">{{item.titolo}}</h2>
+                    <img [src]="item.imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
                 </div>
-                <div class="flex justify-end">
-                    <p class="font-data text-white">{{item.dataPubblicazione}}</p>
+                <div class="flex flex-col justify-between p-4 h-36">
+                    <div>
+                        <h2 class="text-xl text-white w-80">{{item.titolo}}</h2>
+                    </div>
+                    <div class="flex justify-end">
+                        <p class="font-data text-white">{{item.dataPubblicazione}}</p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>

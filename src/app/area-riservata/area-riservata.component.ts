@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { ApiService } from "src/services/api.service";
 import { Router } from "@angular/router";
+import * as dayjs from "dayjs";
+import "dayjs/locale/it";
 
 @Component({
     selector: "app-area-riservata",
@@ -16,6 +18,11 @@ export class AreaRiservataComponent {
         this.apiservice.getArticoloUtente().subscribe(
             (data) => {
                 this.items = data;
+                this.items.forEach((item: any) => {
+                    item.dataPubblicazione = this.formatDate(
+                        item.dataPublicazione
+                    );
+                });
                 console.log("Dati api ottenuti:", this.items);
                 this.getImagesForArticoli(this.items);
             },
@@ -50,5 +57,11 @@ export class AreaRiservataComponent {
             const id = items.id;
             this.getImmagine(id, items);
         });
+    }
+    formatDate(apiDateString: string): string {
+        const formattedDate = dayjs(apiDateString)
+            .locale("it")
+            .format("DD MMMM YYYY");
+        return formattedDate;
     }
 }
