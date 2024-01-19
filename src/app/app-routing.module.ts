@@ -19,6 +19,7 @@ import { AreaRiservataComponent } from "./area-riservata/area-riservata.componen
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 import { DettaglioTracciatoComponent } from "./dettaglio-tracciato/dettaglio-tracciato.component";
 import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-articolo.component";
+import { AnnoComponent } from "./anno/anno.component";
 
 const routes: Routes = [
     { path: "home", component: HomeComponent },

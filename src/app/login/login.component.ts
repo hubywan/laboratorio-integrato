@@ -20,7 +20,9 @@ export class LoginComponent {
                 console.log(response);
                 if (response && response.token) {
                     localStorage.setItem("autenticationToken", response.token);
-                    this.router.navigate(["/area-riservata"]);
+                    this.router.navigate(["/area-riservata"], {
+                        queryParams: { nome: response.nome },
+                    });
                 }
             },
             (error) => {

@@ -36,7 +36,7 @@
             </div>
         </div>
         <div class="flex justify-center">
-            <img [src]=" items.immagine" class="hidden lg:block absolute bottom-0 max-h-64">
+            <img [src]="items.immagine" class="hidden lg:block absolute bottom-0 max-h-64">
         </div>
         <div class="flex flex-row">
             <div class="h-40 w-14 rounded-l-2xl bg-[#E54F2C]">
@@ -60,7 +60,9 @@
     </div>
 
     <div class="mt-40">
-        <h2 class="text-white text-xl text-center mb-4 mt-6">TEAM</h2>
+        <strong>
+            <p class="text-white text-xl text-center mb-8 mt-6">TEAM</p>
+        </strong>
         <div class=" flex flex-row flex-wrap justify-center">
             <div *ngFor="let item of items.scuderie" class="lg:mx-5">
                 <div class="bg-[#2a2a2a] rounded-2xl  h-32 w-32 lg:h-52 lg:w-52 mx-1 p-2 flex justify-center items-center">
@@ -95,8 +97,12 @@
     </div>
 
     <div class="hidden xl:grid grid-cols-2 mt-44 mx-36 gap-x-12 ms-80">
-        <p class="text-white text-lg ms-10">Vittorie</p>
-        <p class="text-white text-lg ms-24">Partecipazioni</p>
+        <strong>
+            <p class="text-white text-lg ms-10">VITTORIE</p>
+        </strong>
+        <strong>
+            <p class="text-white text-lg ms-24">PARTECIPAZIONI</p>
+        </strong>
     </div>
     <div class="hidden xl:grid grid-cols-2 mx-36 mb-10 gap-x-12">
         <div class="p-5 w-[30rem]">
@@ -132,5 +138,5 @@
             </div>
         </div>
     </div>
-    <app-confronto-piloti [idPilota]="items?.id"></app-confronto-piloti>
 </div>
+<app-confronto-piloti [idPilota]="items?.id"></app-confronto-piloti>

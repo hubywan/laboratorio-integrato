@@ -3,6 +3,7 @@ import { ApiService } from "src/services/api.service";
 import { Router } from "@angular/router";
 import * as dayjs from "dayjs";
 import "dayjs/locale/it";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
     selector: "app-area-riservata",
@@ -10,11 +11,20 @@ import "dayjs/locale/it";
     styleUrls: ["./area-riservata.component.css"],
 })
 export class AreaRiservataComponent {
-    items: any;
+    items: any = 0;
+    nome: string = "";
 
-    constructor(private apiservice: ApiService, private router: Router) {}
+    constructor(
+        private apiservice: ApiService,
+        private router: Router,
+        private route: ActivatedRoute
+    ) {}
 
     ngOnInit(): void {
+        this.route.queryParams.subscribe((params) => {
+            this.nome = params["nome"];
+        });
+
         this.apiservice.getArticoloUtente().subscribe(
             (data) => {
                 this.items = data;
@@ -31,9 +41,15 @@ export class AreaRiservataComponent {
             }
         );
     }
+
     redirectToDettaglioArticolo(id: number): void {
         this.router.navigate(["/dettaglio-articolo"], {
-            queryParams: { id },
+            queryParams: { id, nome: this.nome },
+        });
+    }
+    getNomeByRoute(): void {
+        this.route.queryParams.subscribe((params) => {
+            this.nome = params["nome"];
         });
     }
     redirectToStesuraArticolo(): void {

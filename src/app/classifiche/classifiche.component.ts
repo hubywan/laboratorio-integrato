@@ -15,7 +15,7 @@ export class ClassificheComponent {
     ngOnInit(): void {
         this.apiservice.getListaStagioni().subscribe(
             (data) => {
-                this.items = data.slice(0, -1);
+                this.items = data;
                 console.log("Dati api ottenuti:", this.items);
             },
             (error) => {

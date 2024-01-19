@@ -31,6 +31,7 @@ import { LoginComponent } from "./login/login.component";
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 import { CountdownComponent } from "./countdown/countdown.component";
 import { ConfrontoPilotiComponent } from "./confronto-piloti/confronto-piloti.component";
+import { AnnoComponent } from "./anno/anno.component";
 
 @NgModule({
     imports: [
@@ -69,6 +70,7 @@ import { ConfrontoPilotiComponent } from "./confronto-piloti/confronto-piloti.co
         CountdownComponent,
         ConfrontoPilotiComponent,
         StesuraArticoloComponent,
+        AnnoComponent,
     ],
 
     bootstrap: [AppComponent],

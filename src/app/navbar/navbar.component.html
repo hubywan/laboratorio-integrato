@@ -1,7 +1,7 @@
 <header class="bg-[#E54F2C] text-white p-4 flex items-center lg:justify-center justify-between h-12 lg:h-20  lg:rounded-b-2xl rounded-none">
     <ul class="hidden flex-row gap-20 md:gap-16 items-center lg:flex">
         <li><a class="text-white font-custom" routerLink="/home">HOME</a></li>
-        <li><a class="text-white font-custom" routerLink="/classifiche-anno/piloti">STAGIONE 2023</a></li>
+        <li><a class="text-white font-custom" routerLink="/classifiche-anno/piloti" [queryParams]="{ anno: 2023 }">STAGIONE 2023</a></li>
         <li><a class="text-white font-custom" routerLink="/scuderie">SCUDERIE</a></li>
         <li><a class="text-white font-custom" routerLink="/piloti">PILOTI</a></li>
         <a routerLink="/home">
@@ -108,7 +108,7 @@
     <div>
         <ul class="flex flex-col gap-6 ms-24 mt-8 mb-14">
             <li><a class="text-[#3C3C3A] font-custom-mobile font-bold" routerLink="/home" (click)="toggleOverlay()">HOME</a></li>
-            <li><a class="text-[#3C3C3A] font-custom-mobile font-bold" routerLink="/classifiche-anno/piloti" (click)="toggleOverlay()">STAGIONE 2023</a></li>
+            <li><a class="text-[#3C3C3A] font-custom-mobile font-bold" routerLink="/classifiche-anno/piloti" [queryParams]="{ anno: 2023 }" (click)="toggleOverlay()">STAGIONE 2023</a></li>
             <li><a class="text-[#3C3C3A] font-custom-mobile font-bold" routerLink="/scuderie" (click)="toggleOverlay()">SCUDERIE</a></li>
             <li><a class="text-[#3C3C3A] font-custom-mobile font-bold" routerLink="/piloti" (click)="toggleOverlay()">PILOTI</a></li>
             <li><a class="text-[#3C3C3A] font-custom-mobile font-bold" routerLink="/tracciati" (click)="toggleOverlay()">TRACCIATI</a></li>

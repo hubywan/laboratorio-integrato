@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 })
 export class ClassificaPilotiComponent {
     items: any;
+    isExpanded: boolean = false;
     selectedYear: number = 2023;
     showMoreData: boolean[] = [];
     showGrafico: boolean = true;

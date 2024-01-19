@@ -1,69 +1,120 @@
 <div class="max-w-7xl mx-auto">
-    <div class="flex flex-row justify-start">
+    <div class="lg:hidden">
+        <div class="flex flex-row justify-start">
+            <div class="flex items-center mx-5">
+                <img [src]="items.competizione.nazione.bandiera" alt="" class="rounded-full h-20 w-20 mx-3 object-cover">
+            </div>
+            <div>
+                <h2 class="text-base">{{items.competizione.nazione.nome}}</h2>
+                <h2 class="text-white text-xl font-bold">{{items.competizione.nome}}</h2>
+                <h2 class="text-white text-sm">{{items.circuito.nome}}</h2>
+            </div>
+        </div>
+        <div class="flex flex-col items-center my-10">
+            <h2 class="text-white text-xl">Data:{{items.data}}</h2>
+            <h2 class="text-white text-xl">Stato:{{items.stato}}</h2>
+        </div>
+    </div>
+
+
+    <div class="hidden lg:flex flex-row justify-center gap-24 my-24">
         <div class="flex items-center mx-5">
-            <img [src]="items.competizione.nazione.bandiera" alt="" class="rounded-full h-20 w-20 mx-3 object-cover">
+            <img [src]="items.competizione.nazione.bandiera" alt="" class="rounded-full h-52 w-52 mx-3 object-cover">
         </div>
-        <div>
-            <h2 class="text-base">{{items.competizione.nazione.nome}}</h2>
-            <h2 class="text-white text-xl font-bold">{{items.competizione.nome}}</h2>
-            <h2 class="text-white text-sm">{{items.circuito.nome}}</h2>
+        <div class="flex flex-col gap-8 justify-center">
+            <h2 class="text-xl">{{items.competizione.nazione.nome}}</h2>
+            <h2 class="text-white text-2xl font-bold">{{items.competizione.nome}}</h2>
+            <h2 class="text-white text-lg">{{items.circuito.nome}}</h2>
         </div>
-    </div>
-    <div class="flex flex-col items-center my-10">
-        <h2 class="text-white text-xl">Data:{{items.data}}</h2>
-        <h2 class="text-white text-xl">Stato:{{items.stato}}</h2>
-    </div>
-
-    <div class="">
-        <h2 class="text-center text-white text-base">Giro più veloce</h2>
-        <div class="bg-[#2a2a2a] rounded-2xl p-4 m-4 flex flex-row justify-around">
-            <div>
-                <h2 class="text-white text-base text-center">Pilota</h2>
-                <h2 class="text-white text-lg text-center">{{items.giroVeloce.pilota.nome}}</h2>
-            </div>
-            <div>
-                <h2 class="text-white text-base text-center">Tempo</h2>
-                <h2 class="text-white text-lg text-center">{{items.giroVeloce.tempo}}</h2>
-            </div>
+        <div class="flex flex-col justify-center my-10">
+            <h2><span class="text-base text-white">Data: </span><span class="text-xl text-white">{{items.data}}</span></h2>
+            <h2><span class="text-base text-white">Stato: </span><span class="text-xl text-white">{{items.stato}}</span></h2>
         </div>
     </div>
 
 
-    <div class="mb-8">
-        <h2 class="text-center text-white text-base">Classifica Gran prix</h2>
-        <div *ngFor="let item of (showAllClassGP ? items.classificaGranPremio : items.classificaGranPremio.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione.bandiera" class="h-6 w-6 rounded-full object-cover mx-2">
-                <h2 class="text-base text-white">{{item.nome}}</h2>
+    <h2 class="text-center text-white text-xl">Giro più veloce</h2>
+    <div class="w-full flex justify-center">
+        <div style="width: 650px">
+            <div class="bg-[#2a2a2a] h-32 rounded-2xl p-4 m-4 flex flex-row justify-around">
+                <div class="flex flex-col justify-center items-center">
+                    <h2 class="text-white text-base text-center">Pilota</h2>
+                    <h2 class="text-white text-lg text-center">{{items.giroVeloce.pilota.nome}}</h2>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <h2 class="text-white text-base text-center">Tempo</h2>
+                    <h2 class="text-white text-lg text-center">{{items.giroVeloce.tempo}}</h2>
+                </div>
             </div>
-            <div>
+        </div>
+    </div>
+    <hr class="hr-chi-siamo mx-20 rounded my-16">
+
+
+    <div class="mb-36">
+        <h2 class="text-center text-white text-lg my-6">Classifica Gran prix</h2>
+        <div *ngFor="let item of (showAllClassGP ? items.classificaGranPremio : items.classificaGranPremio.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2">
+                <h2 class="text-base text-white">
+                    {{item.nome}}
+                    <span class="giroVeloce-indicator" *ngIf="item.id === giroVeloceId" title="Giro Veloce"></span>
+                </h2>
+            </div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-32">
                 <h2 class="text-base text-white">{{ (item.punti !== null && item.punti !== undefined) ? item.punti + 'pt' : item.tempo }}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllClassGP = !showAllClassGP" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllClassGP ? 'meno' : 'tutti'}} risultati {{showAllClassGP ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllClassGP ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllClassGP">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllClassGP">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
 
 
-    <div class="mb-8" *ngIf="items.classificaSprint && items.classificaSprint.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Sprint</h2>
-        <div *ngFor="let item of (showAllSprint ? items.classificaSprint : items.classificaSprint.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaSprint && items.classificaSprint.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Sprint</h2>
+        <div *ngFor="let item of (showAllSprint ? items.classificaSprint : items.classificaSprint.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-32">
                 <h2 class="text-base text-white">{{ (item.punti !== null && item.punti !== undefined) ? item.punti + 'pt' : item.tempo }}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllSprint = !showAllSprint" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllSprint ? 'meno' : 'tutti'}} risultati {{showAllSprint ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllSprint ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllSprint">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllSprint">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -72,21 +123,34 @@
     </div>
 
 
-    <div class="mb-8" *ngIf="items.classificaSQ1 && items.classificaSQ1.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 1 </h2>
-        <div *ngFor="let item of (showAllSQ1 ? items.classificaSQ1 : items.classificaSQ1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaSQ1 && items.classificaSQ1.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Qualifica Sprint 1 </h2>
+        <div *ngFor="let item of (showAllSQ1 ? items.classificaSQ1 : items.classificaSQ1.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllSQ1 = !showAllSQ1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllSQ1 ? 'meno' : 'tutti'}} risultati {{showAllSQ1 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllSQ1 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllSQ1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllSQ1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -95,21 +159,34 @@
     </div>
 
 
-    <div class="mb-8" *ngIf="items.classificaSQ2 && items.classificaSQ2.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 2 </h2>
-        <div *ngFor="let item of (showAllSQ2 ? items.classificaSQ2 : items.classificaSQ2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaSQ2 && items.classificaSQ2.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Qualifica Sprint 2 </h2>
+        <div *ngFor="let item of (showAllSQ2 ? items.classificaSQ2 : items.classificaSQ2.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllSQ2 = !showAllSQ2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllSQ2 ? 'meno' : 'tutti'}} risultati {{showAllSQ2 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllSQ2 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllSQ2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllSQ2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -119,21 +196,34 @@
 
 
 
-    <div class="mb-8" *ngIf="items.classificaSQ3 && items.classificaSQ3.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Qualifica Sprint 3 </h2>
-        <div *ngFor="let item of (showAllSQ3 ? items.classificaSQ3 : items.classificaSQ3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaSQ3 && items.classificaSQ3.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Qualifica Sprint 3 </h2>
+        <div *ngFor="let item of (showAllSQ3 ? items.classificaSQ3 : items.classificaSQ3.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllSQ3 = !showAllSQ3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllSQ3 ? 'meno' : 'tutti'}} risultati {{showAllSQ3 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllSQ3 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllSQ3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllSQ3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -143,21 +233,34 @@
 
 
 
-    <div class="mb-8" *ngIf="items.classificaQ1 && items.classificaQ1.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Qualifica 1 </h2>
-        <div *ngFor="let item of (showAllQ1 ? items.classificaQ1 : items.classificaQ1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaQ1 && items.classificaQ1.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Qualifica 1 </h2>
+        <div *ngFor="let item of (showAllQ1 ? items.classificaQ1 : items.classificaQ1.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllQ1 = !showAllQ1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllQ1 ? 'meno' : 'tutti'}} risultati {{showAllQ1 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllQ1 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllQ1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllQ1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -167,21 +270,34 @@
 
 
 
-    <div class="mb-8" *ngIf="items.classificaQ2 && items.classificaQ2.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Qualifica 2 </h2>
-        <div *ngFor="let item of (showAllQ2 ? items.classificaQ2 : items.classificaQ2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaQ2 && items.classificaQ2.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Qualifica 2 </h2>
+        <div *ngFor="let item of (showAllQ2 ? items.classificaQ2 : items.classificaQ2.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllQ2 = !showAllQ2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllQ2 ? 'meno' : 'tutti'}} risultati {{showAllQ2 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllQ2 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllQ2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllQ2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -192,21 +308,34 @@
 
 
 
-    <div class="mb-8" *ngIf="items.classificaQ3 && items.classificaQ3.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Qualifica 3 </h2>
-        <div *ngFor="let item of (showAllQ3 ? items.classificaQ3 : items.classificaQ3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaQ3 && items.classificaQ3.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Qualifica 3 </h2>
+        <div *ngFor="let item of (showAllQ3 ? items.classificaQ3 : items.classificaQ3.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllQ3 = !showAllQ3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllQ3 ? 'meno' : 'tutti'}} risultati {{showAllQ3 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllQ3 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllQ3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllQ3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -216,21 +345,34 @@
 
 
 
-    <div class="mb-8" *ngIf="items.classificaP1 && items.classificaP1.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Prova libera 1</h2>
-        <div *ngFor="let item of (showAllP1 ? items.classificaP1 : items.classificaP1.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaP1 && items.classificaP1.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Prova libera 1</h2>
+        <div *ngFor="let item of (showAllP1 ? items.classificaP1 : items.classificaP1.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllP1 = !showAllP1" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllP1 ? 'meno' : 'tutti'}} risultati {{showAllP1 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllP1 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllP1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllP1">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -239,21 +381,34 @@
     </div>
 
 
-    <div class="mb-8" *ngIf="items.classificaP2 && items.classificaP2.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Prova libera 2</h2>
-        <div *ngFor="let item of (showAllP2 ? items.classificaP2 : items.classificaP2.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaP2 && items.classificaP2.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Prova libera 2</h2>
+        <div *ngFor="let item of (showAllP2 ? items.classificaP2 : items.classificaP2.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
         <div class="flex justify-center">
             <a (click)="showAllP2 = !showAllP2" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllP2 ? 'meno' : 'tutti'}} risultati {{showAllP2 ? '(freccia su)' : '(freccia giu)'}}
+                Mostra {{showAllP2 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllP2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllP2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
@@ -263,25 +418,40 @@
 
 
 
-    <div class="mb-8" *ngIf="items.classificaP3 && items.classificaP3.length > 0">
-        <h2 class="text-center text-white text-base">Classifica Prova libera 3</h2>
-        <div *ngFor="let item of (showAllP3 ? items.classificaP3 : items.classificaP3.slice(0, 3))" class="bg-[#2a2a2a] rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
-            <div class="flex flex-row justify-between">
-                <h2 class="text-base text-white">{{item.posizione}}</h2>
-                <img [src]="item.nazione?.bandiera" class="h-6 w-6 rounded-full object-cover mx-2" *ngIf="item.nazione">
+    <div class="mb-36" *ngIf="items.classificaP3 && items.classificaP3.length > 0">
+        <h2 class="text-center text-white text-lg my-6">Classifica Prova libera 3</h2>
+        <div *ngFor="let item of (showAllP3 ? items.classificaP3 : items.classificaP3.slice(0, 4))" class="bg-[#2a2a2a] lg:h-12 rounded-2xl p-1 px-2 mx-4 my-2 flex flex-row justify-between">
+            <div class="flex flex-row justify-between items-center lg:gap-5">
+                <h2 class="text-lg font-bold lg:ms-3 text-white">{{item.posizione}}</h2>
+                <img [src]="item.nazione?.bandiera" class="h-6 lg:h-8 w-6 lg:w-8 rounded-full object-cover mx-2" *ngIf="item.nazione">
                 <h2 class="text-base text-white">{{item.nome}}</h2>
             </div>
-            <div>
+            <div class="hidden lg:flex items-center">
+                <h2 class="text-white text-base">{{item.scuderia.nome}}</h2>
+            </div>
+            <div class="flex items-center lg:me-28">
                 <h2 class="text-base text-white">{{item.tempo}}</h2>
             </div>
         </div>
-        <div class="flex justify-center">
-            <a (click)="showAllP3 = !showAllP3" class=" bg-none text-white px-4 py-2 rounded mt-2 ">
-                Mostra {{showAllP3 ? 'meno' : 'tutti'}} risultati {{showAllP3 ? '(freccia su)' : '(freccia giu)'}}
+        <div class="flex justify-center items-center">
+            <a (click)="showAllP3 = !showAllP3" class="bg-none text-white px-4 py-2 rounded mt-2">
+                Mostra {{showAllP3 ? 'meno' : 'tutti'}} risultati
+                <span *ngIf="showAllP3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+                </span>
+                <span *ngIf="!showAllP3">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" style="color: white;" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </span>
             </a>
         </div>
     </div>
     <div class="flex justify-center" *ngIf="!items.classificaP3 || items.classificaP3.length === 0">
         <p class="text-white"></p>
     </div>
+
+
 </div>

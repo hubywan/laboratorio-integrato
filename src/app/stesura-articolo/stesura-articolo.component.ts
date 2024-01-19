@@ -13,7 +13,7 @@ export class StesuraArticoloComponent {
     immagine: File | undefined; // Definire una variabile per l'immagine
     feedbackMessage: string = "";
 
-    constructor(private autService: AutService) {}
+    constructor(private autService: AutService, private router: Router) {}
     handleFileSelect(event: any): void {
         const fileList: FileList = event.target.files;
 
