@@ -1,27 +1,28 @@
 <div class="max-w-7xl mx-auto">
+    <h1 class="text-white text-2xl m-6 md:ms-32">PILOTI</h1>
     <div class="flex justify-center items-center space-x-4 flex-col lg:flex-row">
-        <div class="flex flex-col">
-            <label for="">filtra per nome</label>
-            <input type="text" class="w-80 bg-[#2b2b2b] rounded-2xl my-1 border-0" placeholder="Inserisci un nome" [(ngModel)]="searchName">
+        <div class="flex flex-col" style="margin-top: 27px;">
+            <input type="text" class="w-80 bg-[#2b2b2b] rounded-2xl my-1 border-0 text-white" placeholder="Inserisci un nome" [(ngModel)]="searchName">
         </div>
-
-        <div class="flex flex-col">
-            <label for="filters">Filtra per anno</label>
-            <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0" [(ngModel)]="selectedYear" (change)="onYearChange()">
-                <option value="">Seleziona un anno</option>
-                <option>2012</option>
-                <option>2013</option>
-                <option>2014</option>
-                <option>2015</option>
-                <option>2016</option>
-                <option>2017</option>
-                <option>2018</option>
-                <option>2019</option>
-                <option>2020</option>
-                <option>2021</option>
-                <option>2022</option>
-                <option>2023</option>
-            </select>
+        <div>
+            <label class="mt-1">FILTRO PER ANNO</label>
+            <div class="flex flex-col">
+                <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0" [(ngModel)]="selectedYear" (change)="onYearChange()">
+                    <option value="">Seleziona un anno</option>
+                    <option class="text-white">2012</option>
+                    <option class="text-white">2013</option>
+                    <option class="text-white">2014</option>
+                    <option class="text-white">2015</option>
+                    <option class="text-white">2016</option>
+                    <option class="text-white">2017</option>
+                    <option class="text-white">2018</option>
+                    <option class="text-white">2019</option>
+                    <option class="text-white">2020</option>
+                    <option class="text-white">2021</option>
+                    <option class="text-white">2022</option>
+                    <option class="text-white">2023</option>
+                </select>
+            </div>
         </div>
 
     </div>
