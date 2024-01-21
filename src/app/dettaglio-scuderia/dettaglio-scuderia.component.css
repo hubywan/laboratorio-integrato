@@ -1,15 +1,9 @@
-.custom-size {
-    width: 400px;
-    height: 400px;
-}
-
 .hr-custom {
     border: 0.1cm solid #e54f2c;
 }
 
-/* Stili per schermi con larghezza maggiore di 1024px */
-@media screen and (min-width: 1025px) {
-    .custom-width {
-        width: 724px; /* Modifica la larghezza per adattarsi al layout o a uno specifico valore per schermi più larghi */
+@media screen and (min-width: 1024px) {
+    .custom-h {
+        height: 188px;
     }
 }

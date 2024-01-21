@@ -1,43 +1,53 @@
 <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col lg:flex-row justify-center">
+    <div class="flex flex-col lg:flex-row justify-center lg:gap-10">
         <div>
             <div class="flex justify-center my-10">
-                <img [src]="items.logo" alt="" class="max-h-52 " style="max-width: 250px;">
+                <img [src]="items.logo" alt="" class="max-h-52 lg:max-h-72 max-w-xs lg:max-w-md">
             </div>
             <div class="flex flex-col text-center mb-2">
                 <h2 class="text-white text-2xl font-bold">{{items.nome}}</h2>
                 <h3 class="text-white text-sm">{{items.sede}}</h3>
             </div>
         </div>
-        <div class="bg-[#2a2a2a] rounded-2xl mx-9 m-5 flex flex-row justify-around lg:w-96 h-28">
-            <div>
-                <p class="text-white text-base p-4 text-center">Campionati</p>
-                <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.campionatiVinti}}</h2>
-            </div>
-            <div>
-                <p class="text-white text-base p-4 text-center">Gare</p>
-                <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.gareVinte}}</h2>
+        <div class="flex flex-col justify-center">
+            <h1 class="hidden lg:block text-center text-white font-bold text-2xl">VITTORIE</h1>
+            <div class="bg-[#2a2a2a] rounded-2xl mx-9 m-5 flex flex-row justify-around lg:w-96 h-28">
+                <div>
+                    <p class="text-white text-base p-4 text-center">Campionati</p>
+                    <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.campionatiVinti}}</h2>
+                </div>
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6854.14 8201.39" width="50">
+                    <defs>
+
+                    </defs>
+                    <path style="fill: #d38d00;stroke: #4e4d4d;stroke-miterlimit: 10;" class="cls-1" d="m5085.5,7569.21H1768.65c-174.15,0-315.77,141.48-315.77,315.91s141.62,315.77,315.77,315.77h3316.85c174.71,0,315.63-141.34,315.63-315.77s-140.92-315.91-315.63-315.91h0Z" />
+                    <path style="fill: #d38d00;stroke: #4e4d4d;stroke-miterlimit: 10;" class="cls-1" d="m5251.65,3611.24c385.17-771.81,647.24-1786.47,723.94-2918.28h560.17c-37.44,1476.54-594.24,2716.99-1284.11,2918.28h0Zm-1211.76,1457.23h-1225.78c-117.22-30.13-209.21-118.93-246.22-231.29h1718.51c-37.02,112.36-129,201.16-246.5,231.29h0Zm246.5,1632.51h-1718.51c37.02-112.17,129-201.17,246.22-231.3h1225.78c117.5,30.13,209.49,119.13,246.5,231.3h0ZM318.79,692.96h559.75c77.12,1131.81,339.05,2146.47,724.51,2918.28C912.48,3409.95,355.81,2169.5,318.79,692.96h0Zm6534.85-316.25h-861.64c4.49-124.33,7.85-249.42,7.85-376.21H854.85c0,126.8,2.8,251.89,7.43,376.21H.5v158.1c0,1916.55,787.46,3417.93,1793.38,3422.87,172.75,282.69,365.13,517.6,571.11,703.69l4.35,89.22c10.8,239.63,181.3,443.79,413.92,496.72h20.19v1041.21l-20.19,2.33c-232.62,52.93-403.13,257.09-413.92,496.51l-2.66,56.09c-189.43,108.81-318.15,310.16-318.15,544.46h2756.96c0-234.31-128.72-435.8-318.01-544.61l-2.52-55.95c-11.22-239.42-181.3-443.79-413.92-496.51h-20.33v-1041.22h10.24l10.09-2.13c232.62-53.13,402.71-257.29,413.92-496.92l4.07-89.01c206.12-186.3,398.64-420.99,571.39-703.9,1005.64-4.87,1793.24-1506.1,1793.24-3422.87v-158.1h0Z" />
+                </svg>
+                <div>
+                    <p class="text-white text-base p-4 text-center">Gare</p>
+                    <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.gareVinte}}</h2>
+                </div>
             </div>
         </div>
     </div>
     <div>
-        <h2 class="text-white font-bold text-2xl text-center mb-4 mt-6">Piloti del TEAM</h2>
+        <h2 class="text-white font-bold text-2xl text-center mb-8 mt-16">Piloti del TEAM</h2>
         <div class=" flex flex-row flex-wrap justify-center">
-            <div *ngFor="let piloti of items.piloti" class="lg:mx-5">
-                <div class="bg-[#2a2a2a] rounded-2xl  h-44 w-44 mx-1 p-2">
-                    <h3 class="text-white text-center">{{piloti.nome}}</h3>
+            <div *ngFor="let piloti of items.piloti" class="lg:mx-5 relative">
+                <div class="bg-[#2a2a2a] rounded-2xl  h-44 w-44 lg:h-56 lg:w-56 mx-1 p-2">
+                    <h3 class="text-white text-center lg:text-xl">{{piloti.nome}}</h3>
                     <div class="flex justify-center align-bottom">
-                        <img [src]="piloti.immagine" class="h-36 object-cover">
+                        <img [src]="piloti.immagine" class="h-36 custom-h object-cover z-50">
                     </div>
-
+                    <img [src]="piloti.bandiera" class="rounded-full h-10 lg:h-14 w-10 lg:w-14 absolute object-cover top-12 lg:top-16 right-5 z-20">
                 </div>
             </div>
         </div>
     </div>
     <hr class="hr-custom mx-20 rounded mt-12 lg:mx-48">
-    <div class="flex items-center flex-col mx-9">
+    <div class="flex items-center flex-col mx-9 mt-20">
         <h2 class="text-white text-2xl text-center font-bold mb-4 mt-6">Dati Generali</h2>
-        <div class="bg-[#2a2a2a] rounded-2xl mx-9 m-5 flex flex-col w-full p-6 gap-3">
+        <div class="bg-[#2a2a2a] rounded-2xl  flex flex-col max-w-2xl p-6 gap-3">
             <p class="text-base  text-white"><span class="text-white font-light text-lg">Anno esordio:</span> <span class="font-bold text-lg text-white"> {{items.annoEsordio }}</span></p>
             <p class="text-base text-white"><span class="text-white font-light text-lg">Presidente: </span><span class="font-bold text-lg text-white"> {{items.presidente}}</span></p>
             <p class="text-base"><span class="text-white font-light text-lg">Direttore: </span> <span class="font-bold text-lg text-white"> {{items.direttore}}</span></p>
@@ -46,10 +56,10 @@
             <p class="text-base"><span class="text-white font-light text-lg">Motore: </span> <span class="font-bold text-lg text-white"> {{items.motore}}</span></p>
         </div>
     </div>
-    <div>
-        <h2 class="text-white text-xl text-center mb-4 mt-6">Variazione del punteggio negli anni</h2>
+    <div class="mt-20">
+        <h2 class="text-white text-2xl text-center font-bold mb-4 mt-6 mx-5">Variazione del punteggio negli anni</h2>
         <div class="flex flex-col items-center mx-9">
-            <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4 custom-size">
+            <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4 w-full">
                 <h3>
                     <app-grafico-scuderia></app-grafico-scuderia>
                 </h3>

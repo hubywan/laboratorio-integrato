@@ -15,6 +15,7 @@ import { ClassificaScuderieComponent } from "./classifica-scuderie/classifica-sc
 import { ListaScuderieComponent } from "./lista-scuderie/lista-scuderie.component";
 import { DettaglioScuderieComponent } from "./dettaglio-scuderia/dettaglio-scuderia.component";
 import { DettaglioPilotaComponent } from "./dettaglio-pilota/dettaglio-pilota.component";
+import { DettaglioTracciatoComponent } from "./dettaglio-tracciato/dettaglio-tracciato.component";
 import { ListaGranPremiComponent } from "./lista-gran-premi/lista-gran-premi.component";
 import { ListaTracciatiComponent } from "./lista-tracciati/lista-tracciati.component";
 import { ArticoliComponent } from "./articoli/articoli.component";
@@ -55,6 +56,7 @@ import { AnnoComponent } from "./anno/anno.component";
         DettaglioScuderieComponent,
         DettaglioPilotaComponent,
         DettaglioGranPremioComponent,
+        DettaglioTracciatoComponent,
         ListaGranPremiComponent,
         ListaTracciatiComponent,
         AreaRiservataComponent,

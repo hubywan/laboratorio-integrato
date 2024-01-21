@@ -1,13 +1,14 @@
 <div class="max-w-7xl mx-auto">
-    <h1 class="text-white text-2xl m-6 md:ms-32">TRACCIATI</h1>
+    <h1 class="text-white font-bold text-center text-4xl mt-16 mb-10">TRACCIATI</h1>
     <div class="flex justify-center items-center space-x-4 flex-col lg:flex-row">
         <div class="flex flex-col" style="margin-top: 27px;">
-            <input type="text" class="w-80 bg-[#2b2b2b] rounded-2xl my-1 border-0 text-white" placeholder="Inserisci un nome" [(ngModel)]="searchName">
+            <label class="mt-1">FILTRO PER NOME</label>
+            <input type="text" class="w-80 bg-[#2b2b2b] rounded-2xl my-1 border-0 text-white lg:h-12 text-xl" placeholder="Inserisci un nome" [(ngModel)]="searchName">
         </div>
-        <div>
+        <div class="mt-6">
             <label class="mt-1">FILTRO PER ANNO</label>
             <div class="flex flex-col">
-                <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0" [(ngModel)]="selectedYear" (change)="onYearChange()">
+                <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0 lg:h-12" [(ngModel)]="selectedYear" (change)="onYearChange()">
                     <option value="">Seleziona un anno</option>
                     <option class="text-white">2012</option>
                     <option class="text-white">2013</option>

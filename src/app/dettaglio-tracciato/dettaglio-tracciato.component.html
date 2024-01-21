@@ -87,15 +87,11 @@
             </div>
         </div>
     </div>
-
-    <!-- video da sostituire non appena abbiamo link -->
-    <div class="xl:hidden flex items-center justify-center p-2 mb-4 ">
-        {{items.video}}
-        <iframe class="rounded-2xl" src="https://www.youtube.com/embed/1Vv7O_6exTc?si=jKA-w-K8OyMaS6JO" title="Australia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen width="400" height="275"></iframe>
+    <div class="xl:hidden flex items-center justify-center p-2 mb-4" *ngIf="safeVideoUrl">
+        <iframe class="rounded-2xl" [src]="safeVideoUrl" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen width="400" height="275"></iframe>
     </div>
 
-    <div class="hidden xl:flex items-center justify-center p-2 mb-4">
-        {{items.video}}
-        <iframe class="rounded-2xl" src="https://www.youtube.com/embed/1Vv7O_6exTc?si=jKA-w-K8OyMaS6JO" title="Australia" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen width="800" height="450"></iframe>
+    <div class="hidden xl:flex items-center justify-center p-2 mb-4" *ngIf="safeVideoUrl">
+        <iframe class="rounded-2xl" [src]="safeVideoUrl" title="Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen width="800" height="450"></iframe>
     </div>
 </div>

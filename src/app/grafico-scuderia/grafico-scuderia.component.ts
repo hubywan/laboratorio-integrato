@@ -64,12 +64,20 @@ export class GraficoScuderiaComponent implements OnInit, AfterViewInit {
                         title: {
                             display: true,
                             text: "Anno Stagione",
+                            color: "white",
+                        },
+                        ticks: {
+                            color: "white",
                         },
                     },
                     y: {
                         title: {
                             display: true,
                             text: "Punti",
+                            color: "white",
+                        },
+                        ticks: {
+                            color: "white",
                         },
                         beginAtZero: true,
                     },
