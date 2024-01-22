@@ -33,6 +33,7 @@ import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.co
 import { CountdownComponent } from "./countdown/countdown.component";
 import { ConfrontoPilotiComponent } from "./confronto-piloti/confronto-piloti.component";
 import { AnnoComponent } from "./anno/anno.component";
+import { SottoCofanoComponent } from "./sotto-cofano/sotto-cofano.component";
 
 @NgModule({
     imports: [
@@ -73,6 +74,7 @@ import { AnnoComponent } from "./anno/anno.component";
         ConfrontoPilotiComponent,
         StesuraArticoloComponent,
         AnnoComponent,
+        SottoCofanoComponent,
     ],
 
     bootstrap: [AppComponent],

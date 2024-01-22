@@ -1,43 +1,49 @@
- <section class="confronto mt-52 mb-32 flex relative ">
-     <div class="w-4/12  flex justify-end items-center">
-         <div class="flex  gap-4 flex-col w-64">
-             <div class="bg-[#2b2b2b] rounded-2xl text-white border-0">
-                 <h2 class="text-white p-2 text-base">{{items.nome}}</h2>
+ <section class="confronto flex justify-center mt-14 mb-10">
+     <div class="flex flex-col lg:flex-row gap-16">
+         <div class="flex items-center justify-center gap-4">
+             <div class="flex flex-col">
+                 <h1 class="text-white text-2xl font-bold mb-8 text-center">Confronta i risultati</h1>
+                 <div class="flex flex-row lg:flex-col gap-3 justify-center">
+                     <div class="bg-[#e54f2c] rounded-2xl text-white border-0 w-44">
+                         <h2 class="text-white p-2 text-base">{{items.nome}}</h2>
+                     </div>
+                     <select id="filters" class="bg-[#e54f2c] rounded-2xl text-white border-0 w-44" (change)="onPilotaSelection($event)">
+                         <option class="text-white">Seleziona Pilota</option>
+                         <option *ngFor="let item of elencoPiloti" [value]="item.id" class="text-white">{{ item.nome }}</option>
+                     </select>
+                 </div>
              </div>
-             <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0" (change)="onPilotaSelection($event)">
-                 <option value="">Seleziona Pilota</option>
-                 <option *ngFor="let item of elencoPiloti" [value]="item.id">{{ item.nome }}</option>
-             </select>
          </div>
-     </div>
-     <div class="w-8/12 flex justify-center">
-         <div class="flex flex-col justify-center gap-8 mt-6 mr-2">
-             <h2 class="text-white">Campionati</h2>
-             <h2 class="text-white">Gare</h2>
-         </div>
-         <div>
-             <div class="flex flex-row justify-between">
-                 <!-- <h2 class="text-white">{{items.nome}}</h2> -->
-                 <img [src]="items.immagine" alt="" class="absolute h-28" style="top: -108px; right: 404px;">
-                 <img [src]="secondItems?.immagine ?? '' " alt="" class="absolute h-28" style="top: -108px; right: 219px;">
-
-                 <h2 class="text-white text-center"></h2>
+         <div class="flex justify-center">
+             <div class="flex flex-col justify-center gap-6 mt-32 mr-2">
+                 <h2 class="text-white">Campionati</h2>
+                 <h2 class="text-white">Gare</h2>
              </div>
-             <div class="bg-[#2a2a2a] w-80 h-16 rounded-2xl flex flex-row items-center m-1">
-                 <div class="w-1/2 flex justify-center m-1">
-                     <h2 class="text-white">{{items.vittorieCampionati}}</h2>
+             <div>
+                 <div class="flex flex-row justify-evenly">
+                     <!-- <h2 class="text-white">{{items.nome}}</h2> -->
+                     <img [src]="items.immagine" alt="" class=" h-32 w-24 object-cover">
+                     <img [src]="secondItems?.immagine ?? '' " alt="" class="h-32 w-24 object-cover" *ngIf="secondItems?.immagine; else placeholder">
+                     <ng-template #placeholder>
+                         <span class="placeholder-text flex flex-col justify-center">inserisci un pilota</span>
+                     </ng-template>
                  </div>
-                 <div class="w-1/2 flex justify-center m-1">
-                     <h2 class="text-white">{{secondItems?.vittorieCampionati ?? '---'}}</h2>
-                 </div>
+                 <div class="bg-[#2a2a2a] w-64 h-12 rounded-3xl flex flex-row items-center m-1">
+                     <div class="w-1/2 flex justify-center m-1">
+                         <h2 class="text-white">{{items.vittorieCampionati}}</h2>
+                     </div>
+                     <div class="w-1/2 flex justify-center m-1">
+                         <h2 class="text-white">{{secondItems?.vittorieCampionati ?? '---'}}</h2>
+                     </div>
 
-             </div>
-             <div class="bg-[#2a2a2a] w-80 h-16 rounded-2xl flex flex-row items-center m-1">
-                 <div class="w-1/2 flex justify-center m-1">
-                     <h2 class="text-white">{{items.vittorieTotali}}</h2>
                  </div>
-                 <div class="w-1/2 flex justify-center m-1">
-                     <h2 class="text-white">{{secondItems?.vittorieTotali ?? '---'}}</h2>
+                 <div class="bg-[#2a2a2a] w-64 h-12 rounded-3xl flex flex-row items-center m-1">
+                     <div class="w-1/2 flex justify-center m-1">
+                         <h2 class="text-white">{{items.vittorieTotali}}</h2>
+                     </div>
+                     <div class="w-1/2 flex justify-center m-1">
+                         <h2 class="text-white">{{secondItems?.vittorieTotali ?? '---'}}</h2>
+                     </div>
                  </div>
              </div>
          </div>

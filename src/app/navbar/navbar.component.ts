@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
-import { ChangeDetectorRef } from "@angular/core";
+import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
+import { filter } from "rxjs/operators";
 
 @Component({
     selector: "app-navbar",
@@ -8,6 +9,19 @@ import { ChangeDetectorRef } from "@angular/core";
 })
 export class NavbarComponent {
     isOverlayActive = false;
+    currentPage: string = "";
+
+    constructor(
+        private router: Router,
+        private activatedRoute: ActivatedRoute
+    ) {
+        this.router.events
+            .pipe(filter((event) => event instanceof NavigationEnd))
+            .subscribe(() => {
+                this.currentPage =
+                    this.activatedRoute.snapshot.routeConfig?.path || "";
+            });
+    }
 
     toggleOverlay() {
         console.log("Toggle Overlay");

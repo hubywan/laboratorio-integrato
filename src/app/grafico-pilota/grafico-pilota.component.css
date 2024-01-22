@@ -1,0 +1,8 @@
+.scrollable-chart {
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.grafico-2023 {
+    display: inline-block;
+}

@@ -19,6 +19,7 @@ import { AreaRiservataComponent } from "./area-riservata/area-riservata.componen
 import { StesuraArticoloComponent } from "./stesura-articolo/stesura-articolo.component";
 import { DettaglioTracciatoComponent } from "./dettaglio-tracciato/dettaglio-tracciato.component";
 import { DettaglioArticoloComponent } from "./dettaglio-articolo/dettaglio-articolo.component";
+import { SottoCofanoComponent } from "./sotto-cofano/sotto-cofano.component";
 import { AnnoComponent } from "./anno/anno.component";
 
 const routes: Routes = [
@@ -56,6 +57,7 @@ const routes: Routes = [
     { path: "login", component: LoginComponent },
     { path: "area-riservata", component: AreaRiservataComponent },
     { path: "stesura-articolo", component: StesuraArticoloComponent },
+    { path: "sotto-il-cofano", component: SottoCofanoComponent },
     { path: "", redirectTo: "home", pathMatch: "full" },
 ];
 
