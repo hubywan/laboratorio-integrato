@@ -8,3 +8,13 @@
     justify-content: end;
     align-items: center;
 }
+.social-color {
+    fill: #cccccc;
+}
+.button {
+    background: #e54f2c;
+    border-radius: 0.75rem;
+}
+.hr-chi-siamo {
+    border: 0.1cm solid #e54f2c;
+}

@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "src/services/api.service";
 import { ActivatedRoute } from "@angular/router";
+import * as dayjs from "dayjs";
+import "dayjs/locale/it";
 
 @Component({
     selector: "app-dettaglio-articolo",
@@ -27,6 +29,8 @@ export class DettaglioArticoloComponent implements OnInit {
         this.apiservice.getDettaglioArticolo(id).subscribe(
             (data) => {
                 this.articolo = data;
+                this.articolo.testo = this.formatText(this.articolo.testo);
+                this.articolo.data = this.formatDate(this.articolo.data);
                 console.log("Dati API ottenuti per ID", id, ":", this.articolo);
                 this.getImagesForArticolo(this.articolo);
             },
@@ -52,8 +56,16 @@ export class DettaglioArticoloComponent implements OnInit {
             }
         );
     }
-
+    formatText(text: string): string {
+        return text.replace(/\n/g, "<br>");
+    }
     getImagesForArticolo(articolo: any): void {
         this.getImmagine(articolo);
+    }
+    formatDate(apiDateString: string): string {
+        const formattedDate = dayjs(apiDateString)
+            .locale("it")
+            .format("DD MMMM YYYY");
+        return formattedDate;
     }
 }

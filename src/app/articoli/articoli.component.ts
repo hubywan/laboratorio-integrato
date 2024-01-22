@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 import { ApiService } from "src/services/api.service";
 import { Router } from "@angular/router";
+import * as dayjs from "dayjs";
+import "dayjs/locale/it";
 
 @Component({
     selector: "app-articoli",
@@ -17,10 +19,19 @@ export class ArticoliComponent {
     ngOnInit(): void {
         this.fetchArticoli();
     }
+    formatDate(apiDateString: string): string {
+        const formattedDate = dayjs(apiDateString)
+            .locale("it")
+            .format("DD MMMM YYYY");
+        return formattedDate;
+    }
     fetchArticoli(): void {
         this.apiservice.getArticoli().subscribe(
             (data) => {
                 this.items = data;
+                this.items.forEach((item: any) => {
+                    item.data = this.formatDate(item.data);
+                });
                 console.log("Dati api ottenuti:", this.items);
                 this.getImagesForArticoli(this.items);
             },

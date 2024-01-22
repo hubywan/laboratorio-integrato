@@ -53,7 +53,7 @@ export class HomeComponent {
         return formattedDate;
     }
     fetchArticoli(): void {
-        this.apiservice.getArticoli().subscribe(
+        this.apiservice.getArticoliRecenti().subscribe(
             (data) => {
                 this.articoli = data;
                 this.articoli.forEach((articolo: any) => {

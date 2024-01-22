@@ -1,6 +1,9 @@
-<div class="scroll">
-    <div *ngFor="let item of items" class="bg-[#cccccc]  flex justify-between m-1 p-1 px-2 rounded-full">
-        <h2 class="text-black text-lg">{{item.competizione.nome}}</h2>
-        <p class="text-black text-base">{{item.punti}} pt.</p>
+<div class="scroll lg:m-6">
+    <div class="">
+        <div *ngFor="let item of items" class="bg-[#cccccc] flex justify-between p-1 mx-3 my-3 px-2 rounded-full">
+            <h2 class="text-black text-lg w-52">{{item.competizione.nome}}</h2>
+            <p class="text-black text-base items-center hidden lg:flex">{{item.tempo}}</p>
+            <p class="text-black text-base flex items-center">{{item.punti}} pt.</p>
+        </div>
     </div>
 </div>

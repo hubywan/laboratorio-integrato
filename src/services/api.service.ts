@@ -290,7 +290,7 @@ export class ApiService {
                 })
             );
     }
-    getArticoli() {
+    getArticoliRecenti() {
         const headers = new HttpHeaders({
             "Access-Control-Allow-Origin": "*",
             "Content-Type": "application/json",
@@ -305,6 +305,20 @@ export class ApiService {
                     return data;
                 })
             );
+    }
+    getArticoli() {
+        const headers = new HttpHeaders({
+            "Access-Control-Allow-Origin": "*",
+            "Content-Type": "application/json",
+        });
+        const options = {
+            headers: headers,
+        };
+        return this.http.get(`http://localhost:8090/articoli`, options).pipe(
+            map((data: any) => {
+                return data;
+            })
+        );
     }
     getDettaglioArticolo(id: number) {
         const headers = new HttpHeaders({

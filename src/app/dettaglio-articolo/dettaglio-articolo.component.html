@@ -1,22 +1,89 @@
-<div class="flex items-center justify-center pb-20 pt-20 big-container mx-16">
-    <div *ngIf="articolo" class="lg:w-2/4 rounded-md card">
-        <img src={{articolo.imageUrl}} alt="Load..." />
-        <div class="bg-ziflex flex-col ">
-            <h2 class="text-white pb-3">{{ articolo.titolo }}</h2>
-            <p class="text-white text-lg">{{ articolo.testo }}</p>
-            <div class="mt-4">
-                <p class="text-white">{{ articolo.data }}</p>
-                <p class="text-gray-600">Autore: {{ articolo.autore }}</p>
-                <br>
-                <p class="text-white social-icons">Condividi :
-                    <a href=""><i class="fab fa-facebook p-2"></i></a>
-                    <a href=""><i class="fab fa-instagram p-2"></i></a>
-                    <a href=""><i class="fab fa-telegram p-2"></i></a>
-                    <a href=""><i class="fab fa-whatsapp p-2"></i></a>
-                </p>
+<div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-center justify-center pt-14">
+        <div *ngIf="articolo" class=" rounded-md">
+            <div class="flex flex-col lg:flex-col-reverse">
+                <h2 class="text-white pb-3 font-bold text-3xl lg:mt-12 lg:mb-4">{{ articolo.titolo }}</h2>
+                <img src={{articolo.imageUrl}} alt="Load..." class="rounded-2xl lg:h-96 object-cover" />
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="flex flex-col lg:flex-col-reverse">
+                    <div class="mt-3 flex flex-col gap-1">
+                        <p class="text-white">{{ articolo.data }}</p>
+                        <p class="text-[#969696]"><span>Autore:</span><span class="font-italic"> {{ articolo.autore }}</span></p>
+                    </div>
+                    <!-- <p class="text-white text-base">{{ articolo.testo }}</p> -->
+                    <div [innerHTML]="articolo.testo" class="text-white text-base"></div>
+                </div>
+                <div class="flex flex-row justify-end mt-12">
+                    <p class="text-[#969696] mr-4">Condividi : </p>
+                    <div class="social-color flex flex-row gap-5">
+                        <a>
+                            <svg data-name="instagram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 273.5 273.94" width="21" height="21">
+                                <path d="M136.91,0c74-.3,136.4,62.08,136.59,136.59.18,75.72-61.5,137.82-137.86,137.35C60.87,273.49.64,213,0,137.58-.59,62.35,61.17.3,136.91,0Zm0,226.06h0c12.88,0,25.77.34,38.63-.07,28.51-.92,49.46-22.76,49.55-51.38q.14-36.74,0-73.49C225,71.7,203.26,49.24,173.76,48.75q-37.11-.61-74.24,0c-28.77.47-51.2,22.46-51.68,50.75q-.65,38.25,0,76.51c.5,27.71,21.87,49,49.65,50,13.19.41,26.33.05,39.51.05Z" transform="translate(0 0)" />
+                                <path d="M208.75,138.2c0,12.63.15,25.26,0,37.88-.31,20.2-14.9,34.46-35.23,34.52q-36.74.1-73.48,0c-20.93-.06-35.56-14.8-35.61-35.83q-.08-36.37,0-72.74c0-21.11,13.34-35.82,34.26-36.33q37.86-.92,75.76,0c20.77.46,34.11,14.73,34.32,35.4C208.85,113.46,208.75,125.84,208.75,138.2ZM136.93,92.31a46,46,0,0,0-46.46,45.54V138c-.12,25.25,20.87,46.18,46.26,46.11a45.91,45.91,0,0,0,.2-91.81Zm57.75-1c.5-6.17-3.41-10.84-9.45-11.3-6.33-.48-11,3.17-11.69,9.06a11.22,11.22,0,0,0,9.83,12.13c5.44.5,10.85-4.24,11.31-9.88Z" transform="translate(0 0)" />
+                                <path d="M166.21,138a29.89,29.89,0,0,1-29.45,30.13c-16,.09-29.88-13.7-30-29.82s13.48-30,29.7-30.1a29.64,29.64,0,0,1,29.75,29.53Z" transform="translate(0 0)" /></svg>
+                        </a>
+                        <a>
+                            <svg data-name="facebook" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 312.96 310.39" width="21" height="21">
+                                <path d="M182,310.38c-.1-2.16-.26-3.95-.26-5.74,0-32,.08-64-.1-96,0-4.69,1.14-6.5,6.1-6.28,8.49.38,17,0,25.5.16,3.6.07,5.35-.9,5.88-4.83,1.62-12,3.66-24,5.5-36,.24-1.61.24-3.26.38-5.46-2.84-.14-5.26-.35-7.69-.36h-31c-2.2,0-4.56.19-4.53-3.09.09-10.16-.53-20.39.48-30.46,1.18-11.92,9.16-18.39,21.42-18.86q9-.34,18,0c3.73.1,5.45-1,5.37-5.09-.22-10.16.06-20.33-.2-30.49,0-1.67-1.56-4.59-2.74-4.77-20-3.1-40.05-6.09-59.6,1.94-18.82,7.73-29.28,22.61-31.85,42.17-1.82,13.78-1.09,27.9-1.39,41.88-.15,6.81,0,6.82-6.86,6.83-9.33,0-18.66.13-28,0-3.9-.08-5.3,1.33-5.24,5.24q.24,18,0,36c-.06,4,1.2,5.63,5.4,5.53,10-.23,20,0,30-.12,3.38-.05,4.74,1,4.73,4.55-.1,33.16-.05,66.32-.08,99.49a28,28,0,0,1-.49,3.77C71.1,303.32,1.59,247.31,0,159.49-1.54,70.41,68.76,3.9,149.1.17c85.44-4,162.35,62.23,163.85,153.9C314.37,242.34,246.33,301.88,182,310.38Z" transform="translate(-0.01 0)" /></svg>
+                        </a>
+                        <a>
+                            <svg data-name="telegram" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380.12 380.26" width="21" height="21">
+                                <path d="M188.71,380.26C84,378.7-.46,295.53,0,189.08.46,83.71,84.91-.09,190.12,0c106,.08,190.1,84.73,190,190.24C380,296.28,295,380,188.71,380.26Zm85-245.35c.17-14.72-4.31-18.46-15-16a101.4,101.4,0,0,0-15.68,5q-51.94,21.47-103.72,43.29c-16.57,7-33,14.31-49.4,21.69-3.59,1.62-8.24,4.05-7,8.48.82,2.95,4.76,6,8,7.12,9.69,3.5,19.67,6.23,29.6,9,9.21,2.58,17.81.91,25.71-4.49,2.47-1.69,5-3.3,7.49-5l64.94-43.13a9.53,9.53,0,0,1,3.51-1.8,5,5,0,0,1,3.49.91c.39.31-.05,2.13-.55,3a14.16,14.16,0,0,1-2.62,3q-19.83,19-39.7,38c-4.8,4.61-9.69,9.17-14.15,14.1-4.87,5.38-4.46,10.35.74,15.34a32.13,32.13,0,0,0,4.3,3.4c16.82,11.4,33.62,22.84,50.55,34.07A42.84,42.84,0,0,0,235,276c7,2.22,12.24.11,15.27-6.56a61.82,61.82,0,0,0,4.35-14.76q6.69-38.11,12.87-76.3c2.55-15.68,4.55-31.53,6.28-43.51Z" transform="translate(0 0)" />
+                            </svg>
+                        </a>
+                        <a>
+                            <svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 637.82 637.62" width="21" height="21">
+                                <path d="M548.16,188.1c177.1-2.42,320.84,141,323,314.66C873.3,679,730.82,823.22,556.84,825.65c-176.49,2.47-321.28-140.19-323.48-314.71C231.16,335.41,372.91,190.05,548.16,188.1ZM369.1,690.66c2.82-.66,4.71-1,6.58-1.54,28.67-7.52,57.33-15.11,86-22.46a11.57,11.57,0,0,1,7.45.76,188.37,188.37,0,0,0,85.25,20.14C661.05,687.56,747,591.78,734.31,486c-7.94-66.16-42.39-114.69-101.76-144.77-68.91-34.92-157.36-18.95-210.39,37.1-56,59.21-67.36,141.92-29.55,214.17a12.63,12.63,0,0,1,.9,8.32c-6.24,23.66-12.8,47.25-19.26,70.86C372.6,677.72,371,683.75,369.1,690.66Z" transform="translate(-233.34 -188.07)" />
+                                <path d="M413.17,647.24c2.14-8,4-15,5.91-22,2.5-9.16,4.82-18.38,7.67-27.43,1.37-4.36.77-7.69-1.65-11.58-44.75-71.81-23.84-163.66,47.47-209.11,95.09-60.6,222.86,3.39,231.29,115.84,7,93.42-69,169.87-162.56,163.28a145.92,145.92,0,0,1-65.6-20.84,13.45,13.45,0,0,0-11.64-1.52C447.54,638.42,430.9,642.6,413.17,647.24Zm187.54-48c10.74-.55,20-4.18,28.94-9.52,12.21-7.32,16.4-18.73,16.81-32,.06-2-1.16-5-2.71-5.85-13.12-7.23-26.41-14.15-39.76-21-3.74-1.91-6.93-.6-9.61,2.76-3.83,4.83-7.94,9.43-12,14-6,6.72-8.77,7.2-16.92,3.11a132.39,132.39,0,0,1-57.13-54.24c-2.74-4.84-2.45-8.73,1-12.75,3.56-4.18,7.64-8.05,10.47-12.68,1.7-2.78,2.8-7.18,1.87-10.11-3.92-12.2-8.39-24.25-13.38-36a16.22,16.22,0,0,0-8.11-8.09c-8.79-3.43-17.47-2.25-24.62,4.46-16.58,15.55-20.84,34.59-15.35,56.19,3.68,14.48,11.82,26.71,19.78,39,24.36,37.77,57.15,64.71,100.45,78C587,596.63,593.92,597.74,600.71,599.28Z" transform="translate(-233.34 -188.07)" /></svg>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
     <h1 *ngIf="!articolo">Caricamento in corso...</h1>
+    <hr class="hr-chi-siamo mx-20 rounded mt-20">
+
+    <section>
+        <div>
+            <div id="mc_embed_shell" class="mt-20 flex justify-center mb-20 mx-5">
+                <div id="mc_embed_signup">
+                    <form action="https://itspiemonte.us21.list-manage.com/subscribe/post?u=aad7d602430111be9fd7f356d&amp;id=a9bb768aaf&amp;f_id=0088f7e6f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                        <div id="mc_embed_signup_scroll">
+                            <h2 class="text-white text-center text-3xl font-bold">Iscriviti alla Newsletter di PistONE</h2>
+                            <p class="text-white text-center mb-10 text-lg">Contenuti esclusivi e aggiornamenti ogni settimana!</p>
+                            <!-- <div class="indicates-required"><span class="asterisk">*</span> indicates required</div> -->
+                            <div class="flex flex-row ms-8">
+                                <div>
+                                    <div class="mc-field-group">
+                                        <input placeholder="Inserisci nome" type="text" name="FNAME" class="border-0 text rounded-xl bg-[#2b2b2b] text-[#ffffff] lg:w-80 lg:h-12" id="mce-FNAME" value="">
+                                    </div>
+                                    <div class="mc-field-group">
+                                        <input placeholder="Inserisci email" type="email" name="EMAIL" class="required email border-0 rounded-xl bg-[#2b2b2b] text-[#ffffff] lg:w-80 lg:h-12" id="mce-EMAIL" required="" value="">
+                                    </div>
+                                    <div id="mce-responses" class="clear foot">
+                                        <div class="response" id="mce-error-response" style="display: none;"></div>
+                                        <div class="response" id="mce-success-response" style="display: none;"></div>
+                                    </div>
+                                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                                        <input type="text" name="b_aad7d602430111be9fd7f356d_a9bb768aaf" tabindex="-1" value="">
+                                    </div>
+                                </div>
+                                <div class="optionalParent">
+                                    <div class="clear foot ms-7 mt-5">
+                                        <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="button rounded-xl lg:h-12 lg:w-44 mx-auto flex justify-center font-bold" value="Iscriviti" style="font-size:18px">Iscriviti
+                                        </button>
+                                        <p style="margin: 0px auto;"><a href="http://eepurl.com/is2FQs" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>

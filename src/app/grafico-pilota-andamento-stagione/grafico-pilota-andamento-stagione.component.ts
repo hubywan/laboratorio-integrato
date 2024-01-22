@@ -74,12 +74,20 @@ export class GraficoPilotaAndamentoStagioneComponent
                         title: {
                             display: true,
                             text: "Giorno Gara",
+                            color: "white",
+                        },
+                        ticks: {
+                            color: "white",
                         },
                     },
                     y: {
                         title: {
                             display: true,
                             text: "Punti",
+                            color: "white",
+                        },
+                        ticks: {
+                            color: "white",
                         },
                         beginAtZero: true,
                     },

@@ -12,8 +12,8 @@ export class ClassificaPilotiComponent {
     isExpanded: boolean = false;
     selectedYear: number = 2023;
     showMoreData: boolean[] = [];
-    showGrafico: boolean = true;
-    showTabella: boolean = false;
+    showGrafico: boolean = false;
+    showTabella: boolean = true;
     showGraficoMobile: boolean[] = [];
     showGraficoDesktop: boolean[] = [];
     showTabellaMobile: boolean[] = [];
@@ -63,14 +63,10 @@ export class ClassificaPilotiComponent {
     }
 
     initializeGraficoVisibility() {
-        this.showGraficoMobile = this.items ? this.items.map(() => true) : [];
-        this.showTabellaMobile = this.items ? this.items.map(() => false) : [];
-
-        if (this.showGraficoDesktop && this.showTabellaDesktop) {
-            // Imposta la visualizzazione del grafico come vero e la tabella come falsa per l'indice 0
-            this.showGraficoDesktop[0] = true;
-            this.showTabellaDesktop[0] = false;
-        }
+        this.showGraficoMobile = this.items ? this.items.map(() => false) : [];
+        this.showGraficoDesktop = this.items ? this.items.map(() => false) : [];
+        this.showTabellaMobile = this.items ? this.items.map(() => true) : [];
+        this.showTabellaDesktop = this.items ? this.items.map(() => true) : [];
     }
 
     initializeTabellaVisibility() {
@@ -141,16 +137,10 @@ export class ClassificaPilotiComponent {
         }
 
         if (this.showGraficoMobile && this.showGraficoDesktop) {
-            this.showGraficoMobile[index] = this.showMoreData[index];
-            this.showTabellaMobile[index] = !this.showMoreData[index];
-            // Assicura che il grafico sia visibile subito anche su desktop
-            if (!this.showMoreData[index]) {
-                this.showGraficoDesktop[index] = false;
-                this.showTabellaDesktop[index] = true;
-            } else {
-                this.showGraficoDesktop[index] = false;
-                this.showTabellaDesktop[index] = true;
-            }
+            this.showGraficoMobile[index] = !this.showMoreData[index];
+            this.showTabellaMobile[index] = this.showMoreData[index];
+            this.showGraficoDesktop[index] = false;
+            this.showTabellaDesktop[index] = true;
         }
     }
 }
