@@ -1,18 +1,24 @@
 <h1 class="text-white text-xl mx-9">Stesura dell'articolo</h1>
-<div class="flex items-center flex-col">
+<div class="flex items-center flex-col mb-14">
     <form (ngSubmit)="onSubmit()">
-        <input type="text" [(ngModel)]="titolo" [ngModelOptions]="{standalone: true}" placeholder="Titolo dell'articolo" class="rounded-xl p-3 w-72 my-5 bg-[rgb(42,42,42)] border-0 text-white">
-        <label for="caricaImmagine" class="cursor-pointer rounded-xl p-4 bg-[#2a2a2a] w-72 h-40 flex justify-center flex-col items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-            </svg>
+        <input type="text" [(ngModel)]="titolo" [ngModelOptions]="{standalone: true}" placeholder="Titolo dell'articolo" class="rounded-xl p-3 custom-width my-5 bg-[rgb(42,42,42)] border-0 text-white">
+        <label for="caricaImmagine" class="cursor-pointer rounded-xl p-4 bg-[#2a2a2a] custom-width h-40 flex justify-center flex-col items-center">
+            <svg id="Livello_1" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 407.96 408.02" width="50" height="50" class="mb-6">
+                <path fill="#616161" d="M246.23,455.67h340v-7q0-37,0-73.91c0-7.5,3.41-13,10.06-16.15,6-2.81,12.61-2.4,17.22,2.35,3.2,3.29,6.26,8.43,6.33,12.79.52,33.29.4,66.59.24,99.89,0,9.94-7.55,16.36-18.46,16.38q-43.59.09-87.19.05l-280.63,0c-15.87,0-21.51-5.66-21.51-21.5q0-46.48,0-93c0-5.92,1.62-11,6.42-14.73,5.31-4.09,11.34-5.07,17.38-2.24,6.86,3.21,10.19,8.93,10.17,16.68-.09,24.44,0,48.88,0,73.33Z" transform="translate(-212.3 -82.05)" />
+                <path fill="#616161" d="M433.23,143v73c0,48.14-.2,96.27.13,144.41.09,12.41-7.83,19.73-17,19.82-10.29.1-17.11-7.6-17.12-19.61q-.06-89.52,0-179.06c0-12.3,0-24.59,0-38.26-2,1.81-3.22,2.77-4.27,3.9q-31.1,33.38-62.16,66.77c-6.5,7-14.25,9-21.23,5.68-10.61-5.11-13.24-17.85-5.35-27.2,4.46-5.29,9.4-10.18,14.12-15.25q40.29-43.35,80.58-86.7c10.63-11.43,20.16-11.35,30.78.08q46.38,49.91,92.81,99.78c4.24,4.55,7.16,9.51,6.2,16-1,6.92-4.85,11.8-11.48,13.86s-13,.65-18-4.62c-7.4-7.83-14.71-15.76-22-23.65Q458,169.21,436.76,146.37C436,145.56,435.14,144.84,433.23,143Z" transform="translate(-212.3 -82.05)" /></svg>
             <span>Carica immagine</span>
             <input id="caricaImmagine" type="file" accept="image/*" class="hidden" (change)="handleFileSelect($event)" />
         </label>
-        <textarea [(ngModel)]="testo" [ngModelOptions]="{standalone: true}" rows="16" cols="50" placeholder="Scrivi articolo" class="rounded-xl p-3 w-72 my-5 mt-8 bg-[#2a2a2a] border-0 text-white"></textarea>
-        <button class="text-white bg-[#e54f2c] rounded-xl m-1 w-32 flex justify-center">Pubblica</button>
+        <div *ngIf="immagineCaricata" class="text-green-500 mt-2">Immagine caricata correttamente!</div>
+        <textarea [(ngModel)]="testo" [ngModelOptions]="{standalone: true}" rows="16" cols="50" placeholder="Scrivi articolo" class="rounded-xl p-3 custom-width my-5 mt-8 bg-[#2a2a2a] border-0 text-white"></textarea>
+
+        <div *ngIf="showDataPubblicazione">
+            <input type="datetime-local" id="dataPubblicazione" [(ngModel)]="dataPubblicazione" name="dataPubblicazione" class="text-white rounded-xl bg-[#2a2a2a]">
+        </div>
+
+        <div class="flex flex-row">
+            <button class="text-white bg-[#e54f2c] rounded-xl m-1 w-32 flex justify-center" (click)="publishArticle">Pubblica</button>
+            <button type="button" class="text-black bg-white rounded-xl m-1 w-32 flex justify-center" (click)="toggleDataPubblicazione()">Programma</button>
+        </div>
     </form>
-    <button type="submit" class="text-black bg-white rounded-xl m-1 w-32 flex justify-center">Programma</button>
-</div>
-<div class="flex justify-end m-8">
 </div>

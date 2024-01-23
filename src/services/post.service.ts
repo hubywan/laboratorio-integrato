@@ -19,7 +19,8 @@ export class AutService {
     creazioneArticolo(
         titolo: string,
         testo: string,
-        immagine: any
+        immagine: any,
+        dataPubblicazione: string | undefined
     ): Observable<any> {
         const autToken = localStorage.getItem("autenticationToken");
         if (autToken) {
@@ -27,6 +28,11 @@ export class AutService {
             formData.append("titolo", titolo);
             formData.append("testo", testo);
             formData.append("immagine", immagine);
+
+            if (dataPubblicazione) {
+                formData.append("dataPubblicazione", dataPubblicazione);
+            }
+
             const headers = new HttpHeaders({
                 Authorization: autToken,
             });

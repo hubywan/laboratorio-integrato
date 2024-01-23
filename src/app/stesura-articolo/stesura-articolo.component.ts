@@ -10,10 +10,14 @@ import { Router } from "@angular/router";
 export class StesuraArticoloComponent {
     titolo: string = "";
     testo: string = "";
-    immagine: File | undefined; // Definire una variabile per l'immagine
+    immagine: File | undefined;
+    dataPubblicazione: string | undefined;
     feedbackMessage: string = "";
+    showDataPubblicazione: boolean = false;
+    immagineCaricata: boolean = false;
 
     constructor(private autService: AutService, private router: Router) {}
+
     handleFileSelect(event: any): void {
         const fileList: FileList = event.target.files;
 
@@ -22,14 +26,25 @@ export class StesuraArticoloComponent {
             console.log("Nome del file:", this.immagine.name);
             console.log("Tipo del file:", this.immagine.type);
             console.log("Dimensione del file:", this.immagine.size, "bytes");
+            this.immagineCaricata = true;
+            this.feedbackMessage = "";
         } else {
             console.log("Nessun file selezionato");
         }
     }
-    onSubmit(): void {
-        console.log(this.immagine);
+
+    toggleDataPubblicazione(): void {
+        this.showDataPubblicazione = !this.showDataPubblicazione;
+    }
+
+    publishArticle(): void {
         this.autService
-            .creazioneArticolo(this.titolo, this.testo, this.immagine)
+            .creazioneArticolo(
+                this.titolo,
+                this.testo,
+                this.immagine,
+                undefined
+            )
             .subscribe(
                 (response) => {
                     console.log(response);
@@ -42,8 +57,48 @@ export class StesuraArticoloComponent {
                 },
                 (error) => {
                     console.error(error);
-                    this.feedbackMessage = "operazione fallita";
+                    this.feedbackMessage =
+                        "Operazione di pubblicazione immediata fallita";
                 }
             );
+    }
+
+    scheduleArticle(): void {
+        if (this.showDataPubblicazione && !this.dataPubblicazione) {
+            this.feedbackMessage = "Seleziona una data di pubblicazione valida";
+            return;
+        }
+
+        this.autService
+            .creazioneArticolo(
+                this.titolo,
+                this.testo,
+                this.immagine,
+                this.showDataPubblicazione ? this.dataPubblicazione : undefined
+            )
+            .subscribe(
+                (response) => {
+                    console.log(response);
+                    if (response && response.token) {
+                        localStorage.setItem(
+                            "autenticationToken",
+                            response.token
+                        );
+                    }
+                },
+                (error) => {
+                    console.error(error);
+                    this.feedbackMessage =
+                        "Operazione di programmazione fallita";
+                }
+            );
+    }
+
+    onSubmit(): void {
+        if (this.showDataPubblicazione) {
+            this.scheduleArticle();
+        } else {
+            this.publishArticle();
+        }
     }
 }
