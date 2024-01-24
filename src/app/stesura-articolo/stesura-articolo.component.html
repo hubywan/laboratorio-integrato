@@ -1,4 +1,4 @@
-<h1 class="text-white mx-9 my-16 text-3xl font-bold text-center">Stesura dell'articolo</h1>
+<h1 class="text-white text-xl mx-9">Stesura dell'articolo</h1>
 <div class="flex items-center flex-col mb-14">
     <form (ngSubmit)="onSubmit()">
         <input type="text" [(ngModel)]="titolo" [ngModelOptions]="{standalone: true}" placeholder="Titolo dell'articolo" class="rounded-xl p-3 custom-width my-5 bg-[rgb(42,42,42)] border-0 text-white">
@@ -11,18 +11,14 @@
         </label>
         <div *ngIf="immagineCaricata" class="text-green-500 mt-2">Immagine caricata correttamente!</div>
         <textarea [(ngModel)]="testo" [ngModelOptions]="{standalone: true}" rows="16" cols="50" placeholder="Scrivi articolo" class="rounded-xl p-3 custom-width my-5 mt-8 bg-[#2a2a2a] border-0 text-white"></textarea>
-        <div class="flex items-end flex-col">
-            <div *ngIf="showDataPubblicazione">
-                <input type="datetime-local" id="dataPubblicazione" [(ngModel)]="dataPubblicazione" name="dataPubblicazione" class="text-white rounded-xl bg-[#2a2a2a]">
-            </div>
-            <div class="flex flex-row">
-                <button class="text-white bg-[#e54f2c] rounded-xl m-1 w-32 flex justify-center font-bold" (click)="publishArticle()">
-                    {{ showDataPubblicazione ? 'Programma' : 'Pubblica' }}
-                </button>
-                <button type="button" class="text-[#2a2a2a] bg-white rounded-xl m-1 w-32 flex justify-center font-bold" (click)="toggleDataPubblicazione()">
-                    {{ showDataPubblicazione ? 'Annulla' : 'Programma' }}
-                </button>
-            </div>
+
+        <div *ngIf="showDataPubblicazione" class="flex justify-end">
+            <input type="datetime-local" id="dataPubblicazione" [(ngModel)]="dataPubblicazione" name="dataPubblicazione" class="text-white rounded-xl bg-[#2a2a2a]">
+        </div>
+
+        <div class="flex flex-row justify-end">
+            <button class="text-white bg-[#e54f2c] rounded-xl m-1 w-32 flex justify-center" (click)="publishArticle">{{ showDataPubblicazione ? 'Programma' : 'Pubblica' }}</button>
+            <button type="button" class="text-black bg-white rounded-xl m-1 w-32 flex justify-center" (click)="toggleDataPubblicazione()">{{ showDataPubblicazione ? 'Annulla' : 'Programma' }}</button>
         </div>
     </form>
 </div>
