@@ -9,7 +9,7 @@ import { DomSanitizer, SafeResourceUrl } from "@angular/platform-browser";
     styleUrls: ["./dettaglio-tracciato.component.css"],
 })
 export class DettaglioTracciatoComponent implements OnInit {
-    items: any;
+    items: any = {};
     selectedIdPilota: number = 1;
     safeVideoUrl: SafeResourceUrl | undefined;
 

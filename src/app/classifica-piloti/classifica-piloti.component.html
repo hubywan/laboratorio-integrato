@@ -54,8 +54,6 @@
                                         <path d="M401.09,217.92l-36-27.79c-14.26,10.61-25.54,9.77-37.69,3.46L284,237.2c4.81,8.35,6.26,17.92,2.22,27.83a30,30,0,0,1-12.38,14.61,30.7,30.7,0,0,1-41.53-43.32C241.2,223,255.4,220,274.24,227.25l42.67-42.93c-1.17-5.24-3.32-10.8-3.49-16.43-.4-13,5.88-22.73,17.67-28.23s23.19-3.7,33,4.85,12.53,19.67,9,32.17c-.55,1.95-1,3.33.9,4.77,11.25,8.55,22.44,17.18,33.78,25.88,12.14-10.42,25-12.15,38.68-4.44l43.4-43.59c-4.39-8.26-6.29-17.21-2.71-26.82a30.42,30.42,0,0,1,12.53-15.68,30.72,30.72,0,0,1,42,43.06c-9,13.63-23.13,16.67-43.31,8.84-8.25,8.42-16.74,17.1-25.25,25.76-4.55,4.63-9,9.4-13.79,13.77-2.78,2.53-3.1,4.52-1.49,8.05,8.92,19.63-4.05,42.86-27.38,43.38-20.39.46-34.33-17.89-30.48-36.86C400.22,221.34,400.62,219.91,401.09,217.92Zm114.72-56.83a18.16,18.16,0,0,0,18.48-17.67,18.5,18.5,0,0,0-18.42-18.95c-9.76,0-18.26,8.4-18.28,18.09A18.21,18.21,0,0,0,515.81,161.09Zm-85.73,49.65A18.14,18.14,0,1,0,429.5,247c10.42.15,18.73-7.7,18.85-17.79A18.33,18.33,0,0,0,430.08,210.74ZM343.8,185.83a18.38,18.38,0,1,0-18.39-18.52A18.65,18.65,0,0,0,343.8,185.83ZM239.45,253.55a18.37,18.37,0,0,0,36.74,0c0-10-8.46-18.58-18.35-18.59S239.44,243.56,239.45,253.55Z" transform="translate(-227.13 -112.02)" /></svg>
                                 </a>
                             </div>
-                            <!-- <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
-                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button> -->
                         </div>
                     </div>
                     <div>
@@ -64,8 +62,19 @@
                     <app-tabella-pilota-andamento-stagione [idPilota]="items[0].id" *ngIf="showTabellaMobile[0]"></app-tabella-pilota-andamento-stagione>
                 </div>
 
-                <a *ngIf="selectedYear===2023" (click)="toggleMoreData(0);" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
-                    <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(0)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                    <ng-container *ngIf="showMoreData[0]; else closedState">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                        </svg>
+
+                    </ng-container>
+                    <ng-template #closedState>
+                        <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                        </svg>
+                    </ng-template>
                 </a>
             </div>
 
@@ -132,8 +141,19 @@
                     <app-tabella-pilota-andamento-stagione [idPilota]="items[1].id" *ngIf="showTabellaMobile[1]"></app-tabella-pilota-andamento-stagione>
                 </div>
 
-                <a *ngIf="selectedYear===2023" (click)="toggleMoreData(1);" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
-                    <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(1)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                    <ng-container *ngIf="showMoreData[1]; else closedState">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                        </svg>
+
+                    </ng-container>
+                    <ng-template #closedState>
+                        <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                        </svg>
+                    </ng-template>
                 </a>
             </div>
 
@@ -199,16 +219,26 @@
                     <app-grafico-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showGraficoMobile[2]"></app-grafico-pilota-andamento-stagione>
                     <app-tabella-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showTabellaMobile[2]"></app-tabella-pilota-andamento-stagione>
                 </div>
+                <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(2)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                    <ng-container *ngIf="showMoreData[2]; else closedState">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                        </svg>
 
-                <a *ngIf="selectedYear===2023" (click)="toggleMoreData(2);" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
-                    <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                    </ng-container>
+                    <ng-template #closedState>
+                        <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                        </svg>
+                    </ng-template>
                 </a>
             </div>
 
 
             <!-- qui ce podio desktop -->
             <div class="hidden lg:flex lg:flex-row items-end relative overflow-hidden pt-48 pb-16">
-                <div class="h-40 bg-[#cccccc] mx-2 rounded-3xl" style="width: 300px;">
+                <div class="h-40 bg-[#cccccc] mx-2 rounded-3xl cursor-pointer" style="width: 300px; ">
                     <div (click)="redirectToDettaglioPilota(items[1].id)">
                         <h2 class="text-white text-6xl font-bold absolute top-0 left-0 mt-20 ms-5">
                             {{items[1].posizione}}°
@@ -225,11 +255,23 @@
                             </div>
                         </div>
                     </div>
-                    <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(1);" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 300px; left:8px; bottom:28px">
-                        <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
+                    <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(1)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 300px; left:8px; bottom:28px">
+                        <ng-container *ngIf="showMoreData[1]; else closedState">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                            </svg>
+
+                        </ng-container>
+                        <ng-template #closedState>
+                            <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                            </svg>
+                        </ng-template>
                     </a>
+
                 </div>
-                <div class="h-40 bg-[#cccccc] mx-2 rounded-3xl" style="width: 380px;">
+                <div class="h-40 bg-[#cccccc] mx-2 rounded-3xl cursor-pointer" style="width: 380px;">
                     <div (click)="redirectToDettaglioPilota(items[0].id)">
                         <h2 class="text-white text-6xl font-bold absolute top-10" style="left: 360px;">
                             {{items[0].posizione}}°
@@ -248,11 +290,22 @@
                             </div>
                         </div>
                     </div>
-                    <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(0); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width:380px; left:324px; bottom:28px">
-                        <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
+                    <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(0)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width:380px; left:324px; bottom:28px">
+                        <ng-container *ngIf="showMoreData[0]; else closedState">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                            </svg>
+
+                        </ng-container>
+                        <ng-template #closedState>
+                            <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                            </svg>
+                        </ng-template>
                     </a>
                 </div>
-                <div class="h-40 bg-[#cccccc] mx-2 rounded-3xl" style="width: 300px;">
+                <div class="h-40 bg-[#cccccc] mx-2 rounded-3xl cursor-pointer" style="width: 300px;">
                     <div (click)="redirectToDettaglioPilota(items[2].id)">
                         <h2 class="text-white text-6xl font-bold absolute top-0 right-0 mt-20 me-52">
                             {{items[2].posizione}}°
@@ -269,8 +322,19 @@
                             </div>
                         </div>
                     </div>
-                    <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(2); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 300px; right:8px; bottom:28px">
-                        <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
+                    <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(2)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 300px; right:8px; bottom:28px">
+                        <ng-container *ngIf="showMoreData[2]; else closedState">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                            </svg>
+
+                        </ng-container>
+                        <ng-template #closedState>
+                            <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                            </svg>
+                        </ng-template>
                     </a>
                 </div>
             </div>
@@ -279,13 +343,13 @@
     </div>
     <div class="hidden lg:block relative">
         <div class="flex justify-center">
-            <div *ngIf="showMoreData && showMoreData[1]" class="h-96 bg-[#505050]" Style="width: 1014px;">
+            <div *ngIf="showMoreData && showMoreData[1]" class="h-96 bg-[#505050] rounded-tr-2xl" Style="width: 1014px;">
                 <div class="bg-[#2a2a2a] absolute h-16" style="top:-64px; left:134px; width: 300px;">
 
                 </div>
                 <div class=" flex justify-between">
                     <div>
-                        <h2 class="text-white mt-5 ml-5">Andamento stagionale</h2>
+                        <h2 class="text-white mt-5 ml-9">Andamento stagionale</h2>
                     </div>
                     <div class="flex flex-row gap-4">
                         <div class="bg-[#cccccc] h-10 w-10 flex justify-center items-center rounded-md mt-3" (click)="mostraTabellaDesktop(1)">
@@ -310,17 +374,28 @@
                 </div>
                 <app-grafico-pilota-andamento-stagione [idPilota]="items[1].id" *ngIf="showGraficoDesktop[1]"></app-grafico-pilota-andamento-stagione>
                 <app-tabella-pilota-andamento-stagione [idPilota]="items[1].id" *ngIf="showTabellaDesktop[1]"></app-tabella-pilota-andamento-stagione>
-                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(1); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 1014px;left: 133px; bottom: -36px;">
-                    <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
+                <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(01)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 1014px; left: 133px; bottom: -36px;">
+                    <ng-container *ngIf="showMoreData[1]; else closedState">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                        </svg>
+
+                    </ng-container>
+                    <ng-template #closedState>
+                        <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                        </svg>
+                    </ng-template>
                 </a>
             </div>
-            <div *ngIf="showMoreData && showMoreData[0]" class="h-96 bg-[#505050]" Style="width: 1014px;">
+            <div *ngIf="showMoreData && showMoreData[0]" class="h-96 bg-[#505050] rounded-t-2xl" Style="width: 1014px;">
                 <div class="bg-[#2a2a2a] absolute h-16" style="top:-64px; left:450px; width: 380px;">
 
                 </div>
                 <div class="flex justify-between">
                     <div>
-                        <h2 class="text-white mt-5 ml-5">Andamento stagionale</h2>
+                        <h2 class="text-white mt-5 ml-9">Andamento stagionale</h2>
                     </div>
                     <div class="flex flex-row gap-4">
                         <div class="bg-[#cccccc] h-10 w-10 flex justify-center items-center rounded-md mt-3" (click)="mostraTabellaDesktop(0)">
@@ -345,17 +420,28 @@
                 </div>
                 <app-grafico-pilota-andamento-stagione [idPilota]="items[0].id" *ngIf="showGraficoDesktop[0]"></app-grafico-pilota-andamento-stagione>
                 <app-tabella-pilota-andamento-stagione [idPilota]="items[0].id" *ngIf="showTabellaDesktop[0]"></app-tabella-pilota-andamento-stagione>
-                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(0); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 1014px; left: 133px; bottom: -36px;">
-                    <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
+                <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(0)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 1014px; left: 133px; bottom: -36px;">
+                    <ng-container *ngIf="showMoreData[0]; else closedState">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                        </svg>
+
+                    </ng-container>
+                    <ng-template #closedState>
+                        <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                        </svg>
+                    </ng-template>
                 </a>
             </div>
-            <div *ngIf="showMoreData && showMoreData[2]" class="h-96 bg-[#505050]" Style="width: 1014px;">
+            <div *ngIf="showMoreData && showMoreData[2]" class="h-96 bg-[#505050] rounded-tl-2xl" Style="width: 1014px;">
                 <div class="bg-[#2a2a2a] absolute h-16" style="top:-64px; right:134px; width: 300px;">
 
                 </div>
                 <div class="flex justify-between">
                     <div>
-                        <h2 class="text-white mt-5 ml-5">Andamento stagionale</h2>
+                        <h2 class="text-white mt-5 ml-9">Andamento stagionale</h2>
                     </div>
                     <div class="flex flex-row gap-4">
                         <div class="bg-[#cccccc] h-10 w-10 flex justify-center items-center rounded-md mt-3" (click)="mostraTabellaDesktop(2)">
@@ -380,9 +466,21 @@
                 </div>
                 <app-grafico-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showGraficoDesktop[2]"></app-grafico-pilota-andamento-stagione>
                 <app-tabella-pilota-andamento-stagione [idPilota]="items[2].id" *ngIf="showTabellaDesktop[2]"></app-tabella-pilota-andamento-stagione>
-                <a *ngIf=" selectedYear===2023" (click)="toggleMoreData(2); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 1014px; left: 133px; bottom: -36px;">
-                    <h3 class=" text-white text-center">visualizza andamento stagionale</h3>
+                <a *ngIf="selectedYear === 2023" (click)="toggleMoreData(2)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center absolute" style="width: 1014px; left: 133px; bottom: -36px;">
+                    <ng-container *ngIf="showMoreData[2]; else closedState">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                        </svg>
+
+                    </ng-container>
+                    <ng-template #closedState>
+                        <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                        </svg>
+                    </ng-template>
                 </a>
+
             </div>
 
 
@@ -391,7 +489,7 @@
 
     <!-- qui ce il resto -->
     <div class="lg:mt-48">
-        <div *ngFor="let item of items; let i = index" class="my-10 lg:my-28 mx-4 relative">
+        <div *ngFor="let item of items; let i = index" class="my-10 lg:my-28 mx-4 relative cursor-pointer">
             <div *ngIf="i >= 3" class="lg:hidden rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px; " [ngClass]="{'rounded-3xl': selectedYear !== 2023, 'rounded-t-3xl': selectedYear === 2023}">
                 <div class="flex items-center w-3/12">
                     <h3 class="text-5xl text-white font-bold ms-3">
@@ -453,7 +551,7 @@
             <div *ngIf="showMoreData && showMoreData[i] && i>= 3" class="second-div h-96 bg-[#505050]">
                 <div class="flex justify-between mb-5">
                     <div>
-                        <h2 class="text-white mt-5 ml-5">Andamento stagionale</h2>
+                        <h2 class="text-white mt-5 ml-9">Andamento stagionale</h2>
                     </div>
                     <div class="flex flex-row gap-4">
                         <div class="bg-[#cccccc] h-10 w-10 flex justify-center items-center rounded-md mt-3" (click)="mostraTabella()">
@@ -470,8 +568,6 @@
                                     <path d="M401.09,217.92l-36-27.79c-14.26,10.61-25.54,9.77-37.69,3.46L284,237.2c4.81,8.35,6.26,17.92,2.22,27.83a30,30,0,0,1-12.38,14.61,30.7,30.7,0,0,1-41.53-43.32C241.2,223,255.4,220,274.24,227.25l42.67-42.93c-1.17-5.24-3.32-10.8-3.49-16.43-.4-13,5.88-22.73,17.67-28.23s23.19-3.7,33,4.85,12.53,19.67,9,32.17c-.55,1.95-1,3.33.9,4.77,11.25,8.55,22.44,17.18,33.78,25.88,12.14-10.42,25-12.15,38.68-4.44l43.4-43.59c-4.39-8.26-6.29-17.21-2.71-26.82a30.42,30.42,0,0,1,12.53-15.68,30.72,30.72,0,0,1,42,43.06c-9,13.63-23.13,16.67-43.31,8.84-8.25,8.42-16.74,17.1-25.25,25.76-4.55,4.63-9,9.4-13.79,13.77-2.78,2.53-3.1,4.52-1.49,8.05,8.92,19.63-4.05,42.86-27.38,43.38-20.39.46-34.33-17.89-30.48-36.86C400.22,221.34,400.62,219.91,401.09,217.92Zm114.72-56.83a18.16,18.16,0,0,0,18.48-17.67,18.5,18.5,0,0,0-18.42-18.95c-9.76,0-18.26,8.4-18.28,18.09A18.21,18.21,0,0,0,515.81,161.09Zm-85.73,49.65A18.14,18.14,0,1,0,429.5,247c10.42.15,18.73-7.7,18.85-17.79A18.33,18.33,0,0,0,430.08,210.74ZM343.8,185.83a18.38,18.38,0,1,0-18.39-18.52A18.65,18.65,0,0,0,343.8,185.83ZM239.45,253.55a18.37,18.37,0,0,0,36.74,0c0-10-8.46-18.58-18.35-18.59S239.44,243.56,239.45,253.55Z" transform="translate(-227.13 -112.02)" /></svg>
                             </a>
                         </div>
-                        <!-- <button (click)="mostraTabella()" class="bg-[#cccccc] text-black m-1">tabella</button>
-                        <button (click)="mostraGrafico()" class="bg-[#cccccc] text-black m-1">grafico</button> -->
                     </div>
                 </div>
                 <div>
@@ -480,8 +576,19 @@
                 <app-tabella-pilota-andamento-stagione [idPilota]="item.id" *ngIf="showTabella"></app-tabella-pilota-andamento-stagione>
             </div>
 
-            <a *ngIf=" selectedYear===2023 && i>= 3" (click)="toggleMoreData(i); " class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
-                <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+            <a *ngIf="selectedYear === 2023 && i >= 3" (click)="toggleMoreData(i)" class="w-full h-9 bg-[#e54f2c] rounded-b-2xl flex items-center justify-center">
+                <ng-container *ngIf="showMoreData[i]; else closedState">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+                    </svg>
+
+                </ng-container>
+                <ng-template #closedState>
+                    <h3 class="text-white text-center">visualizza andamento stagionale</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="inline-block w-4 h-4 align-text-bottom">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 9l7 7 7-7"></path>
+                    </svg>
+                </ng-template>
             </a>
         </div>
     </div>

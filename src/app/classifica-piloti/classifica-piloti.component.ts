@@ -18,6 +18,7 @@ export class ClassificaPilotiComponent {
     showGraficoDesktop: boolean[] = [];
     showTabellaMobile: boolean[] = [];
     showTabellaDesktop: boolean[] = [];
+    buttonPressed: string | null = null;
 
     constructor(
         private apiservice: ApiService,
@@ -77,11 +78,13 @@ export class ClassificaPilotiComponent {
     mostraGrafico() {
         this.showGrafico = true;
         this.showTabella = false;
+        this.buttonPressed = "grafico";
     }
 
     mostraTabella() {
         this.showTabella = true;
         this.showGrafico = false;
+        this.buttonPressed = "tabella";
     }
 
     mostraGraficoMobile(index: number) {

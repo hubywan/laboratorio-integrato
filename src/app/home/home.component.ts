@@ -4,6 +4,7 @@ import * as dayjs from "dayjs";
 import "dayjs/locale/it";
 import { ApiService } from "src/services/api.service";
 import { ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 import { Renderer2, ElementRef } from "@angular/core";
 
 @Component({
@@ -35,6 +36,7 @@ export class HomeComponent {
     constructor(
         private apiservice: ApiService,
         private route: ActivatedRoute,
+        private router: Router,
         private renderer: Renderer2,
         private el: ElementRef
     ) {}
@@ -106,5 +108,10 @@ export class HomeComponent {
                 );
             }
         );
+    }
+    redirectToDettaglioArticolo(id: number): void {
+        this.router.navigate(["/dettaglio-articolo"], {
+            queryParams: { id },
+        });
     }
 }

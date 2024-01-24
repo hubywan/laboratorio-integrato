@@ -1,8 +1,8 @@
 <div class="max-w-7xl mx-auto">
-    <h2 class="text-white ms-5">Benvetun3 {{nome}}</h2>
-    <button class="bg-white text-black rounded-xl m-5 mt-8 text-base" (click)="redirectToStesuraArticolo()">+ Nuovo articolo</button>
+    <h2 class="text-white mt-10 mb-8 text-3xl font-bold ml-9">Benvetun3 {{nome}}</h2>
+    <button class="bg-white text-black rounded-xl ml-9 mt-8 text-base" (click)="redirectToStesuraArticolo()">+ Nuovo articolo</button>
     <div class="flex flex-col lg:flex-row justify-start flex-wrap">
-        <div class="m-8" *ngFor="let item of items">
+        <div class="m-8 hover:scale-105 transition-transform duration-200 cursor-pointer" *ngFor="let item of items">
             <div class=" h-80 rounded-xl bg-[#2a2a2a] mb-14" (click)="redirectToDettaglioArticolo(item.id)">
                 <div>
                     <img [src]="item.imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">

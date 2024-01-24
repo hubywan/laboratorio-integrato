@@ -73,9 +73,9 @@
     </div>
     <div class="hidden lg:flex flex-row mx-40 flex-wrap">
         <div *ngFor="let item of items; let i = index">
-            <div *ngIf="i >= 5">
-                <div class="rounded-xl bg-[#2a2a2a] m-2 card" style="height: 488+px; width: 462px;" (click)="redirectToDettaglioArticolo(item.id)">
-                    <img [src]=" item.imageUrl" alt="" class="w-full h-52 rounded-t-xl object-cover">
+            <a *ngIf="i >= 5">
+                <div class="rounded-xl bg-[#2a2a2a] m-2 card" style="height: 34vh; width: 240px;" (click)="redirectToDettaglioArticolo(item.id)">
+                    <img [src]=" item.imageUrl" alt="" class="w-full rounded-t-xl object-cover" style="height: 45%;">
                     <div class="p-3 flex flex-col justify-between">
                         <h2 class="text-xl text-white font-bold">{{item.titolo}}</h2>
                         <div class="flex justify-end">
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
 
         </div>
     </div>

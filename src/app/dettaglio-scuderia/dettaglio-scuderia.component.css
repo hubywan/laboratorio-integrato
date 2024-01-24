@@ -1,9 +1,15 @@
 .hr-custom {
     border: 0.1cm solid #e54f2c;
 }
+.custom-width {
+    width: 100%;
+}
 
 @media screen and (min-width: 1024px) {
     .custom-h {
         height: 188px;
+    }
+    .custom-width {
+        width: 610px;
     }
 }

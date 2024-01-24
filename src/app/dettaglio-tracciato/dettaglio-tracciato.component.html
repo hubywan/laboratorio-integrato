@@ -12,7 +12,7 @@
         <div class="p-2 mb-4 flex flex-col justify-center items-start">
             <p class="text-xl text-[#949494] mb-1">{{items.nazione.nome}}</p>
             <strong>
-                <p class="text-4xl text-white">{{items.nome}}</p>
+                <p class="text-4xl text-white font-bold">{{items.nome}}</p>
             </strong>
         </div>
         <div class="p-2 mb-4 flex items-center justify-center">
@@ -21,20 +21,20 @@
     </div>
 
     <div class="xl:hidden bg-[#2a2a2a] p-2 mb-12 grid grid-rows-2 grid-cols-2 place-items-center rounded-2xl">
-        <p class="text-sm text-white">Lunghezza</p>
-        <p class="text-sm text-white">Esordio</p>
+        <p class="text-sm text-[#cccccc]">Lunghezza</p>
+        <p class="text-sm text-[#cccccc]">Esordio</p>
         <p class="text-3xl text-white">{{items.lunghezza}}</p>
         <p class="text-3xl text-white">{{items.esordio}}</p>
     </div>
 
-    <p class="xl:hidden text-xl text-center text-white m-2">Giro Record</p>
+    <p class="xl:hidden text-xl text-center text-white m-2 font-bold">Giro Record</p>
     <div class="xl:hidden bg-[#2a2a2a] p-2 mb-12 rounded-2xl">
         <div class="flex flex-col place-items-center">
-            <p class="text-2xl text-white">{{items.giroRecord.nome}}</p>
+            <p class="text-2xl text-white font-italic-bold">{{items.giroRecord.nome}}</p>
             <div>
                 <div class="grid grid-rows-2 grid-cols-2 place-items-center">
-                    <p class="text-sm text-white">Tempo</p>
-                    <p class="text-sm text-white">Anno</p>
+                    <p class="text-sm text-[#cccccc]">Tempo</p>
+                    <p class="text-sm text-[#cccccc]">Anno</p>
                     <p class="text-3xl text-white">{{items.giroRecord.tempo}}</p>
                     <p class="text-3xl text-white">{{items.giroRecord.anno}}</p>
                 </div>
@@ -44,31 +44,31 @@
 
     <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 text-center mx-36">
         <strong>
-            <p class="text-white text-2xl">Dati generali</p>
+            <p class="text-white text-2xl font-bold">Dati generali</p>
         </strong>
         <strong>
-            <p class="text-white text-2xl">Giro record</p>
+            <p class="text-white text-2xl font-bold">Giro record</p>
         </strong>
     </div>
 
     <div class="hidden xl:grid xl:grid-cols-2 grid-rows-1 p-8 mb-16 gap-8 mx-36">
         <div class="grid grid-cols-2 grid-rows-1 gap-8 text-center">
             <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center gap-5">
-                <p class="text-xl text-white">Lunghezza</p>
+                <p class="text-xl text-[#cccccc]">Lunghezza</p>
                 <p class="text-4xl text-white">{{items.lunghezza}}</p>
             </div>
             <div class="bg-[#2a2a2a] rounded-2xl flex flex-col justify-center items-center gap-5">
-                <p class="text-xl text-white">Esordio</p>
+                <p class="text-xl text-[#cccccc]">Esordio</p>
                 <p class="text-4xl text-white">{{items.esordio}}</p>
             </div>
         </div>
         <div class="bg-[#2a2a2a] rounded-2xl">
             <div class="flex flex-col place-items-center gap-4 p-8">
-                <p class="text-3xl text-white font-light">{{items.giroRecord.nome}}</p>
+                <p class="text-3xl text-white font-light font-italic-bold">{{items.giroRecord.nome}}</p>
                 <div>
                     <div class="grid grid-rows-2 grid-cols-2 place-items-center">
-                        <p class="text-base text-white">Tempo</p>
-                        <p class="text-base text-white">Anno</p>
+                        <p class="text-base text-[#cccccc]">Tempo</p>
+                        <p class="text-base text-[#cccccc]">Anno</p>
                         <p class="text-3xl text-white">{{items.giroRecord.tempo}}</p>
                         <p class="text-3xl text-white">{{items.giroRecord.anno}}</p>
                     </div>
@@ -80,7 +80,7 @@
     <div class="p-2 mb-20 xl:mx-48">
         <div class="flex flex-col">
             <strong>
-                <div class="text-xl text-center mb-5 text-white xl:text-start xl:text-2xl">Descrizione</div>
+                <div class="text-xl text-center mb-5 text-white xl:text-start xl:text-2xl font-bold">Descrizione</div>
             </strong>
             <div>
                 <p class="text-white text-lg">{{items.descrizione}}</p>

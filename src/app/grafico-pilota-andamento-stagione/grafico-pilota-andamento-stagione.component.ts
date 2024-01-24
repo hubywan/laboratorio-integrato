@@ -52,6 +52,8 @@ export class GraficoPilotaAndamentoStagioneComponent
             existingChart.destroy(); // distruggi il grafico esistente se presente
         }
 
+        // ...
+
         const myChart = new Chart(ctx, {
             type: "line",
             data: {
@@ -73,11 +75,17 @@ export class GraficoPilotaAndamentoStagioneComponent
                     x: {
                         title: {
                             display: true,
-                            text: "Giorno Gara",
+                            text: "Nome Gara",
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                         ticks: {
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                     },
                     y: {
@@ -85,11 +93,24 @@ export class GraficoPilotaAndamentoStagioneComponent
                             display: true,
                             text: "Punti",
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                         ticks: {
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                         beginAtZero: true,
+                    },
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: "white",
+                        },
                     },
                 },
             },

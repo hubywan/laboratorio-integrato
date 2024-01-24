@@ -65,9 +65,15 @@ export class GraficoPilotaComponent implements OnInit, AfterViewInit {
                             display: true,
                             text: "Anno Stagione",
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                         ticks: {
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                     },
                     y: {
@@ -75,11 +81,24 @@ export class GraficoPilotaComponent implements OnInit, AfterViewInit {
                             display: true,
                             text: "Punti",
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                         ticks: {
                             color: "white",
+                            font: {
+                                size: 16,
+                            },
                         },
                         beginAtZero: true,
+                    },
+                },
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: "white",
+                        },
                     },
                 },
             },

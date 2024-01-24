@@ -1,26 +1,22 @@
 <div class="max-w-7xl mx-auto">
-    <div class="lg:hidden grid grid-cols-12 grid-rows-1 px-10 mb-16">
-        <div class="col-span-7 relative">
-            <div class="absolute bottom-0 left-0 h-2/5 rounded-2xl w-4/5 bg-[#D9D9D9] bg-opacity-20"></div>
-            <img class="absolute left-16 h-[90%] max-w-full bottom-0 object-cover" [src]=items.immagine alt="">
-            <div class="flex justify-start ml-3">
-                <div class="h-16 w-16 rounded-full absolute overflow-hidden bottom-[45%]">
-                    <img src="{{items.nazione.bandiera}}" alt="" class="object-cover absolute w-full h-full rounded-full">
-                </div>
-                <p class="text-white absolute bottom-[3.7rem] text-sm">N° vettura</p>
-                <strong>
-                    <p class="text-white text-5xl absolute bottom-0">{{items.numero}}</p>
-                </strong>
-            </div>
+    <div class="lg:hidden flex flex-row gap-20 mb-8 relative justify-center">
+        <div class="bg-[#2a2a2a] h-24 w-40 rounded-2xl mt-32 py-1 pl-3">
+            <p class="text-bese text-[#cccccc]">n° auto</p>
+            <p class="text-white text-5xl font-bold mt-2">{{items.numero}}</p>
+
         </div>
-        <div class="p-11 col-span-5 aspect-square flex flex-col justify-center">
-            <p><strong class="text-white">{{items.nome}}</strong></p>
+        <div class="flex flex-col justify-center items-end mt-5">
             <strong>
-                <p class="text-[#969696] mt-3">{{items.nazione.nome}}</p>
+                <p class="text-[#969696] mt-3 text-lg font-bold">{{items.nazione.nome}}</p>
             </strong>
             <p class="text-white mt-3">{{items.dataNascita}}</p>
         </div>
+
+        <img class="h-40 object-cover absolute" [src]=items.immagine alt="" style="left: 120px; bottom: 0px;">
+        <img src="{{items.nazione.bandiera}}" alt="" class="object-cover w-16 h-16 rounded-full absolute" style="left: 54px; top: 53px;">
     </div>
+    <h2 class="text-white text-center text-3xl font-bold lg:hidden">{{items.nome}}</h2>
+
 
     <div class="hidden lg:block relative mx-32">
         <div class="mb-16 mt-24 flex flex-row justify-between px-10">
@@ -28,7 +24,7 @@
                 <strong>
                     <p class="text-white text-4xl">{{items.nome}}</p>
                 </strong>
-                <p class="text-[#969696] text-2xl">{{items.nazione.nome}}</p>
+                <p class="text-[#969696] text-2xl font-bold">{{items.nazione.nome}}</p>
             </div>
             <div>
                 <p class="text-white text-xl">Data di Nascita</p>
@@ -59,76 +55,56 @@
         </div>
     </div>
 
-    <div class="lg:mt-40 mt-20">
+    <div class="mt-24 mb-14">
         <strong>
-            <p class="text-white text-2xl font-bold  text-center mb-8 mt-6">TEAM</p>
+            <p class="text-white text-2xl font-bold  text-center mb-4 mt-6">TEAM</p>
         </strong>
         <div class=" flex flex-row flex-wrap justify-center">
             <div *ngFor="let item of items.scuderie" class="lg:mx-5">
-                <div class="bg-[#2a2a2a] rounded-2xl  h-32 w-32 m-3 lg:h-52 lg:w-52 mx-1 p-2 flex justify-center items-center">
-                    <img class="max-h-36" [src]="item.logo">
+                <div class="bg-[#2a2a2a] rounded-2xl  h-32 w-32 m-3 lg:h-52 lg:w-52 mx-5 my-5 lg:mx-0 p-2 flex justify-center items-center">
+                    <img class="max-h-28 lg:max-h-36" [src]="item.logo">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col lg:flex-row justify-center ">
+        <div class="mt-12">
+            <h2 class=" text-center text-white text-2xl font-bold mb-7">PARTECIPAZIONI</h2>
+            <div class=" flex gap-5 flex-row justify-center ">
+                <div class="bg-[#2a2a2a] rounded-3xl w-56 h-32 flex flex-col items-center justify-center gap-4" style="width: 11.5rem;">
+                    <p class="text-center text-white text-base">n° Grand Prix</p>
+                    <p class="text-4xl text-center text-white">{{items.ngrandprix}}</p>
+                </div>
+                <div class="bg-[#2a2a2a] rounded-3xl h-32 flex flex-col items-center justify-center gap-4" style="width: 11.5rem;">
+                    <p class="text-center text-white text-base">n° Podi</p>
+                    <p class="text-4xl text-center text-white">{{items.podio}}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg:mx-16 flex flex-col items-center mt-12">
+            <h2 class="font-bold text-white text-2xl text-center mb-7">VITTORIE</h2>
+            <div class="bg-[#2a2a2a] h-32 w-96 rounded-3xl flex flex-row justify-around">
+                <div class="w-28 flex justify-center items-center flex-col gap-4">
+                    <p class="text-white text-base flex justify-center text-center">Campionati</p>
+                    <h2 class="text-white text-4xl text-center">{{items.vittorieCampionati}}</h2>
+                </div>
+                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 6854.14 8201.39" width="50">
+                    <defs>
+
+                    </defs>
+                    <path style="fill: #d38d00;stroke: #4e4d4d;stroke-miterlimit: 10;" class="cls-1" d="m5085.5,7569.21H1768.65c-174.15,0-315.77,141.48-315.77,315.91s141.62,315.77,315.77,315.77h3316.85c174.71,0,315.63-141.34,315.63-315.77s-140.92-315.91-315.63-315.91h0Z" />
+                    <path style="fill: #d38d00;stroke: #4e4d4d;stroke-miterlimit: 10;" class="cls-1" d="m5251.65,3611.24c385.17-771.81,647.24-1786.47,723.94-2918.28h560.17c-37.44,1476.54-594.24,2716.99-1284.11,2918.28h0Zm-1211.76,1457.23h-1225.78c-117.22-30.13-209.21-118.93-246.22-231.29h1718.51c-37.02,112.36-129,201.16-246.5,231.29h0Zm246.5,1632.51h-1718.51c37.02-112.17,129-201.17,246.22-231.3h1225.78c117.5,30.13,209.49,119.13,246.5,231.3h0ZM318.79,692.96h559.75c77.12,1131.81,339.05,2146.47,724.51,2918.28C912.48,3409.95,355.81,2169.5,318.79,692.96h0Zm6534.85-316.25h-861.64c4.49-124.33,7.85-249.42,7.85-376.21H854.85c0,126.8,2.8,251.89,7.43,376.21H.5v158.1c0,1916.55,787.46,3417.93,1793.38,3422.87,172.75,282.69,365.13,517.6,571.11,703.69l4.35,89.22c10.8,239.63,181.3,443.79,413.92,496.72h20.19v1041.21l-20.19,2.33c-232.62,52.93-403.13,257.09-413.92,496.51l-2.66,56.09c-189.43,108.81-318.15,310.16-318.15,544.46h2756.96c0-234.31-128.72-435.8-318.01-544.61l-2.52-55.95c-11.22-239.42-181.3-443.79-413.92-496.51h-20.33v-1041.22h10.24l10.09-2.13c232.62-53.13,402.71-257.29,413.92-496.92l4.07-89.01c206.12-186.3,398.64-420.99,571.39-703.9,1005.64-4.87,1793.24-1506.1,1793.24-3422.87v-158.1h0Z" />
+                </svg>
+                <div class="w-28 flex justify-center items-center flex-col gap-4">
+                    <p class="text-white text-base text-center">Gare</p>
+                    <h2 class="text-white text-4xl pt-0 text-center">{{items.vittorieTotali}}</h2>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="xl:hidden grid grid-cols-2 gap-8 p-5 my-10">
-        <div class="bg-[#2a2a2a] p-4 rounded-3xl">
-            <p class="mt-3 text-center text-white text-base">Numero Grand Prix</p>
-            <p class="mt-5 text-4xl text-center text-white">{{items.ngrandprix}}</p>
-        </div>
-        <div class="bg-[#2a2a2a] p-4 rounded-3xl">
-            <p class="mt-3 text-center text-white text-base">Numero Podi</p>
-            <p class="mt-5 text-4xl text-center text-white">{{items.podio}}</p>
-        </div>
-    </div>
-
-    <div class="xl:hidden p-5">
-        <div class="bg-[#2a2a2a] rounded-2xl flex flex-row justify-around mb-10">
-            <div>
-                <p class="text-white text-base p-4 text-center">Campionati</p>
-                <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.vittorieCampionati}}</h2>
-            </div>
-            <div>
-                <p class="text-white text-base p-4 text-center">Gare</p>
-                <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.vittorieTotali}}</h2>
-            </div>
-        </div>
-    </div>
-
-    <div class="hidden xl:grid grid-cols-2 mt-44 mx-36 gap-x-12 ms-80">
-        <strong>
-            <p class="text-white text-lg ms-10">VITTORIE</p>
-        </strong>
-        <strong>
-            <p class="text-white text-lg ms-24">PARTECIPAZIONI</p>
-        </strong>
-    </div>
-    <div class="hidden xl:grid grid-cols-2 mx-36 mb-10 gap-x-12">
-        <div class="p-5 w-[30rem]">
-            <div class="bg-[#2a2a2a] rounded-2xl flex flex-row justify-around mb-10 h-40 items-center">
-                <div class="w-1/2">
-                    <p class="text-white text-base p-4 text-center">Campionati</p>
-                    <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.vittorieCampionati}}</h2>
-                </div>
-                <div class="w-1/2">
-                    <p class="text-white text-base p-4 text-center">Gare</p>
-                    <h2 class="text-white text-4xl p-4 pt-0 text-center">{{items.vittorieTotali}}</h2>
-                </div>
-            </div>
-        </div>
-        <div class="grid grid-cols-2 gap-8 w-[30rem] p-5 mb-10">
-            <div class="bg-[#2a2a2a] p-4 rounded-3xl flex items-center justify-center flex-col">
-                <p class="mt-3 text-center text-white text-base">Numero Grand Prix</p>
-                <p class="mt-5 text-4xl text-center text-white">{{items.ngrandprix}}</p>
-            </div>
-            <div class="bg-[#2a2a2a] p-4 rounded-3xl flex items-center justify-center flex-col">
-                <p class="mt-3 text-center text-white text-base">Numero Podi</p>
-                <p class="mt-5 text-4xl text-center text-white">{{items.podio}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="mt-20">
+    <div class="mt-40">
         <h2 class="text-white text-2xl text-center font-bold mb-4 mt-6 mx-5">Variazione del punteggio negli anni</h2>
         <div class="flex flex-col items-center mx-9">
             <div class="bg-[#2a2a2a] rounded-2xl m-5 p-4 w-full">
@@ -139,4 +115,6 @@
         </div>
     </div>
 </div>
-<app-confronto-piloti [idPilota]="items?.id"></app-confronto-piloti>
+<div class="mb-20 mt-32">
+    <app-confronto-piloti [idPilota]="items?.id"></app-confronto-piloti>
+</div>

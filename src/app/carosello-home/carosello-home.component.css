@@ -14,7 +14,7 @@
     font-size: 18px;
 }
 .calendario-2024::-webkit-scrollbar {
-    height: 5px;
+    height: 10px;
 }
 
 .calendario-2024::-webkit-scrollbar-track {
@@ -22,7 +22,7 @@
 }
 
 .calendario-2024::-webkit-scrollbar-thumb {
-    background: #e54f2c;
+    background: #cccccc;
     border-radius: 4px;
 }
 

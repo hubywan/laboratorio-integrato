@@ -1,5 +1,5 @@
 <div class="max-w-7xl mx-auto hidden lg:block mt-32">
-    <div class="w-full flex items-end justify-center mb-20" style="height: 450px;">
+    <div class="w-full flex items-end justify-center mb-20 cursor-pointer" style="height: 450px;">
         <div class="flex felx-row items-end justify-center gap-6 relative">
             <div class="w-80 h-28 bg-[#2a2a2a] rounded-2xl" (click)="redirectToDettaglioScuderia(items[1].id)">
                 <img [src]="items[1].logo" class="absolute max-h-52" style="top: -234px; left:40px; max-width: 270px;">
@@ -9,7 +9,7 @@
                     <p class="text-white text-2xl mt-2">{{items[1].punti}} pt.</p>
                 </div>
             </div>
-            <div class="w-80 h-40 bg-[#2a2a2a] rounded-2xl" (click)="redirectToDettaglioScuderia(items[0].id)">
+            <div class="w-80 h-40 bg-[#2a2a2a] rounded-2xl cursor-pointer" (click)="redirectToDettaglioScuderia(items[0].id)">
                 <h2 class="absolute text-white text-7xl font-bold" style="top: -57px; right:570px;">{{items[0].posizione}}°</h2>
                 <img [src]="items[0].logo" class="absolute max-h-52" style="top: -288px; left:414px; max-width: 270px;">
                 <div class="flex flex-col justify-center items-center h-full">
@@ -17,7 +17,7 @@
                     <p class="text-white text-2xl mt-2">{{items[0].punti}} pt.</p>
                 </div>
             </div>
-            <div class="w-80 h-28 bg-[#2a2a2a] rounded-2xl" (click)="redirectToDettaglioScuderia(items[2].id)">
+            <div class="w-80 h-28 bg-[#2a2a2a] rounded-2xl cursor-pointer" (click)="redirectToDettaglioScuderia(items[2].id)">
                 <h2 class="absolute text-white text-7xl font-bold" style="top: -9px; right:221px;">{{items[2].posizione}}°</h2>
                 <img [src]="items[2].logo" class="absolute max-h-52" style="top: -234px; right:70px; max-width: 270px;">
                 <div class="flex flex-col justify-center items-center h-full">
@@ -29,7 +29,7 @@
     </div>
     <hr class="hr-chi-siamo mx-20 rounded mt-12">
 
-    <div *ngFor="let item of items; let i = index" class=" my-6 mt-20">
+    <div *ngFor="let item of items; let i = index" class=" my-6 mt-20 cursor-pointer">
         <div *ngIf="i >= 3" class="rounded-3xl flex flex-row bg-[#2a2a2a]" style="height: 140px;" (click)="redirectToDettaglioScuderia(item.id)">
             <div class="flex items-center justify-center w-1/12">
                 <h3 class="text-5xl text-white font-bold ms-3">
@@ -48,12 +48,12 @@
                     {{item.nome}}
                 </h3>
             </div>
-            <div class="w-3/12 flex items-center justify-center">
+            <div class="w-4/12 flex items-center justify-center">
                 <h3 class="text-white text-2xl text-center">
                     {{item.punti}} pt.
                 </h3>
             </div>
-            <div class="w-3/12 flex flex-col justify-center items-end mr-5" style="gap: 6px;">
+            <div class="w-2/12 flex flex-col justify-center items-start mr-5" style="gap: 6px;">
                 <div *ngFor="let pilota of item.piloti">
                     <div class="flex flex-row">
                         <img class="rounded-full object-cover h-6 w-6 me-3" [src]="pilota.bandiera" alt="">

@@ -1,6 +1,6 @@
 <header class="bg-[#E54F2C] text-white p-4 flex items-center lg:justify-center justify-between h-12 lg:h-20  lg:rounded-b-2xl rounded-none">
     <ul class="hidden flex-row gap-7 xl:gap-14 2xl:gap-20 items-center lg:flex">
-        <li><a class="text-white font-custom desktop" [ngClass]="{'active': currentPage === '/home'}" routerLink="home">HOME</a></li>
+        <li><a class="text-white font-custom desktop" routerLink="/home">HOME</a></li>
         <li><a class="text-white font-custom desktop" routerLink="/classifiche-anno/piloti" [queryParams]="{ anno: 2023 }">STAGIONE 2023</a></li>
         <li><a class="text-white font-custom desktop" routerLink="/scuderie">SCUDERIE</a></li>
         <li><a class="text-white font-custom desktop" routerLink="/piloti">PILOTI</a></li>
