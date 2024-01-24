@@ -20,7 +20,15 @@ Partendo da sinistra dalla NAVBAR è possibile accedere alle pagine Home, Stagio
 
 La pagina STAGIONE 2023 è una scorciatoia che passa direttamente alla pagina Classifiche > 2023 dato che ha delle funzionalità in più rispetto agli altri anni. Nella pagina SCUDERIE si trova la lista completa delle stesse dal 2012 al 2023 ed è possibile vedere il DETTAGLIO SCUDERIA dove si possono vedere dati, risultati e approfondimenti della stessa. Anche lista PILOTI e lista TRACCIATI sono strutturati nello stesso modo con la possibilità di accedere ai relativi dettagli.
 
-La pagina classifiche ti permette di scegliere l'anno del campionato. Dopo aver deciso l'anno
+La pagina **CLASSIFICHE** ti permette di scegliere l'anno del campionato. Dopo aver deciso l'anno si ha la possibilità di vedere la **CLASSIFICA DEI PILOTI** di quel anno, la **LISTA GRAN PREMI** che compongono il campionato dell'anno scelto e la **CLASSIFICA SCUDERIA**. Dalla lista gran premi è possibile inoltre accedere alla pagina **DETTAGLIO GRAN PREMIO** che contiene dettagli del gran premio e le sue classifiche.
+
+Nella pagina **CHI SIAMO** ci sono scritte value pro position, vision e mission del nostro brand
+
+L'ultima pagina raggiungibile tramite la navbar è la pagina **ARTICOLI** questa contiene la lista di tutti gli articoli ed e possibile entrare in ciascuno di essi per vedere nel dettaglio dell'articolo
+
+Dal footer invece sono raggiungibili la pagina area riservata e la pagina sotto il cofano.
+
+l'**AREA RISERVATA** è accessibile solo tramite un login con le credenziali corrette, entrati e possibile visionare gli articoli scritti in passato e pubblicarne di nuovi
 
 -   area-riservata => Area riservata per la pubblicazione degli articoli.
 -   articoli => Sezione dedicata alla visualizzazione degli articoli.

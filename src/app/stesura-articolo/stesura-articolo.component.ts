@@ -54,6 +54,7 @@ export class StesuraArticoloComponent {
                             response.token
                         );
                     }
+                    this.router.navigate(["/area-riservata"]);
                 },
                 (error) => {
                     console.error(error);
@@ -85,6 +86,7 @@ export class StesuraArticoloComponent {
                             response.token
                         );
                     }
+                    this.router.navigate(["/area-riservata"]);
                 },
                 (error) => {
                     console.error(error);

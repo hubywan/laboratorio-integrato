@@ -9,7 +9,7 @@
             <label class="mt-1">FILTRO PER ANNO</label>
             <div class="flex flex-col">
                 <select id="filters" class="bg-[#2b2b2b] rounded-2xl text-white border-0 lg:h-12" [(ngModel)]="selectedYear" (change)="onYearChange()">
-                    <option value="">Seleziona un anno</option>
+                    <option>Seleziona un anno</option>
                     <option class="text-white">2012</option>
                     <option class="text-white">2013</option>
                     <option class="text-white">2014</option>
@@ -29,7 +29,7 @@
     </div>
     <div>
         <div class="container flex flex-row flex-wrap justify-center mx-auto max-w-6xl mt-10">
-            <div *ngFor="let item of filteredItems; let i = index" (click)="redirectToDettaglioScuderia(item.id)" class="h-44 w-44 lg:mx-6 m-3 lg:m-11 rounded-lg overflow-hidden bg-[#0E0E0E] m-10 hover:scale-105 transition-transform duration-200">
+            <div *ngFor="let item of filteredItems; let i = index" (click)="redirectToDettaglioScuderia(item.id)" class="h-44 w-44 lg:mx-6  lg:m-11 rounded-lg overflow-hidden bg-[#0E0E0E] m-10 hover:scale-105 transition-transform duration-200">
                 <a>
                     <img [src]="item.logo" alt="" class="w-full h-28 object-contain">
                     <h2 class="text-white text-center px-2 py-3 text-xl">
