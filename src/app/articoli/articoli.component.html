@@ -1,4 +1,4 @@
-<h1 class=" pt-20 text-white font-bold text-center">ARTICOLI</h1>
+<h1 class=" pt-20 text-white font-bold text-center mb-16">ARTICOLI</h1>
 
 <div class="m-8 lg:hidden">
     <div *ngFor="let item of items">
@@ -17,74 +17,85 @@
     </div>
 </div>
 <div class="max-w-7xl mx-auto">
-    <div class="hidden lg:flex " style=" flex-direction: row; justify-content: center; align-items: center; height: 80vh;">
-        <div class="card" style="height: 71vh; width: 400px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(items[0].id)">
-            <a [routerLink]="['/dettaglio', items[0].id]">
-                <img [src]="items[0].imageUrl" alt="Load..." style="height: 45%; width: 100%;" class="object-cover">
-                <h2 class="text-white font-bold" style="padding: 10px;">{{items[0].titolo}}</h2>
+    <div class="hidden lg:flex " style=" flex-direction: row; justify-content: center; align-items: center;">
+        <div class="rounded-xl bg-[#2a2a2a] mb-14 card m-4 flex flex-col gap-7 cursor-pointer" style="height: 670px; width: 430px;" (click)="redirectToDettaglioArticolo(items[0].id)">
+            <div>
+                <img [src]="items[0].imageUrl" alt="" class="w-full h-80 rounded-t-xl object-cover">
+            </div>
+            <div class="flex flex-col justify-between p-4 gap-1" style="height: 300px;">
+                <h2 class="text-xl text-white font-bold ml-4">{{items[0].titolo}}</h2>
                 <p class="text-white" style="padding: 15px; max-height: 200px; overflow: hidden;">{{items[0].testo}}</p>
-                <div class="flex justify-end mt-6 me-3">
-                    <p class="text-white">{{items[0].data}}</p>
+                <div class="flex justify-end">
                 </div>
-            </a>
+                <p class="text-white flex justify-end mt-5">{{items[0].data}}</p>
+            </div>
         </div>
         <div style="display: flex; flex-direction: column; justify-content: space-between;">
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div class="card" style="height: 34vh; width: 240px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(items[1].id)">
-                    <a [routerLink]="['/dettaglio', items[1].id]">
-                        <img [src]="items[1].imageUrl" alt="Load..." style="height: 45%; width: 100%;" class="object-cover">
-                        <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{items[1].titolo}}</h2>
-                        <div class="flex justify-end me-3" style="margin-top: 52px;">
+                <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] card m-4 cursor-pointer" (click)="redirectToDettaglioArticolo(items[1].id)">
+                    <div>
+                        <img [src]="items[1].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                        <h2 class="text-base font-bold text-white">{{items[1].titolo}}</h2>
+                        <div class="flex justify-end">
                             <p class="text-white">{{items[1].data}}</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="card" style="height: 34vh; width: 240px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(items[2].id)">
-                    <a [routerLink]="['/dettaglio', items[2].id]">
-                        <img [src]="items[2].imageUrl" alt="Load..." style="height: 45%; width: 100%; " class="object-cover">
-                        <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{items[2].titolo}}</h2>
-                        <div class="flex justify-end mt-6 me-3">
+                <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] card m-4 cursor-pointer" (click)="redirectToDettaglioArticolo(items[2].id)">
+                    <div>
+                        <img [src]="items[2].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                        <h2 class="text-base font-bold text-white">{{items[2].titolo}}</h2>
+                        <div class="flex justify-end">
                             <p class="text-white">{{items[2].data}}</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
             <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div class="card" style="height: 34vh; width: 240px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(items[3].id)">
-                    <a [routerLink]="['/dettaglio', items[3].id]">
-                        <img [src]="items[3].imageUrl" alt="Load..." style="height: 45%; width: 100%; " class="object-cover">
-                        <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{items[3].titolo}}</h2>
-                        <div class="flex justify-end mt-6 me-3">
+                <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] mb-14 card m-4 cursor-pointer" (click)="redirectToDettaglioArticolo(items[3].id)">
+                    <div>
+                        <img [src]="items[3].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                        <h2 class="text-base font-bold text-white">{{items[3].titolo}}</h2>
+                        <div class="flex justify-end">
                             <p class="text-white">{{items[3].data}}</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="card" style="height: 34vh; width: 240px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(items[4].id)">
-                    <a [routerLink]="['/dettaglio', items[4].id]">
-                        <img [src]="items[4].imageUrl" alt="Load..." style="height: 45%; width: 100%; " class="object-cover">
-                        <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{items[4].titolo}}</h2>
-                        <div class="flex justify-end mt-6 me-3">
+                <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] mb-14 card m-4 cursor-pointer" (click)="redirectToDettaglioArticolo(items[4].id)">
+                    <div>
+                        <img [src]="items[4].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                        <h2 class="text-base font-bold text-white">{{items[4].titolo}}</h2>
+                        <div class="flex justify-end">
                             <p class="text-white">{{items[4].data}}</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="hidden lg:flex flex-row mx-40 flex-wrap">
+    <div class="hidden lg:flex flex-row flex-wrap" style="margin: 0 140px;">
         <div *ngFor="let item of items; let i = index">
             <a *ngIf="i >= 5">
-                <div class="rounded-xl bg-[#2a2a2a] m-2 card" style="height: 34vh; width: 240px;" (click)="redirectToDettaglioArticolo(item.id)">
-                    <img [src]=" item.imageUrl" alt="" class="w-full rounded-t-xl object-cover" style="height: 45%;">
-                    <div class="p-3 flex flex-col justify-between">
-                        <h2 class="text-xl text-white font-bold">{{item.titolo}}</h2>
+                <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] card m-4 cursor-pointer" (click)="redirectToDettaglioArticolo(item.id)">
+                    <div>
+                        <img [src]="item.imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                        <h2 class="text-base text-white font-bold">{{item.titolo}}</h2>
                         <div class="flex justify-end">
-                            <p class="font-data text-white mt-3 font-italic">{{item.data}}</p>
+                            <p class="text-white">{{item.data}}</p>
                         </div>
                     </div>
                 </div>
             </a>
-
         </div>
     </div>
 </div>

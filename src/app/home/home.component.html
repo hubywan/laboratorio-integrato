@@ -214,56 +214,66 @@
         </section>
         <section class="articoli">
             <h2 class="hidden lg:flex text-white text-3xl font-bold text-center mt-20 mb-12 justify-center ">Articoli</h2>
-            <div class="hidden lg:flex " style=" flex-direction: row; justify-content: center; align-items: center; height: 80vh;">
-                <div class="card" style="height: 71vh; width: 550px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(articoli[0].id)" class="hover:scale-105 transition-transform duration-200">
-                    <a [routerLink]="['/dettaglio', articoli[0].id]">
-                        <img [src]="articoli[0].imageUrl" alt="Load..." style="height: 45%; width: 100%;" class="object-cover">
-                        <h2 class="text-white font-bold" style="padding: 10px;">{{articoli[0].titolo}}</h2>
+            <div class="hidden lg:flex " style=" flex-direction: row; justify-content: center; align-items: center;">
+                <div class="rounded-xl bg-[#2a2a2a] mb-14 card m-4 flex flex-col gap-7 hover:scale-105 transition-transform duration-200 cursor-pointer" style="height: 670px; width: 430px;" (click)="redirectToDettaglioArticolo(articoli[0].id)">
+                    <div>
+                        <img [src]="articoli[0].imageUrl" alt="" class="w-full h-80 rounded-t-xl object-cover">
+                    </div>
+                    <div class="flex flex-col justify-between p-4 gap-1" style="height: 300px;">
+                        <h2 class="text-xl text-white font-bold ml-4">{{articoli[0].titolo}}</h2>
                         <p class="text-white" style="padding: 15px; max-height: 200px; overflow: hidden;">{{articoli[0].testo}}</p>
-                        <div class="flex justify-end mt-6 me-3">
-                            <p class="text-white">{{articoli[0].data}}</p>
+                        <div class="flex justify-end">
                         </div>
-                    </a>
+                        <p class="text-white flex justify-end mt-5">{{articoli[0].data}}</p>
+                    </div>
                 </div>
                 <div style="display: flex; flex-direction: column; justify-content: space-between;">
                     <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                        <div class="card" style="height: 34vh; width: 290px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(articoli[1].id)" class="hover:scale-105 transition-transform duration-200">
-                            <a [routerLink]="['/dettaglio', articoli[1].id]">
-                                <img [src]="articoli[1].imageUrl" alt="Load..." style="height: 45%; width: 100%;" class="object-cover">
-                                <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{articoli[1].titolo}}</h2>
-                                <div class="flex justify-end me-3" style="margin-top: 52px;">
+                        <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] card m-4 hover:scale-105 transition-transform duration-200 cursor-pointer" (click)="redirectToDettaglioArticolo(articoli[1].id)">
+                            <div>
+                                <img [src]="articoli[1].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                            </div>
+                            <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                                <h2 class="text-base font-bold text-white">{{articoli[1].titolo}}</h2>
+                                <div class="flex justify-end">
                                     <p class="text-white">{{articoli[1].data}}</p>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                        <div class="card" style="height: 34vh; width: 290px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(articoli[2].id)" class="hover:scale-105 transition-transform duration-200">
-                            <a [routerLink]="['/dettaglio', articoli[2].id]">
-                                <img [src]="articoli[2].imageUrl" alt="Load..." style="height: 45%; width: 100%; " class="object-cover">
-                                <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{articoli[2].titolo}}</h2>
-                                <div class="flex justify-end mt-6 lg:mt-12 me-3">
+                        <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] card m-4 hover:scale-105 transition-transform duration-200 cursor-pointer" (click)="redirectToDettaglioArticolo(articoli[2].id)">
+                            <div>
+                                <img [src]="articoli[2].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                            </div>
+                            <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                                <h2 class="text-base font-bold text-white">{{articoli[2].titolo}}</h2>
+                                <div class="flex justify-end">
                                     <p class="text-white">{{articoli[2].data}}</p>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                     <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                        <div class="card" style="height: 34vh; width: 290px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(articoli[3].id)" class="hover:scale-105 transition-transform duration-200">
-                            <a [routerLink]="['/dettaglio', articoli[3].id]">
-                                <img [src]="articoli[3].imageUrl" alt="Load..." style="height: 45%; width: 100%; " class="object-cover">
-                                <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{articoli[3].titolo}}</h2>
-                                <div class="flex justify-end mt-6 me-3">
+                        <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] mb-14 card m-4 hover:scale-105 transition-transform duration-200 cursor-pointer" (click)="redirectToDettaglioArticolo(articoli[3].id)">
+                            <div>
+                                <img [src]="articoli[3].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                            </div>
+                            <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                                <h2 class="text-base font-bold text-white">{{articoli[3].titolo}}</h2>
+                                <div class="flex justify-end">
                                     <p class="text-white">{{articoli[3].data}}</p>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                        <div class="card" style="height: 34vh; width: 290px; margin: 15px; background-color: #2B2B2B; overflow: auto; border-radius: 10px;" (click)="redirectToDettaglioArticolo(articoli[4].id)" class="hover:scale-105 transition-transform duration-200">
-                            <a [routerLink]="['/dettaglio', articoli[4].id]">
-                                <img [src]="articoli[4].imageUrl" alt="Load..." style="height: 45%; width: 100%; " class="object-cover">
-                                <h2 class="text-white font-bold text-lg" style="padding: 10px;">{{articoli[4].titolo}}</h2>
-                                <div class="flex justify-end mt-6 me-3">
+                        <div class="w-custom h-80 w-60 rounded-xl bg-[#2a2a2a] mb-14 card m-4 hover:scale-105 transition-transform duration-200 cursor-pointer" (click)="redirectToDettaglioArticolo(articoli[4].id)">
+                            <div>
+                                <img [src]="articoli[4].imageUrl" alt="" class="w-full h-44 rounded-t-xl object-cover">
+                            </div>
+                            <div class="flex flex-col justify-between p-4" style="height: 152px;">
+                                <h2 class="text-base font-bold text-white">{{articoli[4].titolo}}</h2>
+                                <div class="flex justify-end">
                                     <p class="text-white">{{articoli[4].data}}</p>
                                 </div>
-                            </a>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 # PistONE
 
 Piattaforma di statistiche, risultati e approfondimenti su
-piloti, scuderie e tracciati. Con un archivio dal
-2012 e aggiornamenti sulle nuove competizioni. È inoltre presente una sezione dedicata agli articoli.
+piloti, gran prix, scuderie e tracciati della Formula 1.
+Ha un archivio di dati dal 2012 e aggiornamenti sulle nuove competizioni.
 
 ## Versioni
 
@@ -16,24 +16,41 @@ La pagina di apertura della piattaforma è l'HOME PAGE. Presenta diverse sezioni
 
 In ogni pagina della piattaforma è possibile interagire con la Navbar e il Footer.
 
-Partendo da sinistra dalla NAVBAR è possibile accedere alle pagine Home, Stagione 2023, Scuderie, Piloti, Home (dal logo PistONE), Tracciati, Classifiche, Chi siamo e Articoli.
+Partendo da sinistra nella NAVBAR è possibile accedere alle pagine Home, Stagione 2023, Scuderie, Piloti, Home (dal logo PistONE), Tracciati, Classifiche, Chi siamo e Articoli.
 
-La pagina STAGIONE 2023 è una scorciatoia che passa direttamente alla pagina Classifiche > 2023 dato che ha delle funzionalità in più rispetto agli altri anni. Nella pagina SCUDERIE si trova la lista completa delle stesse dal 2012 al 2023 ed è possibile vedere il DETTAGLIO SCUDERIA dove si possono vedere dati, risultati e approfondimenti della stessa. Anche lista PILOTI e lista TRACCIATI sono strutturati nello stesso modo con la possibilità di accedere ai relativi dettagli.
+La pagina **STAGIONE 2023** è una scorciatoia che passa direttamente dalla pagina **CLASSIFICHE** > **2023**. In questa sezione sono disponibili maggiori dati rispetto agli altri anni dato che è la stagione più recente.
 
-La pagina **CLASSIFICHE** ti permette di scegliere l'anno del campionato. Dopo aver deciso l'anno si ha la possibilità di vedere la **CLASSIFICA DEI PILOTI** di quel anno, la **LISTA GRAN PREMI** che compongono il campionato dell'anno scelto e la **CLASSIFICA SCUDERIA**. Dalla lista gran premi è possibile inoltre accedere alla pagina **DETTAGLIO GRAN PREMIO** che contiene dettagli del gran premio e le sue classifiche.
+Nella pagina **SCUDERIE** troviamo la lista completa dei team dal 2012 al 2023 e cliccando su ognuno si accede al DETTAGLIO SCUDERIA. Qui troviamo dati, risultati e approfondimenti. Anche la pagina PILOTI e la pagina TRACCIATI sono strutturati nello stesso modo con la possibilità di accedere ai relativi dettagli.
 
-Nella pagina **CHI SIAMO** ci sono scritte value pro position, vision e mission del nostro brand
+La pagina **CLASSIFICHE** ti permette di scegliere l'anno del campionato di interesse. Dopo aver deciso l'anno si ha la possibilità di vedere la classifica dei **PILOTI** di quell'anno, la lista **GRAN PREMI** che compongono il campionato dell'anno scelto e la classifica delle **SCUDERIE** cliccando sugli appositi bottoni. Dalla lista **GRAN PREMI** è possibile inoltre accedere alla pagina di DETTAGLIO GRAN PREMIO che contiene informazioni sulla corsa e la classifica della stessa.
 
-L'ultima pagina raggiungibile tramite la navbar è la pagina **ARTICOLI** questa contiene la lista di tutti gli articoli ed e possibile entrare in ciascuno di essi per vedere nel dettaglio dell'articolo
+Nella pagina **CHI SIAMO** troviamo value proposition, vision e mission del nostro brand.
 
-Dal footer invece sono raggiungibili la pagina area riservata e la pagina sotto il cofano.
+L'ultima pagina raggiungibile tramite la navbar è la pagina **ARTICOLI**. Contiene la lista di tutti gli articoli pubblicati e ciascuno di essi può essere aperto per leggerne il testo e condividerlo.
 
-l'**AREA RISERVATA** è accessibile solo tramite un login con le credenziali corrette, entrati e possibile visionare gli articoli scritti in passato e pubblicarne di nuovi
+Dal FOOTER si possono raggiungere la pagina **Area riservata** e la pagina **Sotto il cofano**.
+
+Per accedere all’**Area riservata** è necessario inserire le credenziali corrette (nome utente: martinamascolo / password:password). Una volta entrati è possibile visionare gli articoli pubblicati dall’utente che ha fatto l’accesso e creare un nuovo articolo.
+
+La sezione **Sotto il cofano** è una pagina dimostrativa per testare le chiamate all’API.
+
+## Funzionalità della piattaforma
+
+### Funzionalità HOME PAGE
+
+**Calendario a carosello**
+Si trova nella Homepage della piattaforma e mostra le date delle corse relative alla stagione 2024. I dati al suo interno sono richiamati dall’API, mentre le bandiere sono state implementate manualmente nel database. Il carosello si aggiorna automaticamente eliminando le date delle corse dopo il loro svolgimento.
+
+**Countdown**
+Dall’Api si riceve la data della prossima gara e tramite Dayjs
+
+**Form newsletter**
+Nell’ultima parte della Homepage c’è il form per iscriversi alla newsletter. Il codice HTML è stato generato direttamente dalla piattaforma di Mailchimp e implementato con la parte di CSS. Ha un collegamento diretto al sito che raccoglie le email degli utenti.
 
 -   area-riservata => Area riservata per la pubblicazione degli articoli.
 -   articoli => Sezione dedicata alla visualizzazione degli articoli.
 -   carosello-home => Carosello contenente la lista dei Gran Premi del 2024 assieme alle rispettive date.
--   chi-siamo => Pagina contenente value pro position, vision e mission.
+-   chi-siamo => Pagina contenente value proposition, vision e mission.
 -   classifica-piloti => Codice finalizzato alla creazione delle pagine dedicate alle classifiche stagionali dei piloti.
 -   classifica-scuderie => Codice finalizzato alla creazione delle pagine dedicate alle classifiche stagionali delle scuderie.
 -   classifiche => Pagina contenente la selezione dell’anno per la visualizzazione delle classifiche specifiche.
@@ -56,4 +73,7 @@ l'**AREA RISERVATA** è accessibile solo tramite un login con le credenziali cor
 -   login => Pagina dedicata al login per l’area riservata.
 -   navbar => Navbar del sito con le sezioni Home, Stagione 2023, Scuderie, Piloti, PistONE(Home), Tracciati, Classifiche, Chi siamo e Articoli.
 -   stesura-articolo => Componente finalizzato alla stesura, alla pubblicazione e alla programmazione degli articoli.
--   tabella-pilota-andamento-stagione => Tabella che ripercorre l’andamento dei piloti nella stagione 2023.
+-   tabella-pilota-andamento-stagione => Tabella che ripercorre l’andamento dei piloti nella stagione 2023.
+
+**FILTRI**
+I filtri includono la ricerca per nome e il filtro per anno
