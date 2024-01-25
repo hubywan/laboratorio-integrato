@@ -2,7 +2,7 @@
 
 Piattaforma di statistiche, risultati e approfondimenti su
 piloti, gran prix, scuderie e tracciati della Formula 1.
-Ha un archivio di dati dal 2012 e aggiornamenti sulle nuove competizioni. L’applicazione è stata progettata mobile first ma con la possibilità della visualizzazione desktop in quanto responsive.
+Ha un archivio di dati dal 2012 e aggiornamenti sulle nuove competizioni. L’applicazione è stata progettata mobile first con la possibilità della visualizzazione desktop in quanto responsive.
 
 ## Versioni e Utilities
 
@@ -10,7 +10,7 @@ Angular 16.1.0
 
 Node.js 20.1.0
 
-come setuppare Angular : https://angular.io/guide/setup-local
+Come setuppare Angular : https://angular.io/guide/setup-local
 repository git : https://github.com/hubywan/laboratorio-integrato
 
 ## Struttura del Progetto
@@ -29,11 +29,11 @@ La pagina **CLASSIFICHE** ti permette di scegliere l'anno del campionato di inte
 
 Nella pagina **CHI SIAMO** troviamo value proposition, vision e mission del nostro brand.
 
-L'ultima pagina raggiungibile tramite la navbar è la pagina **ARTICOLI**. Contiene la lista di tutti gli articoli pubblicati e ciascuno di essi può essere aperto per leggerne il testo e condividerlo.
+L'ultima pagina raggiungibile tramite la navbar è la sezione **ARTICOLI**. Contiene la lista di tutti gli articoli pubblicati e ciascuno di essi può essere aperto per leggerne il testo e condividerlo.
 
-Dal FOOTER si possono raggiungere la pagina Area riservatA e la pagina Sotto il cofano.
+Dal FOOTER si possono raggiungere la pagina **Area riservata** e la pagina **Sotto il cofano**.
 
-Per accedere all’**AREA RISERVATA** è necessario inserire le credenziali corrette (nome utente: martinamascolo / password:password). Una volta entrati è possibile visionare gli articoli pubblicati dall’utente che ha fatto l’accesso e creare un nuovo articolo.
+Per accedere all’**Area riservata** è necessario inserire le credenziali corrette (nome utente: martinamascolo / password:password). Una volta entrati è possibile visionare gli articoli pubblicati dall’utente che ha fatto l’accesso e creare un nuovo articolo.
 
 La sezione **SOTTO IL COFANO** è una pagina dimostrativa per testare le chiamate all’API.
 
@@ -57,11 +57,11 @@ Nell’ultima parte della Homepage c’è il form per iscriversi alla newsletter
 
 **Piloti**
 
-La sezione mostra la classifica piloti completa della stagione 2023 oltre a due grafici, uno a linee e uno a tabella, che si soffermano sull’andamento di ogni atleta in ogni evento. I dati sono tutti richiamati dall’API tranne le immagini, tutte implementate manualmente. Invece i grafici sono stati implementati grazie a Chartjs.
+La sezione mostra la classifica piloti completa della stagione 2023 oltre a due grafici, uno a linee e uno a tabella, che si soffermano sull’andamento di ogni atleta in ogni evento. I dati sono tutti richiamati dall’API tranne le immagini, tutte inserite manualmente. I grafici sono stati implementati grazie a Chartjs.
 
 **Gran Premi**
 
-È presente l’intera lista delle gare nella stagione 2023 con nazione, nome dell’evento, data dello stesso e la bandiera. Come per le altre sezioni in stagioni 2023 i dati sono chiamati tramite API tranne le immagini, mentre le date sono state formattate con Dayjs.
+È presente l’intera lista delle gare nella stagione 2023 con nazione, nome dell’evento, data dello stesso e la bandiera. Come per le altre sezioni in stagioni 2023, i dati sono chiamati tramite API, tranne le immagini, e le date sono state formattate con Dayjs.
 
 **Scuderie**
 
@@ -71,12 +71,12 @@ Sono indicate le posizioni della classifica costruttori 2023, assieme al numero 
 
 **Scuderie**
 
-Oltre alla lista delle scuderie presenti in Formula 1 dal 2012 ad oggi. Si possono notare il filtro di ricerca per nome e quello per anno. La ricerca per nome confronta la stringa inserita con i nomi e mostra quelli nel quale le stringhe combaciano. Il filtro per anno è una select con gli anni che se selezionati chiamano l’API, che risponderà con i dati dell’anno corrispondente. Questi filtri funzionano allo stesso modo anche per le liste di piloti e tracciati, così come il click su un’icona che porta alla pagina dettaglio.
+Oltre alla lista delle scuderie presenti in Formula 1 dal 2012 ad oggi si possono notare il filtro di ricerca per nome e quello per anno. La ricerca per nome confronta la stringa inserita con i nomi e mostra quelli nel quale le stringhe combaciano. Il filtro per anno è una select con gli anni che, quando selezionati, chiamano l’API che risponderà con i dati dell’anno corrispondente. Questi filtri funzionano allo stesso modo anche per le liste di piloti e tracciati. Cliccando su un elemento si arriva alla pagina di dettaglio.
 Quando viene selezionato un elemento della lista viene passato come parametro attraverso la navigazione delle route. La pagina di dettaglio riceve l'ID dal parametro della route e utilizza l’ID per effettuare una chiamata API e viene usato come parametro da passare al servizio corrispondente.
 
 **Dettaglio scuderia**
 
-Nel dettaglio scuderia sono presenti tutti i dati forniti dall’API riguardante la stessa, con le immagini del logo e dei piloti inseriti manualmente nel database. Inoltre è visibile il punteggio della squadra in ogni edizione disputata del campionato mondiale.
+Nel dettaglio scuderia sono presenti tutti i dati forniti dall’API riguardante la stessa, con le immagini del logo e dei piloti inserite manualmente nel database. Inoltre è visibile il punteggio della squadra in ogni edizione disputata del campionato mondiale rappresentato tramite un grafico di chartjs.
 
 ### Funzionalità PILOTI
 
@@ -86,8 +86,8 @@ Esattamente come per le scuderie si nota la lista dei piloti presenti in Formula
 
 **Dettaglio pilota**
 
-Nel dettaglio pilota vengono mostrati tutti i dati degli atleti, come il numero di gara, i team presenti e passati e l’andamento stagionale per anno via grafico.
-Il confronto pilota paragona quello della pagina stessa con uno a scelta. Il pilota da confrontare viene inserito tramite una select che contiene i nomi di tutti i piloti presi tramite un servizio GET. In seguito alla selezione viene effettuata un'ulteriore chiamata la quale tramite l'id del pilota restituisce i dati da comparare.
+Nel dettaglio pilota vengono mostrati tutti i dati degli atleti, come il numero di gara, i team presenti e passati e l’andamento stagionale per anno nel grafico.
+Il confronto pilota paragona quello della pagina stessa con uno a scelta. Il pilota da confrontare viene inserito tramite una select che contiene i nomi di tutti i piloti presi tramite un servizio GET. In seguito alla selezione viene effettuata un'ulteriore chiamata la quale, tramite l'id del pilota, restituisce i dati da comparare.
 
 ### Funzionalità TRACCIATI
 
@@ -97,7 +97,7 @@ Ancora una volta c’è la lista dei tracciati presenti in Formula 1 dal 2012 ad
 
 **Dettaglio tracciato**
 
-Oltre ai canonici dati statistici si notano due caratteristiche esclusive: sono infatti state scritte a mano delle descrizioni per ogni circuito e sono stati registrati video tramite F1 23 e Assetto Corsa con il fine di mostrarlo nella sua interezza. Questi video sono stati caricati sul canale YouTube di PistONE.
+Oltre ai canonici dati statistici si notano due caratteristiche esclusive: sono infatti state scritte a mano delle descrizioni per ogni circuito e sono stati registrati video tramite F1 23 e Assetto Corsa che simulano un giro di pista sul tracciato scelto. Questi video sono stati caricati sul canale YouTube (privato) di PistONE.
 
 ### Funzionalità CLASSIFICHE
 
@@ -107,7 +107,7 @@ Tutte le stagioni dal 2012 ad oggi sono selezionabili tramite questa pagina.
 
 **Classifica anno**
 
-Il funzionamento è il medesimo della sezione Classifiche 2023, senza però mostrare grafici date le diverse modalità di assegnazione del punteggio.
+Il funzionamento è il medesimo della sezione Classifiche 2023, ad eccezione dei grafici che sono un'esclusiva di quell'anno.
 
 ### Funzionalità CHI SIAMO
 
